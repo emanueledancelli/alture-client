@@ -12,7 +12,7 @@ const EventMap = props => {
       };
     
     return (
-        <div style={{ height: '150px', width: '100%' }}>
+        <div style={{ height: '200px', width: '100%' }}>
             <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyDdrWJJch3MI-CQuQgv3PEzaok97K4ywss'  }}
             defaultCenter={defaultProps.center}

@@ -37,14 +37,20 @@ class SingleEvent extends Component {
                 backgroundColor: 'white',
                 top: '0',
                 left: '0',
-                marginBottom: '80px'
+                marginBottom: '8vh'
             },
-            container: {
-                padding: '5%'
+            headerContainer: {
+                padding: '5%',
+                marginTop: '20px'
+            },
+            descriptionContainer: {
+                paddingTop: '5%',
+                paddingRight: '5%',
+                paddingLeft: '5%',
             },
             info: {
-                marginTop: '20px',
-                marginBottom: '20px'
+                marginTop: '25px',
+                marginBottom: '15px'
             },
             map: {
                 height: '200px',
@@ -53,14 +59,15 @@ class SingleEvent extends Component {
                 marginBottom: '20px'
             },
             description: {
-                fontSize: '18px',
-                lineHeight: '150%'
+                fontSize: '1em',
+                lineHeight: '180%',
             }
         }
         
         const { selectedEvent, isLoading } = this.state
         const date = moment(selectedEvent.start).locale('it').format("LLL");
-
+        const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
+        
         if(isLoading) (
             <p>Caricamento...</p>
         )
@@ -68,18 +75,22 @@ class SingleEvent extends Component {
             <div style={styles.wrapper}>
                 <ScrollToTopOnMount/>
                 <ImgOverlay image={selectedEvent.image.url}>                
-                    <SingleHeader handleBackButton={() => this.props.history.goBack()}/>
+                    <SingleHeader
+                        url={currentUrl}
+                        backButtonHandler={() => this.props.history.goBack()}
+                        />
                 </ImgOverlay>
-                <div style={styles.container}>
+                <div style={styles.headerContainer}>
                     <h1 className="title black">{selectedEvent.name}</h1>
                     <div style={styles.info}>
                         <PlaceAndDate location={selectedEvent.place} date={date} />
                     </div>
                 </div>
-                <EventMap />
-                <div style={styles.container}>
-                    <span style={styles.description}>{selectedEvent.description}</span>
-
+                <div style={{zIndex: '-1'}}>
+                    <EventMap />                
+                </div>
+                <div style={styles.descriptionContainer}>
+                    <p style={styles.description}>{selectedEvent.description}</p>
                 </div>
             </div>
         );

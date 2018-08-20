@@ -10,6 +10,11 @@
     font-size: 1.3em;
 }
 
+.appheader a {
+    text-decoration: none;
+    color: #333;
+}
+
 .appheader-icon {
     color: #728DC3;
     transition: all 1s ease-out;

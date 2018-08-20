@@ -10,16 +10,16 @@ class AppNavigation extends Component {
   render() {
     return (
       <div className="AppNavigation">
-        <Link to='/'>
-          <div>
+        <div>
+          <Link to='/'>
             <HomeIcon className="AppNavigation-icon" size={26}/>
-          </div>
-        </Link>
-        <Link to='/Mappa'>
-          <div>
+          </Link>
+        </div>
+        <div>
+          <Link to='/Mappa'>
             <MapIcon className="AppNavigation-icon" size={26}/>         
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     );
   }
