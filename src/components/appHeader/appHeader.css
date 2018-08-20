@@ -1,0 +1,24 @@
+.appheader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+    height: 120px;
+    justify-content: space-around;
+    align-items: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.appheader-icon {
+    color: #728DC3;
+    transition: all 1s ease-out;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.appheader-icon__active {
+    transform: rotate(45deg);
+}

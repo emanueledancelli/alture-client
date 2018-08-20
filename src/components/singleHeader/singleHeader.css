@@ -1,0 +1,19 @@
+.single-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: transparent;
+    height: 120px;
+    justify-content: space-around;
+    align-items: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.single-header-icon {
+    color: #FFF
+}
+
+.thin {
+    font-weight: 300;
+}

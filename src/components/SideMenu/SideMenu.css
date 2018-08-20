@@ -1,0 +1,15 @@
+.sidemenu-wrapper {
+    min-height: 100vh;
+    width:100%;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sidemenu-items {
+    width: 80%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(114,141,195,1) 35%, rgba(0,212,255,1) 100%);
+}

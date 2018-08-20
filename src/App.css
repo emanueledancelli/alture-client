@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800');
+
+a {
+    text-decoration: none;
+}
+
+p, span, h1 {
+    font-family: "Raleway"
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: 700
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: #333333;
+}
+
+.App {
+    min-height: 100vh;
+}
