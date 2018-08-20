@@ -3,11 +3,11 @@
     flex-direction: row;
     width: 100%;
     background-color: white;
-    height: 120px;
+    height: 14vh;
     justify-content: space-around;
     align-items: center;
     color: #333;
-    font-size: 24px;
+    font-size: 1.3em;
 }
 
 .appheader-icon {
@@ -21,4 +21,4 @@
 
 .appheader-icon__active {
     transform: rotate(45deg);
-}
+} 

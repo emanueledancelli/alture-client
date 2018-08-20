@@ -6,17 +6,17 @@ const PlaceAndDate = props => {
     const styles = {
         p: {
             margin: '0px',
-            paddingTop: '2px',
-            fontSize: '20px',
+            paddingTop: '0.5em',
+            fontSize: '1em',
             fontWeight: '400', 
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-start',
-            alignItems: 'baseline'
+            alignItems: 'center'
         },
         icon: {
             paddingRight: '8px',
-            paddingTop: '2px',
+            color: '#F7B801'
         }
     }     
  

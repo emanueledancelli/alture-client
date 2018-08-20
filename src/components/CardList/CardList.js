@@ -28,7 +28,7 @@ class CardList extends Component {
       const styles = {
         list: {
           width: '100%',
-          marginBottom: '80px'
+          marginBottom: '9vh'
         }
       }
     

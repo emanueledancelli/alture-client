@@ -5,25 +5,25 @@ const Card = props => {
 
   const styles = {
       card: {
-        minHeight: '250px',
+        minHeight: '200px',
         borderRadius: '10px',
         paddingTop: '5px',
         paddingBottom:'5px',
-        paddingLeft: '33px',
-        marginBottom: '14px',
-        marginLeft: '10px',
-        marginRight: '10px',
+        paddingLeft: '20px',
+        marginBottom: '10px',
+        marginLeft: '5px',
+        marginRight: '5px',
         zIndex: '-99',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
-        WebkitBoxShadow: '3px 4px 15px -4px rgba(0,0,0,0.75)',
-        MozBoxShadow: '3px 4px 15px -4px rgba(0,0,0,0.75)',
-        boxShadow: '3px 4px 15px -4px rgba(0,0,0,0.75)',
+        WebkitBoxShadow: '3px 4px 20px -4px rgba(0,0,0,0.8)',
+        MozBoxShadow: '3px 4px 20px -4px rgba(0,0,0,0.8)',
+        boxShadow: '3px 4px 20px -4px rgba(0,0,0,0.8)',
         background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${props.backgroundImage}) center`
       },
       header: {
-        maxWidth: '60%'
+        maxWidth: '80%'
       }
   }
 

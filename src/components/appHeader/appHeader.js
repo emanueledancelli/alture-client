@@ -4,11 +4,10 @@ import './appHeader.css';
 import { AddIcon, NotificationsIcon } from 'mdi-react';
 
 import SideMenu from '../SideMenu/SideMenu'
-import Notifications from '../Notifications/Notifications'
 
 class AppHeader extends Component {
   state = {
-    isMenuOpen: false
+    isMenuOpen: true
   }
 
   MenuHandler = () => {
@@ -24,10 +23,10 @@ class AppHeader extends Component {
        <div> 
         <div className="appheader">
           <div onClick={this.MenuHandler}>
-            <AddIcon className="appheader-icon appheader-icon__active" size={35}/>
+            <AddIcon className="appheader-icon appheader-icon__active" size={26}/>
          </div>
-         <p className="appheader-logo"><span className="thin">Alture</span><strong>360</strong></p>
-         <NotificationsIcon className="appheader-icon" size={35} />
+         <span className="appheader-logo"><span className="thin">Alture</span><strong>360</strong></span>
+          <NotificationsIcon className="appheader-icon" size={26} />
         </div>
         <SideMenu />
       </div>
@@ -36,10 +35,10 @@ class AppHeader extends Component {
     return (
       <div className="appheader">
         <div onClick={this.MenuHandler}>
-         <AddIcon className="appheader-icon" size={35}/>
+         <AddIcon className="appheader-icon" size={26}/>
          </div>
-         <p className="appheader-logo"><span className="thin">Alture</span><strong>360</strong></p>
-         <NotificationsIcon className="appheader-icon" size={35} />
+         <span className="appheader-logo"><span className="thin">Alture</span><strong>360</strong></span>
+         <NotificationsIcon className="appheader-icon" size={26} />
       </div>
     );
   }
