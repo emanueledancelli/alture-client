@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const SideMenu = props => {
     const menuStyles = {
@@ -15,7 +17,7 @@ const SideMenu = props => {
             //display: 'flex',
         },
         items: {
-            padding: '3%',
+            padding: '5%',
             backgroundColor: 'white',
             display: 'flex',
             flexDirection: 'column',
@@ -29,18 +31,32 @@ const SideMenu = props => {
         },
         item: {
             fontSize: '1em',
-            paddingTop: '0.5em',
-            paddingBottom: '0.5em'
+            paddingTop: '1em',
+            paddingBottom: '1em'
         }
     }
 
     return (
         <div style={menuStyles.container}>
             <div style={menuStyles.items}>
-                <span style={menuStyles.item}>Suggerisci un evento</span>
-                <span style={menuStyles.item}>Contatti</span>
-                <span style={menuStyles.item}>About</span>
-                <span style={menuStyles.item}>Privacy</span>
+                <Link 
+                    to='/suggerisci'
+                    style={menuStyles.item}
+                >
+                    <span>Suggerisci un evento</span>
+                </Link>
+                <Link to='/feedback' style={menuStyles.item}>                
+                    <span>Feedback</span>                
+                </Link>
+                <Link to='/contatti' style={menuStyles.item}>                
+                    <span>Contatti</span>                
+                </Link>
+                <Link to='/about' style={menuStyles.item}>
+                    <span>About</span>
+                </Link>
+                <Link to='/privacy'  style={menuStyles.item}>
+                    <span>Privacy</span>
+                </Link>
             </div>
         </div>
     )

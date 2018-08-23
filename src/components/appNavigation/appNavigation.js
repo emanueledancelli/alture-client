@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './appNavigation.css';
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { HomeIcon, MapIcon } from 'mdi-react';
 
@@ -11,14 +11,22 @@ class AppNavigation extends Component {
     return (
       <div className="AppNavigation">
         <div>
-          <Link to='/'>
+          <NavLink 
+            to='/'
+            exact
+            activeClassName="selected"
+          >
             <HomeIcon className="AppNavigation-icon" size={26}/>
-          </Link>
+          </NavLink>
         </div>
         <div>
-          <Link to='/Mappa'>
+          <NavLink 
+            to='/Mappa'
+            exact
+            activeClassName="selected"
+          >
             <MapIcon className="AppNavigation-icon" size={26}/>         
-          </Link>
+          </NavLink>
         </div>
       </div>
     );

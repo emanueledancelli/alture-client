@@ -39,7 +39,8 @@ class SingleEvent extends Component {
                 left: '0',
                 marginBottom: '8vh'
             },
-            headerContainer: {
+            curvedContainer: {
+                backgroundColor: 'white',
                 padding: '5%',
                 marginTop: '20px'
             },
@@ -80,10 +81,12 @@ class SingleEvent extends Component {
                         backButtonHandler={() => this.props.history.goBack()}
                         />
                 </ImgOverlay>
-                <div style={styles.headerContainer}>
-                    <h1 className="title black">{selectedEvent.name}</h1>
-                    <div style={styles.info}>
-                        <PlaceAndDate location={selectedEvent.place} date={date} />
+                <div style={styles.curvedContainer}>
+                    <div style={styles.headerContainer}>
+                        <h1 className="title black">{selectedEvent.name}</h1>
+                        <div style={styles.info}>
+                            <PlaceAndDate location={selectedEvent.place} date={date} />
+                        </div>
                     </div>
                 </div>
                 <div style={{zIndex: '-1'}}>

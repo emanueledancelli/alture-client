@@ -18,7 +18,7 @@ class Map extends Component {
           mapMargins: {
           },
           mapContainer: {
-              height: '78vh',
+              height: '77vh',
               width: '100%',
               borderRadius: '10px',
           }
