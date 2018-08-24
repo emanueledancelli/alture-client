@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from '../../components/MapMarker/MapMarker';
-import AppHeader from '../../components/appHeader/appHeader';
+import AppHeader from '../../components/AppHeader/AppHeader';
 
 class Map extends Component {
     

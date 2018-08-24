@@ -1,4 +1,4 @@
-.appheader {
+.AppHeader {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -10,20 +10,19 @@
     font-size: 1.3em;
 }
 
-.appheader a {
+.AppHeader a {
     text-decoration: none;
     color: #333;
 }
 
-.appheader-icon {
+.AppHeader-icon {
     color: #728DC3;
-    transition: all 1s ease-out;
 }
 
 .thin {
     font-weight: 300;
 }
 
-.appheader-icon__active {
+.AppHeader-icon__active {
     transform: rotate(45deg);
 } 

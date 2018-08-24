@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppHeader from '../../components/appHeader/appHeader'
+import AppHeader from '../../components/AppHeader/AppHeader'
 
 class Feedback extends Component {
     render() {

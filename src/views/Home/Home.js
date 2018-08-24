@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardList from '../../components/CardList/CardList'
-import AppHeader from '../../components/appHeader/appHeader'
+import AppHeader from '../../components/AppHeader/AppHeader'
 
 class Home extends Component {
   render() {
