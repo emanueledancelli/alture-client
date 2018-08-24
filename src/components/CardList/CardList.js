@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import moment from 'moment';
 import 'moment/locale/it';
 
+import Card from '../Card/Card'
+import Spinner from '../Spinner/Spinner'
 
 class CardList extends Component {
   
@@ -47,14 +48,16 @@ class CardList extends Component {
               location={e.place}
             />
           </Link>
-        )})
+        )});
       
-      if(isLoading) (
-        <p>Caricamento...</p>
-      )
+      if(isLoading) {
+        return (
+          <Spinner />
+        )
+      }      
       return (
         <div style={styles.list}>
-          {cardList}
+          { cardList }
         </div>
       ); 
     }

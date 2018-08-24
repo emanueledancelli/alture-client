@@ -21,7 +21,7 @@ const MenuBody = () => {
         color: #728DC3; 
     `
 
-    render (
+    return (
         <Body>
             <MenuItem linkTo="/suggerisci" name="Suggerisci un evento">
                 <AddBoxIcon className={Icon} size={26} />

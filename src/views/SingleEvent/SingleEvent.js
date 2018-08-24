@@ -4,6 +4,7 @@ import ImgOverlay from '../../components/ImgOverlay/ImgOverlay'
 import SingleHeader from '../../components/singleHeader/singleHeader'
 import PlaceAndDate from '../../components/PlaceAndDate/PlaceAndDate'
 import EventMap from '../../components/EventMap/EventMap'
+import Spinner from '../../components/Spinner/Spinner'
 import axios from 'axios'
 import moment from 'moment';
 import 'moment/locale/it';
@@ -69,9 +70,11 @@ class SingleEvent extends Component {
         const date = moment(selectedEvent.start).locale('it').format("LLL");
         const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
         
-        if(isLoading) (
-            <p>Caricamento...</p>
-        )
+        if(isLoading) {
+            return (
+                <Spinner />
+            )
+        }
         return (
             <div style={styles.wrapper}>
                 <ScrollToTopOnMount/>

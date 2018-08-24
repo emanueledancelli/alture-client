@@ -3,15 +3,6 @@ import styled from 'react-emotion';
 
 const MenuFooter = () => {
    
-    const Header = styled('div')`
-        width: 85%;
-        height: 14vh;
-        font-size: 1.3em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    `
     const Footer = styled('div')`
         width: 85%;
         height: 9vh;
@@ -24,7 +15,7 @@ const MenuFooter = () => {
         font-weight: 600;
     `
 
-    render (
+    return (
         <Footer>
             <p>Privacy policy</p>                
         </Footer> 
