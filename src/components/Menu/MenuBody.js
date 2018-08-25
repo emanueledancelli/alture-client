@@ -19,7 +19,7 @@ const MenuBody = () => {
     const Icon = css`
         margin-right: 15px;
         color: #728DC3; 
-    `
+    ` 
 
     return (
         <Body>

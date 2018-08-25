@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './singleHeader.css';
-import SocialShare from '../SocialShare/SocialShare'
+import Sharer from '../Sharer/Sharer'
 
 import { KeyboardBackspaceIcon, ShareVariantIcon } from 'mdi-react';
 
@@ -24,9 +24,8 @@ class SingleHeader extends Component {
   render() {
     const { isSharingOpen } = this.state
 
-    if(isSharingOpen) {
       return (
-        <div>
+        <React.Fragment>
           <div className="single-header">
                 <div onClick={this.props.backButtonHandler}>
                     <KeyboardBackspaceIcon className="single-header-icon" size={35}/>
@@ -35,29 +34,14 @@ class SingleHeader extends Component {
                 <div onClick={this.shareButtonHandler}>
                     <ShareVariantIcon className="single-header-icon" size={35} />
                 </div>
-                </div>
-
-                <SocialShare 
-                  url={this.props.url} 
-                  wrapperHandler={this.wrapperHandler}
-                />
-        </div>
-    
+          </div>
+          {isSharingOpen 
+            ? <Sharer url={this.props.url} wrapperHandler={this.wrapperHandler} />
+            : null
+          }
+        </React.Fragment>
       );
     }
-
-    return (
-      <div className="single-header">
-        <div onClick={this.props.backButtonHandler}>
-            <KeyboardBackspaceIcon className="single-header-icon" size={35}/>
-        </div>
-        <div></div>
-        <div onClick={this.shareButtonHandler}>
-            <ShareVariantIcon className="single-header-icon" size={35} />
-        </div>
-      </div>
-    );
-  }
 }
 
 export default SingleHeader;

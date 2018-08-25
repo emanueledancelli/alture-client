@@ -1,20 +1,22 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { keyframes } from 'react-emotion';
 
 import MenuHeader from './MenuHeader';
 import MenuBody from './MenuBody';
 import MenuFooter from './MenuFooter';
+import Shade from '../Shade/Shade';
 
 const Menu = ({ handleCloseMenu }) => {
-
-    const Wrapper =  styled('div')`
-        height: 100vh;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99;
-        background-color: rgba(10, 21, 60, 0.5);
+          
+    const slideIn = keyframes`
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0)
+        }
     `
 
     const Container = styled('div')`
@@ -29,16 +31,18 @@ const Menu = ({ handleCloseMenu }) => {
         -webkit-box-shadow: 5px 5px 24px -2px rgba(10,21,60,0.62);
         -moz-box-shadow: 5px 5px 24px -2px rgba(10,21,60,0.62);
         box-shadow: 5px 5px 24px -2px rgba(10,21,60,0.62);
+        animation: ${slideIn} 500ms ease-in;
+        transition: all 0.5s ease-in;
     `
-
+ 
     return (
-            <Wrapper onClick={handleCloseMenu}>
+            <Shade onClick={handleCloseMenu}>
                 <Container>
                     <MenuHeader />
                     <MenuBody />
                     <MenuFooter />
                 </Container>
-            </Wrapper>
+            </Shade>
     );
 }
 
