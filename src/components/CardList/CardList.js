@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import styled from 'react-emotion';
 import axios from 'axios'
 import moment from 'moment';
 import 'moment/locale/it';
@@ -25,13 +26,11 @@ class CardList extends Component {
   }
 
   render() {
-      
-      const styles = {
-        list: {
-          width: '100%',
-          marginBottom: '9vh'
-        }
-      }
+
+      const Container = styled('div')`
+        width: 100%;
+        margin-bottom: 9vh;
+      `
     
       const { events, isLoading } = this.state
 
@@ -56,9 +55,9 @@ class CardList extends Component {
         )
       }      
       return (
-        <div style={styles.list}>
+        <Container>
           { cardList }
-        </div>
+        </Container>
       ); 
     }
     

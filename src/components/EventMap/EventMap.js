@@ -14,13 +14,14 @@ const EventMap = props => {
     return (
         <div style={{ height: '200px', width: '100%' }}>
             <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyDdrWJJch3MI-CQuQgv3PEzaok97K4ywss'  }}
+            bootstrapURLKeys={{ key: 'AIzaSyC0zvScZpvk_-_cTjYEK1FnbDH38_a_pSE'  }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
-            >
+            > 
             <MapMarker
                 lat={45.793770}
                 lng={10.273630}
+                name={'boma'}
             />
             </GoogleMapReact>
         </div>

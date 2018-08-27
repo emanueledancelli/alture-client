@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from '../../components/MapMarker/MapMarker';
 import AppHeader from '../../components/AppHeader/AppHeader';
+import { Link } from 'react-router-dom'
 
 class Map extends Component {
     
@@ -30,25 +31,35 @@ class Map extends Component {
             <div style={mapStyles.mapMargins}>
                 <div style={mapStyles.mapContainer}>
                     <GoogleMapReact
-                        bootstrapURLKeys={{ key: 'AIzaSyDdrWJJch3MI-CQuQgv3PEzaok97K4ywss'  }}
+                        bootstrapURLKeys={{ key: 'AIzaSyC0zvScZpvk_-_cTjYEK1FnbDH38_a_pSE'  }}
                         defaultCenter={defaultProps.center}
                         defaultZoom={defaultProps.zoom}
                     >
-                        <MapMarker
+                        <Link 
+                            to="/"
                             lat={45.793770}
-                            lng={10.273630}
-                            text={'Bovegno'}
-                        />
-                        <MapMarker
-                            lat={45.7505617}
-                            lng={10.1593999}
-                            text={'Guglielmo'}
-                        />
-                        <MapMarker
-                            lat={45.6584268}
-                            lng={10.0384156}
-                            text={'Iseo'}
-                        />
+                            lng={10.273630}>
+                            <MapMarker
+                                name={'Bovegno'}
+                                date={'Ven 14 Ott'}
+                            />
+                        </Link>
+                        <Link to="/">
+                            <MapMarker
+                                lat={45.7505617}
+                                lng={10.1593999}
+                                name={'Golem'}
+                                date={'Gio 25 Sett'}
+                            />
+                        </Link>                       
+                        <Link to="/">
+                            <MapMarker
+                                lat={45.6584268}
+                                lng={10.0384156}
+                                name={'Iseo'}
+                                date={'Sab 11 Sett'}
+                            />
+                        </Link>                        
                     </GoogleMapReact>
                 </div>
             </div>

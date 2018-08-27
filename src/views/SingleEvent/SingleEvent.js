@@ -12,10 +12,10 @@ import 'moment/locale/it';
 class SingleEvent extends Component {
     state = {
         isLoading: false,
+        isDescriptionExtended: false,
         selectedEvent: {
             image: ''
-        },
-        
+        },    
     }
 
     componentDidMount() {
@@ -71,9 +71,7 @@ class SingleEvent extends Component {
         const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
         
         if(isLoading) {
-            return (
-                <Spinner />
-            )
+            return <Spinner/>
         }
         return (
             <div style={styles.wrapper}>

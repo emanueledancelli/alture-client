@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const MenuItem = (props) => {
 
     const Item = styled('p')`
-        font-size: 1em;
-        font-weight: 600;
+        font-size: 0.9em;
+        font-weight: 300;
         display: flex;
         align-items: center;
         color: #333;

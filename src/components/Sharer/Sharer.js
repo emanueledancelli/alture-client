@@ -32,7 +32,7 @@ const Sharer = (props) => {
         -moz-box-shadow: 0px 2px 24px -2px rgba(10,21,60,1);
         box-shadow: 0px 2px 24px -2px rgba(10,21,60,1);
         display: flex;
-        padding: 5%;
+        padding: 2%;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -45,7 +45,7 @@ const Sharer = (props) => {
         align-items: center;
     `
     const IconSpacing = css`
-        padding: 25px;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
