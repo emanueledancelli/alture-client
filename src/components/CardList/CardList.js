@@ -29,7 +29,8 @@ class CardList extends Component {
 
       const Container = styled('div')`
         width: 100%;
-        margin-bottom: 9vh;
+        margin-top: 15vh;
+        margin-bottom: 11vh;
       `
     
       const { events, isLoading } = this.state

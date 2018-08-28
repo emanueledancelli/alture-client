@@ -52,14 +52,15 @@ const Sharer = (props) => {
         align-items: center;
     `
 
-    const Paragraph = styled('p')`
+    const Paragraph = styled('span')`
         font-weight: 600;
         font-size: 1em;
         color: #333333;
+        margin-top: 10px;
     `
 
     return (
-        <Shade className={ Center } onClick={props.wrapperHandler}>
+        <Shade className={ Center } onClick={props.onClick}>
             <Container>
                 <div>
                     <FacebookShareButton className={IconSpacing} url={props.url}>

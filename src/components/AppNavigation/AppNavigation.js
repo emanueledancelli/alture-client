@@ -1,16 +1,25 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled, { css, keyframes } from 'react-emotion';
 import { NavLink } from 'react-router-dom'
-import { HomeIcon, MapIcon } from 'mdi-react';
+import { HomeOutlineIcon, MapOutlineIcon } from 'mdi-react';
 
 const AppNavigation = () => {
+
+  const Shake = keyframes`
+    from {
+      transform: rotate(10deg)
+    }
+    to {
+      transform: rotate(-10deg)
+    }
+  `
 
   const Container = styled('div')`
     position: fixed;
     bottom: 0;
     display: flex;
     width: 100%;
-    height: 9vh;
+    height: 10vh;
     background-color: white;
     align-items: center;
     z-index: 98;
@@ -25,7 +34,23 @@ const AppNavigation = () => {
   const Selected = css`
     & svg {
       color: #728DC3;
+      animation: ${Shake} 0.2s 2 ease-out;
     }
+    & span {
+      color: #728DC3;
+    }
+  `
+  const navbarStyle = css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  `
+  const textStyle = css`
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #B8C6E1;
+    margin-top: 3px;
   `
 
   return (
@@ -33,16 +58,21 @@ const AppNavigation = () => {
           <NavLink 
             to='/'
             exact
+            className={ navbarStyle }
             activeClassName={ Selected }
           >
-            <HomeIcon className={ Icon } size={26}/>
+            <HomeOutlineIcon className={ Icon } size={26}/>
+            <span className={textStyle}>Home</span>
           </NavLink>
           <NavLink 
             to='/Mappa'
             exact
+            className={ navbarStyle}
             activeClassName={ Selected }
           >
-            <MapIcon className={Icon} size={26}/>         
+            <MapOutlineIcon className={Icon} size={26}/>
+            <span className={textStyle}>Mappa</span>
+
           </NavLink>
     </Container>
   );

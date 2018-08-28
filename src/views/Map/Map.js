@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from '../../components/MapMarker/MapMarker';
 import AppHeader from '../../components/AppHeader/AppHeader';
+import AppNavigation from '../../components/AppNavigation/AppNavigation'
 import { Link } from 'react-router-dom'
 
 class Map extends Component {
@@ -17,9 +18,10 @@ class Map extends Component {
 
       const mapStyles = {
           mapMargins: {
+              marginTop: '14vh',
           },
           mapContainer: {
-              height: '77vh',
+              height: '76vh',
               width: '100%',
               borderRadius: '10px',
           }
@@ -63,6 +65,7 @@ class Map extends Component {
                     </GoogleMapReact>
                 </div>
             </div>
+            <AppNavigation />
         </div>
     );
 

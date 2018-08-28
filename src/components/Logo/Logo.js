@@ -9,6 +9,7 @@ const Logo = () => {
     `
     const Thin = css`
         font-weight: 300
+        transition: all 0.3s ease-in;
     `
     
     return (

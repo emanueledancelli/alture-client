@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'react-emotion';
 import { AddBoxIcon, 
          FeedbackIcon,
-         InformationIcon,
+         InformationOutlineIcon,
          SendIcon } from 'mdi-react';
 
 import MenuItem from './MenuItem';
@@ -31,7 +31,7 @@ const MenuBody = () => {
                 <FeedbackIcon className={Icon} size={26} />
             </MenuItem>
             <MenuItem linkTo="/about" name="About">
-                <InformationIcon className={Icon} size={26} />
+                <InformationOutlineIcon className={Icon} size={26} />
             </MenuItem>
             <MenuItem linkTo="/contatti" name="Contatti">
                 <SendIcon className={Icon} size={26} />

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import CardList from '../../components/CardList/CardList'
 import AppHeader from '../../components/AppHeader/AppHeader'
+import AppNavigation from '../../components/AppNavigation/AppNavigation'
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <AppHeader />
         <CardList />
-      </div>
+        <AppNavigation />
+      </React.Fragment>
     );
   }
 }
