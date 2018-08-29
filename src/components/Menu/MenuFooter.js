@@ -10,7 +10,6 @@ const MenuFooter = () => {
         align-items: center;
         justify-content: space-between;
         color: rgba(79, 79, 79, 0.5);
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
         font-size: 0.8em;
         font-weight: 600;
     `

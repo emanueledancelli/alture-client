@@ -7,6 +7,7 @@ const MapMarker = ({ name, date }) => {
 
     const Container = styled('div')`
         display: flex;
+        width: ;
         flex-direction: column;
         align-items: center;
         justify-content:  center;
@@ -27,13 +28,12 @@ const MapMarker = ({ name, date }) => {
     const titleStyle = css`
         font-weight: 600;
         font-size: 1.5em;
+        display: inline;
     `
     const dateStyle = css`
-        word-wrap: nowrap;
         font-size: 1em;
+        display: inline;
     `
-
-
     const iconStyle = css`
         color: red;
         margin-top: -15px;

@@ -29,7 +29,7 @@ class CardList extends Component {
 
       const Container = styled('div')`
         width: 100%;
-        margin-top: 15vh;
+        //margin-top: 15vh;
         margin-bottom: 11vh;
       `
     

@@ -11,7 +11,7 @@ class AppHeader extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    //window.addEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = () => {
@@ -37,9 +37,9 @@ class AppHeader extends Component {
     const { isMenuOpen, isScrolled } = this.state
     
     const container = css`
-      position: fixed;
-      top: 0;
-      left: 0;
+      //position: fixed;
+      //top: 0;
+      //left: 0;
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -52,7 +52,7 @@ class AppHeader extends Component {
       transition: all 0.3s ease-in;
     `
     const IconStyle = css`
-      color: #728DC3;
+      color: #333;
     `
     const scrolledDiv = css`
       height: 10vh;

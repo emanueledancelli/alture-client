@@ -10,6 +10,8 @@ import About from './views/About/About'
 import Feedback from './views/Feedback/Feedback'
 import Privacy from './views/Privacy/Privacy'
 import SuggestEvent from './views/SuggestEvent/SuggestEvent'
+import NewMap from './views/Map/NewMapContainer';
+import MapComponent from './views/Map/MapComponent';
 
 class App extends Component {
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
             <Route exact path="/feedback" component={ Feedback } />      
             <Route exact path="/privacy" component={ Privacy } />     
             <Route exact path="/suggerisci" component={ SuggestEvent } />                   
-            <Route exact path="/mappa" component={ Map } />
+            <Route exact path="/mappa" component={ MapComponent } />
             <Route exact path="/eventi/:id" render={(routeProps) => <SingleEvent {...routeProps} /> } /> 
           </ScrollToTop>         
         </div>

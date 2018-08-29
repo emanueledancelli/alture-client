@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled, { css } from 'react-emotion';
-import { ArrowCollapseIcon } from 'mdi-react';
+import styled, { css, keyframes } from 'react-emotion';
+import { ArrowDropDownIcon, ArrowDropUpIcon } from 'mdi-react';
 import axios from 'axios'
 import moment from 'moment';
 import 'moment/locale/it';
@@ -54,6 +54,14 @@ class SingleEvent extends Component {
 
     render() {
 
+        const fadeIn = keyframes`
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        `
         const Container = styled('div')`
             width: 100%;
             position: absolute;
@@ -80,7 +88,27 @@ class SingleEvent extends Component {
         const descriptionText = css`
             font-size: 1em;
             line-height: 180%;
+            animation: ${fadeIn} 0.5s ease-out;
         `
+        const helperText = css`
+            font-weight: 600;
+            font-size: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        `
+        const showMore = css`
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 3%;
+            padding-right: 3%;
+            padding-bottom: 3%;            
+        `
+
         const { selectedEvent, isLoading, isDescriptionExtended } = this.state
         const date = moment(selectedEvent.start).locale('it').format("LLL");
         const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
@@ -110,10 +138,10 @@ class SingleEvent extends Component {
                         ? <p className={ descriptionText }>{selectedEvent.description}</p>
                         : <p className={ descriptionText }>{ slicedDescription }</p>
                     }
-                    <div onClick={this.handleFullDescriptionButton}>
+                    <div className={showMore} onClick={this.handleFullDescriptionButton}>
                         {isDescriptionExtended
-                            ? <span><ArrowCollapseIcon size={26}></ArrowCollapseIcon>Visualizza meno</span>
-                            : <span>Visualizza descrizione completa</span>
+                            ? <span className={ helperText }>Visualizza meno <ArrowDropUpIcon size={26} /></span>
+                            : <span className={ helperText }>Visualizza descrizione completa <ArrowDropDownIcon size={26} /></span>
                         }
                     </div>   
                 </div>

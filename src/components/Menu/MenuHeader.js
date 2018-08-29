@@ -1,23 +1,37 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
+import { KeyboardBackspaceIcon } from 'mdi-react';
 
-import Logo from '../Logo/Logo';
-
-const MenuHeader = () => {
+const MenuHeader = (props) => {
    
     const Header = styled('div')`
         width: 85%;
         height: 14vh;
-        font-size: 1.3em;
+        font-size: 1.2em;
+        font-weight: 300;
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        justify-content: flex-start;
+        color: #333;
+    `
+    const fixAlignment = css`
+        display: flex;
+        align-items: center;                
+        justify-content: flex-start;
+    `
+    const iconMargin = css`
+        margin-right: 20px;
     `
 
     return (
         <Header>
-            <Logo />  
+            <span className={ fixAlignment}>
+                <KeyboardBackspaceIcon
+                    className={ iconMargin } 
+                    size={36}
+                    onClick={props.onClick} />
+                Menu
+            </span>  
         </Header>
     );
 }
