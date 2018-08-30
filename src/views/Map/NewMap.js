@@ -1,7 +1,6 @@
 import React from "react";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import NewMarker from './NewMarker';
-import { Link } from 'react-router-dom';
 
 
 const NewMap = withScriptjs(withGoogleMap((props) =>{
@@ -10,6 +9,8 @@ const NewMap = withScriptjs(withGoogleMap((props) =>{
                 <NewMarker
                     location={{lat: e.latitude, lng: e.Longitude}}
                     name={e.name}
+                    id={e.id}
+                    date={e.start}
                 />
                 );
                   

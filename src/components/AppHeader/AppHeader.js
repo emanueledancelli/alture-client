@@ -52,7 +52,7 @@ class AppHeader extends Component {
       transition: all 0.3s ease-in;
     `
     const IconStyle = css`
-      color: #333;
+      color: #B8C6E1;
     `
     const scrolledDiv = css`
       height: 10vh;
