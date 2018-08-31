@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, {css} from 'react-emotion';
+import {css} from 'react-emotion';
 import { HamburgerMenuIcon, NotificationsNoneIcon } from 'mdi-react';
 import Menu from '../Menu/Menu'
 import Logo from '../Logo/Logo'
@@ -7,24 +7,6 @@ import Logo from '../Logo/Logo'
 class AppHeader extends Component {
   state = {
     isMenuOpen: false,
-    isScrolled: false,
-  }
-
-  componentDidMount() {
-    //window.addEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    if(window.scrollY > 0) {
-      this.setState({
-        isScrolled: true
-      })
-    }
-    else {
-      this.setState({
-        isScrolled: false
-      })
-    }
   }
 
   MenuHandler = () => {
@@ -37,9 +19,6 @@ class AppHeader extends Component {
     const { isMenuOpen, isScrolled } = this.state
     
     const container = css`
-      //position: fixed;
-      //top: 0;
-      //left: 0;
       display: flex;
       flex-direction: row;
       width: 100%;

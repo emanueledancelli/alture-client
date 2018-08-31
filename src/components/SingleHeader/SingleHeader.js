@@ -46,12 +46,14 @@ class SingleHeader extends Component {
       display: flex;
       position: fixed;
       top: 0;
+      left: 0;
+      opacity: 0.6;
       flex-direction: row;
       width: 100%;
       height: 14vh;
-      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://api.dancel.li${this.props.image}) center;
       justify-content: space-around;
       align-items: center;
+      background-color: transparent;
       color: transparent;
       transition: all 0.3s ease-in;
       z-index: 97;
@@ -63,14 +65,15 @@ class SingleHeader extends Component {
     const scrolledDiv = css`
       height: 10vh !important;
       background: white !important;
-      color: #333 !important;
+      color: #333333 !important;
+      opacity: 1 !important;
       font-size: 0.9em;
-      font-weight: 600;
+      font-weight: 300;
       -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,1.2);
       -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
       box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
       & svg {
-        color: #333;
+        color: #333333;
       }
     `
 
@@ -85,7 +88,7 @@ class SingleHeader extends Component {
                   className={ IconStyle } 
                   size={(isScrolled
                          ? 26
-                         : 35)}
+                         : 30)}
                 />
             </div>
             <div>
@@ -96,7 +99,7 @@ class SingleHeader extends Component {
                   className={ IconStyle } 
                   size={(isScrolled
                     ? 26
-                    : 35)}
+                    : 30)}
                 />
             </div>
           </div>

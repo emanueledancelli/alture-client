@@ -1,7 +1,7 @@
 import React from 'react';
-import { CalendarTodayIcon, LocationOnIcon } from 'mdi-react';
+import { CalendarDayIcon, LocationIcon, LabelOutlineIcon } from 'mdi-react';
 
-const PlaceAndDate = props => {
+const NewInfo = props => {
 
     const styles = {
         p: {
@@ -27,16 +27,17 @@ const PlaceAndDate = props => {
         },
         icon: {
             paddingRight: '8px',
-            color: '#b8b8b8'
+            color: '#B8C6E1'
         }
     }     
  
     return (
         <React.Fragment>
-            <p style={styles.mona} className={props.className}><CalendarTodayIcon style={styles.icon} size={20} />{props.date}</p>
-            <p style={styles.p} className={props.className}><LocationOnIcon style={styles.icon} size={20} />{props.location}</p>
+            <p style={styles.mona} className={props.className}><CalendarDayIcon style={styles.icon} size={20} />{props.date}</p>
+            <p style={styles.p} className={props.className}><LocationIcon style={styles.icon} size={20} />{props.location}</p>
+            <p style={styles.p} className={props.className}><LabelOutlineIcon style={styles.icon} size={20} />{props.tags}</p>             
         </React.Fragment>
     )
 };
 
-export default PlaceAndDate;
+export default NewInfo;

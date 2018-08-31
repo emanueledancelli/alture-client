@@ -27,7 +27,7 @@ const Card = (props) => {
 
   return (
       <Container>        
-        <h1 style={{maxWidth: 100 + '%'}} className="title white">{props.title}</h1>
+        <h1 style={{maxWidth: 80 + '%'}} className="title white">{props.title}</h1>
         <div><PlaceAndDate className="white" location={props.location} date={props.date} /></div>
       </Container>
   );

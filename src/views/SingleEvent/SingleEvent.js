@@ -5,10 +5,12 @@ import axios from 'axios'
 import moment from 'moment';
 import 'moment/locale/it';
 
-import SingleHeader from '../../components/singleHeader/singleHeader';
+import SingleHeader from '../../components/SingleHeader/SingleHeader';
 import PlaceAndDate from '../../components/PlaceAndDate/PlaceAndDate';
 import EventMap from '../../components/EventMap/EventMap';
 import Spinner from '../../components/Spinner/Spinner';
+import EventHeader from './EventHeader';
+import NewInfo from './NewInfo';
 
 class SingleEvent extends Component {
     state = {
@@ -18,6 +20,7 @@ class SingleEvent extends Component {
             image: '',
             name: '',
             description: '',
+            tags: ''
         },    
     }
 
@@ -31,12 +34,19 @@ class SingleEvent extends Component {
                 console.log(this.state.selectedEvent)
             })
             .catch(err => console.log(err))
+
     }
 
     handleFullDescriptionButton = () => {
         this.setState({
             isDescriptionExtended: !this.state.isDescriptionExtended
         })
+    }
+
+    getTags = () => {
+        let tags = this.state.selectedEvent.tags
+        let slicedTags = tags.split(',')
+        console.log(slicedTags)
     }
 
     sliceName = () => {
@@ -62,23 +72,13 @@ class SingleEvent extends Component {
                 opacity: 1;
             }
         `
-        const Container = styled('div')`
-            width: 100%;
-            position: absolute;
-            background-color: white;
-            top: 0;
-            left: 0;
-            margin-top: 14vh;
-            margin-bottom: 10vh;
-        `     
+    
         const MainInfo = styled('div')`
-            background-color: white;
-            padding: 5%;
-            margin-top: 20px  
-        `
-        const InfoBox = styled('div')`
-            margin-top: 25px;
-            margin-bottom: 15px;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+            color: #333;            
         `
         const Description = css`
             padding-top: 5%;
@@ -88,10 +88,12 @@ class SingleEvent extends Component {
         const descriptionText = css`
             font-size: 1em;
             line-height: 180%;
+            color: #333;
             animation: ${fadeIn} 0.5s ease-out;
         `
         const helperText = css`
-            font-weight: 600;
+            font-weight: 400;
+            color: #bdbdbd;
             font-size: 1em;
             text-align: center;
             display: flex;
@@ -110,27 +112,30 @@ class SingleEvent extends Component {
         `
 
         const { selectedEvent, isLoading, isDescriptionExtended } = this.state
-        const date = moment(selectedEvent.start).locale('it').format("LLL");
+        const date = moment(selectedEvent.start).locale('it').format("LLLL");
         const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
         const slicedName = this.sliceName()
         const slicedDescription = this.sliceDescription()
+
+        this.getTags()
 
         if(isLoading) {
             return <Spinner/>
         }
         return (
-            <Container>
+            <React.Fragment>
                 <SingleHeader
                     url={currentUrl}
                     name={slicedName}
                     image={selectedEvent.image.url}
                     onClick={() => this.props.history.goBack()}
                 />
+                <EventHeader 
+                    image={selectedEvent.image.url}
+                    title={selectedEvent.name}
+                />
                 <MainInfo>
-                    <h1 className="title black">{selectedEvent.name}</h1>
-                    <InfoBox>
-                        <PlaceAndDate location={selectedEvent.place} date={date} />
-                    </InfoBox>
+                    <NewInfo location={selectedEvent.place} date={date} tags={selectedEvent.tags}/>
                 </MainInfo>    
                 <EventMap />                
                 <div className={ Description }>
@@ -140,13 +145,13 @@ class SingleEvent extends Component {
                     }
                     <div className={showMore} onClick={this.handleFullDescriptionButton}>
                         {isDescriptionExtended
-                            ? <span className={ helperText }>Visualizza meno <ArrowDropUpIcon size={26} /></span>
-                            : <span className={ helperText }>Visualizza descrizione completa <ArrowDropDownIcon size={26} /></span>
+                            ? <p className={ helperText }>Visualizza meno <ArrowDropUpIcon size={26} /></p>
+                            : <p className={ helperText }>Visualizza descrizione completa <ArrowDropDownIcon size={26} /></p>
                         }
                     </div>   
                 </div>
              
-            </Container>
+            </React.Fragment>
         );
     
     }

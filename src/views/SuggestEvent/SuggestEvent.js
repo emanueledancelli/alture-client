@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'react-emotion';
-import SingleHeader from '../../components/singleHeader/singleHeader';
+import SingleHeader from '../../components/SingleHeader/SingleHeader';
 
 
 class SuggestEvent extends Component {
