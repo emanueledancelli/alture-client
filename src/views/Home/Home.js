@@ -4,6 +4,11 @@ import AppHeader from '../../components/AppHeader/AppHeader'
 import AppNavigation from '../../components/AppNavigation/AppNavigation'
 
 class Home extends Component {
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
   
     return (

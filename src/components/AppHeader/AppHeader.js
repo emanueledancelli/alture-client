@@ -23,9 +23,7 @@ const AppHeader = () => {
     `
     return (
       <Container>
-        <Link to="/info">
-         <InfoOutlineIcon className={ IconStyle } size={26}/>
-        </Link>
+        <InfoOutlineIcon className={ IconStyle } size={26}/>
         <Logo />
         <NotificationsNoneIcon className={ IconStyle } size={26} />
       </Container>

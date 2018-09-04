@@ -24,7 +24,7 @@ const Card = (props) => {
   const header = css`
     max-width: 80%;
   `
-
+  
   return (
       <Container>        
         <h1 style={{maxWidth: 80 + '%'}} className="title white">{props.title}</h1>

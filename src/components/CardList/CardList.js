@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import posed from 'react-pose';
 import styled from 'react-emotion';
 import moment from 'moment';
 import 'moment/locale/it';
@@ -11,7 +12,17 @@ class CardList extends Component {
   
   render() {
 
-      const Container = styled('div')`
+      const AnimationContainer = posed.div({
+        enter: { staggerChildren: 50 },
+        exit: { staggerChildren: 20, staggerDirection: -1 }
+      })
+
+      const AnimatedItem = posed.div({
+        enter: { x: 0, opacity: 1 },
+        exit: { x: 50, opacity: 0 }
+      });
+
+      const Container = styled(AnimationContainer)`
         width: 100%;
         display: flex;
         flex-direction:column;
@@ -22,16 +33,18 @@ class CardList extends Component {
         const date = moment(e.start).locale('it').format("LLL");
         const image = `https://api.dancel.li/${e.image.url}`
         return (
-          <Link 
-            to={`/eventi/${e.id}`}
-            key={e.id}>
-            <Card
-              title={e.name}
-              date={date}
-              backgroundImage={image}
-              location={e.place}
-            />
-          </Link>
+          <AnimatedItem>
+            <Link 
+              to={`/eventi/${e.id}`}
+              key={e.id}>
+              <Card
+                title={e.name}
+                date={date}
+                backgroundImage={image}
+                location={e.place}
+              />
+            </Link>
+          </AnimatedItem>
         )});
          
       return (
