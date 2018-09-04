@@ -37,12 +37,14 @@ const Menu = ({ handleCloseMenu }) => {
         transition: all 300ms ease-out;
         overflow: hidden;
     `
+    const Menu = styled('div')`
+        display: flex;
+        flex-direction: column;
+    `
  
     return (
         <Container>
-            <MenuHeader onClick={handleCloseMenu} />
-            <MenuBody />
-            <MenuFooter />
+            
         </Container>
     );
 }

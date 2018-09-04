@@ -4,13 +4,8 @@ import './App.css';
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Home from './views/Home/Home'
-import Map from './views/Map/Map'
-import SingleEvent from './views/SingleEvent/SingleEvent'
-import About from './views/About/About'
-import Feedback from './views/Feedback/Feedback'
-import Privacy from './views/Privacy/Privacy'
-import SuggestEvent from './views/SuggestEvent/SuggestEvent'
-import NewMap from './views/Map/NewMapContainer';
+import EventView from './views/EventView/EventView'
+import Info from './views/Info/Info'
 import MapComponent from './views/Map/MapComponent';
 
 class App extends Component {
@@ -20,12 +15,9 @@ class App extends Component {
         <div className="App">
           <ScrollToTop>
             <Route exact path="/" component={ Home } />
-            <Route exact path="/about" component={ About } />       
-            <Route exact path="/feedback" component={ Feedback } />      
-            <Route exact path="/privacy" component={ Privacy } />     
-            <Route exact path="/suggerisci" component={ SuggestEvent } />                   
+            <Route exact path="/info" component={ Info } />     
             <Route exact path="/mappa" component={ MapComponent } />
-            <Route exact path="/eventi/:id" render={(routeProps) => <SingleEvent {...routeProps} /> } /> 
+            <Route exact path="/eventi/:id" render={(routeProps) => <EventView {...routeProps} /> } /> 
           </ScrollToTop>         
         </div>
       </Router>

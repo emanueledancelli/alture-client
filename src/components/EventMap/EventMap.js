@@ -14,9 +14,9 @@ const EventMap = props => {
     return (
         <div style={{ height: '200px', width: '100%' }}>
             <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyC0zvScZpvk_-_cTjYEK1FnbDH38_a_pSE'  }}
-            defaultCenter={defaultProps.center}
-            defaultZoom={defaultProps.zoom}
+                bootstrapURLKeys={{ key: 'AIzaSyC0zvScZpvk_-_cTjYEK1FnbDH38_a_pSE'  }}
+                defaultCenter={defaultProps.center}
+                defaultZoom={defaultProps.zoom}
             > 
             <MapMarker
                 lat={45.793770}

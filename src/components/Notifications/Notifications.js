@@ -16,7 +16,7 @@ const Notifications = (props) => {
             </div>
     }
         <div style={wrapper}>
-                <p>notifiche disattivate</p>
+                <p>Notifiche disattivate</p>
         </div>
             
 }

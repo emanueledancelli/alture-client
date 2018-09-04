@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import styled, { css, keyframes } from 'react-emotion';
 import { ArrowDropDownIcon, ArrowDropUpIcon } from 'mdi-react';
-import axios from 'axios'
+import $ from '../../config.js'
 import moment from 'moment';
 import 'moment/locale/it';
 
-import SingleHeader from '../../components/SingleHeader/SingleHeader';
-import PlaceAndDate from '../../components/PlaceAndDate/PlaceAndDate';
-import EventMap from '../../components/EventMap/EventMap';
-import Spinner from '../../components/Spinner/Spinner';
-import EventHeader from './EventHeader';
-import NewInfo from './NewInfo';
+import SingleHeader from '../../components/SingleHeader/SingleHeader.js';
+import EventMap from '../../components/EventMap/EventMap.js';
+import Spinner from '../../components/Spinner/Spinner.js';
+import EventHeader from './EventHeader.js';
+import NewInfo from './NewInfo.js';
 
 class SingleEvent extends Component {
     state = {
@@ -28,10 +27,9 @@ class SingleEvent extends Component {
         console.log(this.props.history)
         this.setState({ isLoading: true })
 
-        axios.get('https://api.dancel.li/event/' + this.props.match.params.id)
+        $.get(`/event/${this.props.match.params.id}`)
             .then(res => {
                 this.setState({ selectedEvent: res.data, isLoading: false })
-                console.log(this.state.selectedEvent)
             })
             .catch(err => console.log(err))
 
@@ -46,7 +44,6 @@ class SingleEvent extends Component {
     getTags = () => {
         let tags = this.state.selectedEvent.tags
         let slicedTags = tags.split(',')
-        console.log(slicedTags)
     }
 
     sliceName = () => {
@@ -113,7 +110,7 @@ class SingleEvent extends Component {
 
         const { selectedEvent, isLoading, isDescriptionExtended } = this.state
         const date = moment(selectedEvent.start).locale('it').format("LLLL");
-        const currentUrl = 'https://sleepy-visvesvaraya-3e74ed.netlify.com' + this.props.location.pathname
+        const currentUrl = '%PUBLIC_URL%' + this.props.location.pathname
         const slicedName = this.sliceName()
         const slicedDescription = this.sliceDescription()
 

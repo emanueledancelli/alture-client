@@ -55,25 +55,24 @@ const AppNavigation = () => {
 
   return (
     <Container>
-          <NavLink 
-            to='/'
-            exact
-            className={ navbarStyle }
-            activeClassName={ Selected }
-          >
-            <HomeOutlineIcon className={ Icon } size={26}/>
-            <span className={textStyle}>Home</span>
-          </NavLink>
-          <NavLink 
-            to='/Mappa'
-            exact
-            className={ navbarStyle}
-            activeClassName={ Selected }
-          >
-            <MapOutlineIcon className={Icon} size={26}/>
-            <span className={textStyle}>Mappa</span>
-
-          </NavLink>
+      <NavLink 
+        to='/'
+        exact
+        className={ navbarStyle }
+        activeClassName={ Selected }
+      >
+        <HomeOutlineIcon className={ Icon } size={26}/>
+        <span className={textStyle}>Home</span>
+      </NavLink>
+      <NavLink 
+        to='/Mappa'
+        exact
+        className={ navbarStyle}
+        activeClassName={ Selected }
+      >
+        <MapOutlineIcon className={Icon} size={26}/>
+        <span className={textStyle}>Mappa</span>
+      </NavLink>
     </Container>
   );
 }

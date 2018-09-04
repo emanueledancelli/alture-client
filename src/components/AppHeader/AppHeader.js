@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
-import {css} from 'react-emotion';
-import { HamburgerMenuIcon, NotificationsNoneIcon } from 'mdi-react';
-import Menu from '../Menu/Menu'
+import React from 'react';
+import styled, { css } from 'react-emotion';
+import { Link } from 'react-router-dom';
+import { InfoOutlineIcon, NotificationsNoneIcon } from 'mdi-react';
 import Logo from '../Logo/Logo'
 
-class AppHeader extends Component {
-  state = {
-    isMenuOpen: false,
-  }
-
-  MenuHandler = () => {
-    this.setState({
-      isMenuOpen: !this.state.isMenuOpen
-    })
-  }
-
-  render() {
-    const { isMenuOpen, isScrolled } = this.state
+const AppHeader = () => {
     
-    const container = css`
+  const Container = styled('div')`
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -33,34 +21,15 @@ class AppHeader extends Component {
     const IconStyle = css`
       color: #B8C6E1;
     `
-    const scrolledDiv = css`
-      height: 10vh;
-      & span {
-        font-size: 0.9em;
-      }
-    `
-  
     return (
-      <React.Fragment>
-         <div 
-            className={container + " " + (isScrolled
-                       ? scrolledDiv
-                       : "" )}>
-          <div onClick={this.MenuHandler}>
-            <HamburgerMenuIcon className={ IconStyle } size={26}/>
-          </div>
-          <Logo />
-          <div>
-            <NotificationsNoneIcon className={ IconStyle } size={26} />
-          </div>
-        </div>
-        {isMenuOpen
-          ? <Menu handleCloseMenu={this.MenuHandler}/>
-          : null
-        }
-      </React.Fragment>
+      <Container>
+        <Link to="/info">
+         <InfoOutlineIcon className={ IconStyle } size={26}/>
+        </Link>
+        <Logo />
+        <NotificationsNoneIcon className={ IconStyle } size={26} />
+      </Container>
     );
-  }
 }
 
 export default AppHeader;

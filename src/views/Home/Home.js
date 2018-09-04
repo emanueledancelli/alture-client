@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'react-emotion';
 import CardList from '../../components/CardList/CardList'
 import AppHeader from '../../components/AppHeader/AppHeader'
 import AppNavigation from '../../components/AppNavigation/AppNavigation'
