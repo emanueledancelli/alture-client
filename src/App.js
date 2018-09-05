@@ -1,59 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import posed, { PoseGroup } from 'react-pose';
+import { PoseGroup } from 'react-pose'
 import './App.css';
 
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Home from './views/Home/Home'
 import EventView from './views/EventView/EventView'
 import MapComponent from './views/Map/MapComponent';
+import AppHeader from './components/AppHeader/AppHeader';
+import AppNavigation from './components/AppNavigation/AppNavigation';
+import InfoModal from './components/InfoModal/InfoModal';
 
+const AllRoutes = location => {
+  return (
+    <Switch location={location}>
+      <Route exact path="/" component={ Home } />
+      <Route exact path="/mappa" component={ MapComponent } />
+      <Route exact path="/eventi/:id" render={(routeProps) => <EventView {...routeProps} /> } /> 
+    </Switch>
+  )
+}
 
-const RouteContainer = posed.div({
-  enter: { opacity: 1, delay: 300, beforeChildren: true },
-  exit: { opacity: 0 }
-});
+class App extends Component {
+  state = {
+    isVisible: false
+  }
 
-/* class App extends Component {
+  handleModal = () => {
+    this.setState({
+      isVisible: !this.state.isVisible
+    })
+  }
+
   render() {
     return (
-      <Router>
+      <Route
+        onUpdate={() => window.scrollTo(0, 0)}
+        render={({ location }) => (
 
           <div className="App">
+            
+            {location.pathname.startsWith('/eventi/') ? null : <AppHeader handleModal={this.handleModal} />}
+              
+              {AllRoutes(location)}
+            
+            {location.pathname.startsWith('/eventi/') ? null : <AppNavigation />}
+            
+            {this.state.isVisible 
+              && <InfoModal 
+                    isVisible={this.state.isVisible}
+                    closeModal={this.handleModal}  />
+            }
 
-            <ScrollToTop>
-              <Route exact path="/" component={ Home } />
-              <Route exact path="/mappa" component={ MapComponent } />
-              <Route exact path="/eventi/:id" render={(routeProps) => <EventView {...routeProps} /> } /> 
-            </ScrollToTop>         
-      
           </div>
-
-      </Router>
+          
+        )}
+      />
     );
   }
-} */
-
-const App = () => (
-  <Route
-    onUpdate={() => window.scrollTo(0, 0)}
-    render={({ location }) => (
-      <div className="App">
-
-          <PoseGroup>
-            <RouteContainer key={location.key}>
-              <Switch location={location}>
-                  <Route exact path="/" component={ Home } />
-                  <Route exact path="/mappa" component={ MapComponent } />
-                  <Route exact path="/eventi/:id" render={(routeProps) => <EventView {...routeProps} /> } /> 
-              </Switch>
-            </RouteContainer>
-          </PoseGroup>
-
-      </div>
-    )}
-  />
-);
+}
 
 
 export default App;

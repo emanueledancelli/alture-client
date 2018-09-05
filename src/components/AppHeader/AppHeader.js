@@ -1,12 +1,11 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import { Link } from 'react-router-dom';
 import { InfoOutlineIcon, NotificationsNoneIcon } from 'mdi-react';
 import Logo from '../Logo/Logo'
 
-const AppHeader = () => {
-    
-  const Container = styled('div')`
+const AppHeader = ({ handleModal }) => {
+
+    const Container = styled('div')`
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -17,17 +16,20 @@ const AppHeader = () => {
       color: #333;
       font-size: 1.3em;
       transition: all 0.3s ease-in;
+      @media (min-width: 740px) {
+        display: none;
+      }
     `
     const IconStyle = css`
       color: #B8C6E1;
     `
     return (
       <Container>
-        <InfoOutlineIcon className={ IconStyle } size={26}/>
+        <InfoOutlineIcon onClick={handleModal} className={ IconStyle } size={26}/>
         <Logo />
         <NotificationsNoneIcon className={ IconStyle } size={26} />
       </Container>
     );
-}
+  }
 
 export default AppHeader;

@@ -1,7 +1,18 @@
 import React from 'react';
 import styled from 'react-emotion';
+import posed, { PoseGroup } from 'react-pose';
 
 const EventHeader = (props) => {
+
+    const AnimationGroup = posed.div({
+        enter: { staggerChildren: 50 },
+        exit: { staggerChildren: 20, staggerDirection: -1 }
+    });
+
+    const SingleAnimatedElement = posed.div({
+        enter: { y: 0, opacity: 1 },
+        exit: { y: 50, opacity: 0 }
+    })
     
     const Container = styled('div')`
         height: 40vh;

@@ -12,17 +12,7 @@ class CardList extends Component {
   
   render() {
 
-      const AnimationContainer = posed.div({
-        enter: { staggerChildren: 50 },
-        exit: { staggerChildren: 20, staggerDirection: -1 }
-      })
-
-      const AnimatedItem = posed.div({
-        enter: { x: 0, opacity: 1 },
-        exit: { x: 50, opacity: 0 }
-      });
-
-      const Container = styled(AnimationContainer)`
+      const Container = styled('div')`
         width: 100%;
         display: flex;
         flex-direction:column;
@@ -33,7 +23,6 @@ class CardList extends Component {
         const date = moment(e.start).locale('it').format("LLL");
         const image = `https://api.dancel.li/${e.image.url}`
         return (
-          <AnimatedItem>
             <Link 
               to={`/eventi/${e.id}`}
               key={e.id}>
@@ -44,7 +33,6 @@ class CardList extends Component {
                 location={e.place}
               />
             </Link>
-          </AnimatedItem>
         )});
          
       return (

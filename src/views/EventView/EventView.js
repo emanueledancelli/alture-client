@@ -50,9 +50,7 @@ class SingleEvent extends Component {
         if(this.state.selectedEvent.name.length < 25) {
             return this.state.selectedEvent.name
         }
-        else {
             return this.state.selectedEvent.name.slice(0, 21) + '...'
-        }
     }
 
     sliceDescription = () => {
@@ -69,16 +67,6 @@ class SingleEvent extends Component {
                 opacity: 1;
             }
         `
-
-        const StaggerAnimationGroup = posed.div({
-            enter: { staggerChildren: 50 },
-            exit: { staggerChildren: 20, staggerDirection: -1 }
-        });
-
-        const SingleAnimatedElement = posed.div({
-            enter: { y: 0, opacity: 1 },
-            exit: { y: 50, opacity: 0 }
-        })
     
         const MainInfo = styled('div')`
             padding-left: 5%;
@@ -129,7 +117,6 @@ class SingleEvent extends Component {
         }
         return (
             <React.Fragment>
-                <StaggerAnimationGroup>
                     <SingleHeader
                         url={currentUrl}
                         name={slicedName}
@@ -140,7 +127,6 @@ class SingleEvent extends Component {
                         image={selectedEvent.image.url}
                         title={selectedEvent.name}
                     />
-                    <SingleAnimatedElement>                 
                     <MainInfo>
                         <NewInfo 
                             location={selectedEvent.place} 
@@ -148,10 +134,7 @@ class SingleEvent extends Component {
                             tags={selectedEvent.tags}
                         />
                     </MainInfo> 
-                    </SingleAnimatedElement>
-                    <SingleAnimatedElement>     
                     <EventMap />            
-                    </SingleAnimatedElement>    
                     <div className={ Description }>
                         {isDescriptionExtended
                             ? <p className={ descriptionText }>{selectedEvent.description}</p>
@@ -164,7 +147,6 @@ class SingleEvent extends Component {
                             }
                         </div>   
                     </div>
-                    </StaggerAnimationGroup>
             </React.Fragment>
         );
     

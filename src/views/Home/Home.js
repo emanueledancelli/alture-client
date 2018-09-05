@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import CardList from '../../components/CardList/CardList'
-import AppHeader from '../../components/AppHeader/AppHeader'
-import AppNavigation from '../../components/AppNavigation/AppNavigation'
 
 class Home extends Component {
   
@@ -13,9 +11,7 @@ class Home extends Component {
   
     return (
       <React.Fragment>
-        <AppHeader />
         <CardList />
-        <AppNavigation />
       </React.Fragment>
     );
   }

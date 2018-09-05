@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css, keyframes } from 'react-emotion';
 import { NavLink } from 'react-router-dom'
+import posed from 'react-pose';
 import { HomeOutlineIcon, MapOutlineIcon } from 'mdi-react';
 
 const AppNavigation = () => {
@@ -27,6 +28,9 @@ const AppNavigation = () => {
     -webkit-box-shadow: 0px -4px 4px 0px rgba(0,0,0,1.2);
     -moz-box-shadow: 0px -4px 4px 0px rgba(0,0,0,0.2);
     box-shadow: 0px -4px 4px 0px rgba(0,0,0,0.2);
+    @media (min-width: 740px) {
+      display: none;
+    }
   `
   const Icon = css`
     color: #B8C6E1;
@@ -57,21 +61,21 @@ const AppNavigation = () => {
     <Container>
       <NavLink 
         to='/'
-        exact
         className={ navbarStyle }
         activeClassName={ Selected }
+        exact
       >
         <HomeOutlineIcon className={ Icon } size={26}/>
         <span className={textStyle}>Home</span>
       </NavLink>
-      <NavLink 
-        to='/Mappa'
-        exact
-        className={ navbarStyle}
-        activeClassName={ Selected }
-      >
-        <MapOutlineIcon className={Icon} size={26}/>
-        <span className={textStyle}>Mappa</span>
+        <NavLink 
+          to='/Mappa'
+          className={ navbarStyle }
+          activeClassName={ Selected }
+          exact
+        >
+          <MapOutlineIcon className={Icon} size={26}/>
+         <span className={textStyle}>Mappa</span>
       </NavLink>
     </Container>
   );
