@@ -1,12 +1,11 @@
-import React from 'react';
-import styled, { css } from 'react-emotion';
+import React from "react";
+import styled, { css } from "react-emotion";
 
-import PlaceAndDate from '../PlaceAndDate/PlaceAndDate'
+import PlaceAndDate from "../PlaceAndDate/PlaceAndDate";
 
-const Card = (props) => {
-
-  const Container = styled('div')`
-    min-height:  200px;
+const Card = props => {
+  const Container = styled("div")`
+    min-height: 200px;
     border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -18,19 +17,29 @@ const Card = (props) => {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 3px 4px 20px -4px rgba(0,0,0,0.8);
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${props.backgroundImage}) center;
-  `
+    box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${props.backgroundImage}) center;
+  `;
   const header = css`
     max-width: 80%;
-  `
-  
+  `;
+
   return (
-      <Container>        
-        <h1 style={{maxWidth: 80 + '%'}} className="title white">{props.title}</h1>
-        <div><PlaceAndDate className="white" location={props.location} date={props.date} /></div>
-      </Container>
+    <Container>
+      <h1 style={{ maxWidth: 80 + "%" }} className="title white">
+        {props.title}
+      </h1>
+      <div>
+        <PlaceAndDate
+          className="white"
+          location={props.location}
+          date={props.date}
+          endDate={props.end}
+        />
+      </div>
+    </Container>
   );
-}
+};
 
 export default Card;
