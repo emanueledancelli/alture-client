@@ -140,8 +140,8 @@ class SingleEvent extends Component {
             tags={selectedEvent.tags}
           />
         </MainInfo>
-        <EventMap />
         <div className={Description}>
+          <span className="title black">Informazioni</span>
           {isDescriptionExtended ? (
             <p className={descriptionText}>{selectedEvent.description}</p>
           ) : (

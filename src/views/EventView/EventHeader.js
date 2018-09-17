@@ -13,9 +13,10 @@ const EventHeader = props => {
       url(https://api.dancel.li${props.image}) center;
   `;
   const Text = styled("p")`
-    font-size: 0.9em;
-    color: #bdbdbd;
+    font-size: 1.1em;
+    color: #ffffff;
     margin-top: 10px;
+    text-decoration: uppercase;
   `;
   const Paddings = styled("div")`
     padding-left: 5%;
