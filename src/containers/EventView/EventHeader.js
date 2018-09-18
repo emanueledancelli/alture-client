@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "react-emotion";
-import posed, { PoseGroup } from "react-pose";
 
 const EventHeader = props => {
   const Container = styled("div")`

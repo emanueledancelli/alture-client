@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import { PoseGroup } from "react-pose";
+import { Provider } from "react-redux";
+import store from "./store";
 import "./App.css";
 
-import Home from "./views/Home/Home";
-import EventView from "./views/EventView/EventView";
-import MapComponent from "./views/Map/MapComponent";
+import Home from "./containers/Home/Home";
+import EventView from "./containers/EventView/EventView";
+import MapComponent from "./containers/Map/MapComponent";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppNavigation from "./components/AppNavigation/AppNavigation";
 import InfoModal from "./components/InfoModal/InfoModal";
@@ -37,29 +38,31 @@ class App extends Component {
 
   render() {
     return (
-      <Route
-        onUpdate={() => window.scrollTo(0, 0)}
-        render={({ location }) => (
-          <div className="App">
-            {location.pathname.startsWith("/eventi/") ? null : (
-              <AppHeader handleModal={this.handleModal} />
-            )}
+      <Provider store={store}>
+        <Route
+          onUpdate={() => window.scrollTo(0, 0)}
+          render={({ location }) => (
+            <div className="App">
+              {location.pathname.startsWith("/eventi/") ? null : (
+                <AppHeader handleModal={this.handleModal} />
+              )}
 
-            {AllRoutes(location)}
+              {AllRoutes(location)}
 
-            {location.pathname.startsWith("/eventi/") ? null : (
-              <AppNavigation />
-            )}
+              {location.pathname.startsWith("/eventi/") ? null : (
+                <AppNavigation />
+              )}
 
-            {this.state.isVisible && (
-              <InfoModal
-                isVisible={this.state.isVisible}
-                closeModal={this.handleModal}
-              />
-            )}
-          </div>
-        )}
-      />
+              {this.state.isVisible && (
+                <InfoModal
+                  isVisible={this.state.isVisible}
+                  closeModal={this.handleModal}
+                />
+              )}
+            </div>
+          )}
+        />
+      </Provider>
     );
   }
 }
