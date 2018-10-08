@@ -1,31 +1,21 @@
-import React from 'react';
-import GoogleMapReact from 'google-map-react';
-import MapMarker from '../MapMarker/MapMarker';
+import React from "react";
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
+import NewMarker from "./EventMapMarker";
 
-const EventMap = props => {
-    const defaultProps = {
-        center: {
-          lat: 45.793770,
-          lng: 10.273630
-        },
-        zoom: 11
-      };
-    
-    return (
-        <div style={{ height: '200px', width: '100%' }}>
-            <GoogleMapReact
-                bootstrapURLKeys={{ key: 'AIzaSyC0zvScZpvk_-_cTjYEK1FnbDH38_a_pSE'  }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
-            > 
-            <MapMarker
-                lat={45.793770}
-                lng={10.273630}
-                name={'boma'}
-            />
-            </GoogleMapReact>
-        </div>
+const EventMap = withScriptjs(
+  withGoogleMap(props => {
+    const marker = props.events(
+      <NewMarker
+        location={{ lat: props.events.latitude, lng: props.events.Longitude }}
+      />
     );
-}
 
-export default EventMap
+    return (
+      <GoogleMap defaultZoom={11} center={{ lat: 45.79377, lng: 10.27363 }}>
+        {marker}
+      </GoogleMap>
+    );
+  })
+);
+
+export default EventMap;

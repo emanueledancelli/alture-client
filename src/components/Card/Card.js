@@ -27,7 +27,7 @@ const Card = props => {
 
   return (
     <Container>
-      <h1 style={{ maxWidth: 80 + "%" }} className="title white">
+      <h1 style={{ maxWidth: 80 + "%" }} className="card-title white">
         {props.title}
       </h1>
       <div>

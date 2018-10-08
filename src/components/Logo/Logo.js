@@ -1,25 +1,29 @@
 import React from "react";
-import styled, { css } from 'react-emotion';
+import styled, { css } from "react-emotion";
 import { Link } from "react-router-dom";
 
-const Logo = () => {
+const Logo = props => {
+  const Logo = styled("span")`
+    color: #333;
+  `;
+  const Thin = css`
+    font-weight: 300;
+  `;
 
-    const Logo = styled('span')`
-        color: #333;
-    `
-    const Thin = css`
-        font-weight: 300
-        transition: all 0.3s ease-in;
-    `
-    
-    return (
-        <Link to='/'>
-            <Logo>
-                <span className={Thin}>Alture</span><strong>360</strong>
-            </Logo>
-        </Link>
-    );
-    
-}
+  const Size = css`
+    font-size: ${props.size || 1}em;
+  `;
+
+  return (
+    <Link to="/">
+      <Logo>
+        <span className={(Thin, Size)}>Alture</span>
+        <span className={Size}>
+          <strong>360</strong>
+        </span>
+      </Logo>
+    </Link>
+  );
+};
 
 export default Logo;

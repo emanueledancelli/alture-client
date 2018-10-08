@@ -1,46 +1,45 @@
-import React, { Component } from 'react';
-import { css } from 'react-emotion';
-import { KeyboardBackspaceIcon, ShareVariantIcon } from 'mdi-react';
+import React, { Component } from "react";
+import { css } from "react-emotion";
+import { ChevronLeftIcon, ShareVariantIcon } from "mdi-react";
 
-import Sharer from '../Sharer/Sharer'
+import Sharer from "../Sharer/Sharer";
 
 class SingleHeader extends Component {
   state = {
     isSharingOpen: false,
-    isScrolled: false,
-  }
+    isScrolled: false
+  };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
-    if(window.scrollY > 0) {
+    if (window.scrollY > 0) {
       this.setState({
         isScrolled: true
-      })
-    }
-    else {
+      });
+    } else {
       this.setState({
         isScrolled: false
-      })
+      });
     }
-  }
+  };
 
   shareButtonHandler = () => {
-    this.setState({ 
-      isSharingOpen: !this.state.isSharingOpen 
-    })
-  }
+    this.setState({
+      isSharingOpen: !this.state.isSharingOpen
+    });
+  };
 
   sharerComponentHandler = () => {
     this.setState({
       isSharingOpen: false
-    })
-  }
+    });
+  };
 
   render() {
-    const { isSharingOpen, isScrolled } = this.state
+    const { isSharingOpen, isScrolled } = this.state;
 
     const container = css`
       display: flex;
@@ -57,11 +56,11 @@ class SingleHeader extends Component {
       color: transparent;
       transition: all 0.3s ease-in;
       z-index: 97;
-    `
+    `;
     const IconStyle = css`
-      color: #FFF;
+      color: #fff;
       transition: all 0.3s ease-in;
-    `
+    `;
     const scrolledDiv = css`
       height: 10vh !important;
       background: white !important;
@@ -69,47 +68,39 @@ class SingleHeader extends Component {
       opacity: 1 !important;
       font-size: 0.9em;
       font-weight: 300;
-      -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,1.2);
-      -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 1.2);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       & svg {
         color: #333333;
       }
-    `
+    `;
 
-      return (
-        <React.Fragment>
-          <div 
-            className={container + " " + (isScrolled
-                       ? scrolledDiv
-                       : "" )}>
-            <div onClick={this.props.onClick}>
-                <KeyboardBackspaceIcon 
-                  className={ IconStyle } 
-                  size={(isScrolled
-                         ? 26
-                         : 30)}
-                />
-            </div>
-            <div>
-              <span>{this.props.name}</span>
-            </div>
-            <div onClick={this.shareButtonHandler}>
-                <ShareVariantIcon 
-                  className={ IconStyle } 
-                  size={(isScrolled
-                    ? 26
-                    : 30)}
-                />
-            </div>
+    return (
+      <React.Fragment>
+        <div className={container + " " + (isScrolled ? scrolledDiv : "")}>
+          <div onClick={this.props.onClick}>
+            <ChevronLeftIcon
+              className={IconStyle}
+              size={isScrolled ? 40 : 45}
+            />
           </div>
-          {isSharingOpen 
-            ? <Sharer url={this.props.url} onClick={this.sharerComponentHandler} />
-            : null
-          }
-        </React.Fragment>
-      );
-    }
+          <div>
+            <span>{this.props.name}</span>
+          </div>
+          <div onClick={this.shareButtonHandler}>
+            <ShareVariantIcon
+              className={IconStyle}
+              size={isScrolled ? 26 : 30}
+            />
+          </div>
+        </div>
+        {isSharingOpen ? (
+          <Sharer url={this.props.url} onClick={this.sharerComponentHandler} />
+        ) : null}
+      </React.Fragment>
+    );
+  }
 }
 
 export default SingleHeader;

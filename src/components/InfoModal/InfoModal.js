@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled, { css } from "react-emotion";
 import posed, { PoseGroup } from "react-pose";
 import Logo from "../Logo/Logo";
-import { CloseIcon } from "mdi-react";
+import { CloseCircleOutlineIcon } from "mdi-react";
 
 const Modal = posed.div({
   enter: {
@@ -26,27 +26,64 @@ const StyledModal = styled(Modal)`
   background-color: white;
   z-index: 100;
   display: flex;
-  height: 100vh;
   flex-direction: column;
+  overflow-y: hidden;
+  justify-content: center;
 `;
 
 const Header = styled("div")`
   display: flex;
-  width: 100%;
-  flex-direction: flex-end;
+  width: 95%;
+  height: 15vh;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 const Body = styled("div")`
   flex: 1;
+  width: 88%;
+  padding-left: 6%;
+  padding-right: 6%;
 `;
 
 const Footer = styled("div")`
   display: flex;
   align-content: center;
   flex-direction: row;
-  width: 100%;
+  width: 88%;
+  padding-left: 6%;
+  padding-right: 6%;
   justify-content: space-between;
-  padding: 5%;
+  & p {
+    color: #828282;
+  }
+`;
+
+const iconStyle = css`
+  color: #454545;
+`;
+
+const descrLong = css`
+  line-height: 160%;
+  margin-top: 40px;
+  color: #333;
+  font-size: 1em;
+`;
+
+const ContattiBox = styled("div")`
+  margin-top: 50px;
+  color: #333;
+`;
+
+const HalfTitle = css`
+  font-size: 1.3em;
+  font-weight: 700;
+`;
+
+const teamTag = css`
+  color: #333;
+  font-style: italic;
+  margin-top: 30px;
 `;
 
 class InfoModal extends Component {
@@ -76,11 +113,11 @@ class InfoModal extends Component {
           {showModal ? (
             <StyledModal onClick={this.handleStuff}>
               <Header>
-                <CloseIcon size={26} />
+                <CloseCircleOutlineIcon className={iconStyle} size={30} />
               </Header>
               <Body>
-                <Logo />
-                <p>
+                <Logo size={2} />
+                <p className={descrLong}>
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -90,12 +127,15 @@ class InfoModal extends Component {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum."
                 </p>
-                <span>Contattaci qui</span>
-                <p>mail@mail.com</p>
+                <p className={teamTag}>Il team di Alture360</p>
+                <ContattiBox>
+                  <p className={HalfTitle}>Contatti</p>
+                  <p>mail@mail.com</p>
+                </ContattiBox>
               </Body>
               <Footer>
-                <p>privacy policy</p>
-                <p>ed</p>
+                <p>Privacy Policy</p>
+                <p>ED</p>
               </Footer>
             </StyledModal>
           ) : null}

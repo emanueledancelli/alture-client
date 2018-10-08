@@ -3,19 +3,21 @@ import styled from "react-emotion";
 
 const EventHeader = props => {
   const Container = styled("div")`
-    height: 40vh;
+    height: 42vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(https://api.dancel.li${props.image}) center;
+      url(http://localhost:1337/${props.image}) center;
   `;
   const Text = styled("p")`
-    font-size: 1.1em;
+    font-size: 1em;
     color: #ffffff;
-    margin-top: 10px;
-    text-decoration: uppercase;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
   `;
   const Paddings = styled("div")`
     padding-left: 5%;
@@ -29,7 +31,7 @@ const EventHeader = props => {
     <Container>
       <Paddings>
         <h1 className="title white">{props.title}</h1>
-        <Text>Alture Festival &#38; Padile Running Team</Text>
+        <Text>Alture Festival, Padile Running Team</Text>
       </Paddings>
     </Container>
   );

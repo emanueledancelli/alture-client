@@ -1,5 +1,6 @@
 import React from "react";
-import { CalendarDayIcon, LocationIcon, LabelOutlineIcon } from "mdi-react";
+import styled from "react-emotion";
+import { LabelIcon, LocationIcon, AccessTimeIcon } from "mdi-react";
 
 const NewInfo = props => {
   const styles = {
@@ -25,25 +26,32 @@ const NewInfo = props => {
     },
     icon: {
       paddingRight: "8px",
-      color: "#B8C6E1"
+      color: "#728dc3"
     }
   };
 
+  const Container = styled("div")`
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    justify-content: space-around;
+  `;
+
   return (
-    <React.Fragment>
+    <Container>
       <p style={styles.mona} className={props.className}>
-        <CalendarDayIcon style={styles.icon} size={20} />
+        <LabelIcon style={styles.icon} size={20} />
+        Alture Festival, Padile Running Team
+      </p>
+      <p style={styles.p} className={props.className}>
+        <AccessTimeIcon style={styles.icon} size={20} />
         {props.startDate} - {props.endDate}
       </p>
       <p style={styles.p} className={props.className}>
         <LocationIcon style={styles.icon} size={20} />
-        {props.location}
+        {props.location} - mostra mappa
       </p>
-      <p style={styles.p} className={props.className}>
-        <LabelOutlineIcon style={styles.icon} size={20} />
-        {props.tags}
-      </p>
-    </React.Fragment>
+    </Container>
   );
 };
 

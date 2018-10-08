@@ -23,7 +23,7 @@ class CardList extends Component {
       const end = moment(e.end)
         .locale("it")
         .format("LT");
-      const image = `https://api.dancel.li/${e.image.url}`;
+      const image = `http://localhost:1337/${e.image.url}`;
       return (
         <Link to={`/eventi/${e.id}`} key={e.id}>
           <Card

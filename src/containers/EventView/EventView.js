@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import styled, { css, keyframes } from "react-emotion";
-import posed from "react-pose";
 import { ArrowDropDownIcon, ArrowDropUpIcon } from "mdi-react";
 import $ from "../../config.js";
 import moment from "moment";
 import "moment/locale/it";
 
 import SingleHeader from "../../components/SingleHeader/SingleHeader.js";
-import EventMap from "../../components/EventMap/EventMap.js";
 import Spinner from "../../components/Spinner/Spinner.js";
 import EventHeader from "./EventHeader.js";
 import NewInfo from "./NewInfo.js";
+import CallToAction from "./calltoaction.js";
 
 class SingleEvent extends Component {
   state = {
@@ -71,8 +70,8 @@ class SingleEvent extends Component {
     const MainInfo = styled("div")`
       padding-left: 5%;
       padding-right: 5%;
-      padding-top: 10%;
-      padding-bottom: 10%;
+      padding-top: 8%;
+      padding-bottom: 5%;
       color: #333;
     `;
     const Description = css`
@@ -86,6 +85,7 @@ class SingleEvent extends Component {
       color: #333;
       animation: ${fadeIn} 0.5s ease-out;
       margin-bottom: 0;
+      margin-top: 20px;
     `;
     const helperText = css`
       font-weight: 400;
@@ -95,6 +95,12 @@ class SingleEvent extends Component {
       display: flex;
       justify-content: flex-start;
       align-items: center;
+    `;
+    const informazioni = css`
+      font-weight: 700;
+      font-size: 1.3em;
+      color: #728dc3;
+      padding-bottom: 30px;
     `;
     const showMore = css`
       width: 100%;
@@ -141,7 +147,7 @@ class SingleEvent extends Component {
           />
         </MainInfo>
         <div className={Description}>
-          <span className="title black">Informazioni</span>
+          <span className={informazioni}>Informazioni</span>
           {isDescriptionExtended ? (
             <p className={descriptionText}>{selectedEvent.description}</p>
           ) : (
@@ -159,6 +165,7 @@ class SingleEvent extends Component {
             )}
           </div>
         </div>
+        <CallToAction />
       </React.Fragment>
     );
   }
