@@ -3,7 +3,7 @@ import styled, { css } from "react-emotion";
 import { InfoOutlineIcon, NotificationsNoneIcon } from "mdi-react";
 import Logo from "../Logo/Logo";
 
-const AppHeader = ({ handleModal }) => {
+const AppHeader = ({ handleModal, handleNotificationPanel }) => {
   const Container = styled("div")`
     display: flex;
     flex-direction: row;
@@ -26,7 +26,11 @@ const AppHeader = ({ handleModal }) => {
     <Container>
       <InfoOutlineIcon onClick={handleModal} className={IconStyle} size={26} />
       <Logo />
-      <NotificationsNoneIcon className={IconStyle} size={26} />
+      <NotificationsNoneIcon
+        onClick={handleNotificationPanel}
+        className={IconStyle}
+        size={26}
+      />
     </Container>
   );
 };

@@ -1,65 +1,47 @@
-import React, { Component } from "react";
-import styled, { css } from "react-emotion";
-import posed, { PoseGroup } from "react-pose";
+import React from "react";
+import styled, { css, keyframes } from "react-emotion";
 
-const Modal = posed.div({
-  enter: {
-    y: 0,
-    opacity: 1,
-    delay: 200
-  },
-  exit: {
-    y: 50,
-    opacity: 0,
-    transition: { type: "tween", duration: 200 }
-  }
-});
+import Shade from "../Shade/Shade";
 
-const StyledModal = styled(Modal)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 100;
-`;
+const NotificationModal = props => {
+  const slideIn = keyframes`
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
 
-class NotificationModal extends Component {
-  state = {
-    showModal: false
-  };
+  const Container = styled("div")`
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 2px 6px -2px rgba(10, 21, 60, 1);
+    -moz-box-shadow: 0px 2px 6px -2px rgba(10, 21, 60, 1);
+    box-shadow: 0px 2px 6px -2px rgba(10, 21, 60, 1);
+    display: flex;
+    padding: 2%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: ${slideIn} 0.5s ease-in;
+  `;
+  const Center = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
 
-  componentDidMount() {
-    this.setState({
-      showModal: true
-    });
-  }
-
-  handleStuff = () => {
-    this.setState({
-      showModal: false
-    });
-  };
-
-  render() {
-    const { isVisible, closeModal } = this.props;
-    const { showModal } = this.state;
-
-    if (isVisible) {
-      return (
-        <PoseGroup>
-          {showModal ? (
-            <StyledModal onClick={this.handleStuff}>
-              <div className="onesignal-customlink-container" />
-            </StyledModal>
-          ) : null}
-        </PoseGroup>
-      );
-    } else {
-      return null;
-    }
-  }
-}
+  return (
+    <Shade className={Center} onClick={props.onClick}>
+      <Container>
+        <div className="onesignal-customlink-container" />
+      </Container>
+    </Shade>
+  );
+};
 
 export default NotificationModal;

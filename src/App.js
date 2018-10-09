@@ -10,6 +10,7 @@ import MapComponent from "./containers/Map/MapComponent";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppNavigation from "./components/AppNavigation/AppNavigation";
 import InfoModal from "./components/InfoModal/InfoModal";
+import NotificationModal from "./components/NotificationModal/NotificationModal";
 
 const AllRoutes = location => {
   return (
@@ -27,12 +28,19 @@ const AllRoutes = location => {
 
 class App extends Component {
   state = {
-    isVisible: false
+    isInfoModalVisible: false,
+    isNotificationModalVisible: false
   };
 
   handleModal = () => {
     this.setState({
-      isVisible: !this.state.isVisible
+      isInfoModalVisible: !this.state.isInfoModalVisible
+    });
+  };
+
+  handleNotificationPanel = () => {
+    this.setState({
+      isNotificationModalVisible: !this.state.isNotificationModalVisible
     });
   };
 
@@ -44,7 +52,10 @@ class App extends Component {
           render={({ location }) => (
             <div className="App">
               {location.pathname.startsWith("/eventi/") ? null : (
-                <AppHeader handleModal={this.handleModal} />
+                <AppHeader
+                  handleModal={this.handleModal}
+                  handleNotificationPanel={this.handleNotificationPanel}
+                />
               )}
 
               {AllRoutes(location)}
@@ -53,11 +64,14 @@ class App extends Component {
                 <AppNavigation />
               )}
 
-              {this.state.isVisible && (
+              {this.state.isInfoModalVisible && (
                 <InfoModal
-                  isVisible={this.state.isVisible}
+                  isVisible={this.state.isInfoModalVisible}
                   closeModal={this.handleModal}
                 />
+              )}
+              {this.state.isNotificationModalVisible && (
+                <NotificationModal onClick={this.handleNotificationPanel} />
               )}
             </div>
           )}
