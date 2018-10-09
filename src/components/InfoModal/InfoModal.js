@@ -20,7 +20,7 @@ const Modal = posed.div({
 const StyledModal = styled(Modal)`
   height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: white;

@@ -17,21 +17,21 @@ class CardList extends Component {
     `;
 
     const cardList = this.props.events.map(e => {
-      const date = moment(e.start)
+      const date = moment(e.inizio)
         .locale("it")
         .format("LLL");
-      const end = moment(e.end)
+      const end = moment(e.fine)
         .locale("it")
         .format("LT");
-      const image = `http://localhost:1337/${e.image.url}`;
+      const image = `http://localhost:1337/${e.immagine.url}`;
       return (
         <Link to={`/eventi/${e.id}`} key={e.id}>
           <Card
-            title={e.name}
+            title={e.titolo}
             date={date}
             end={end}
             backgroundImage={image}
-            location={e.place}
+            location={e.luogo}
           />
         </Link>
       );

@@ -20,7 +20,7 @@ const withEvents = WrappedComponent => {
     fetchEvents = () => {
       $.get("/event")
         .then(res => {
-          let sortedRes = _.sortBy(res.data, "start");
+          let sortedRes = _.sortBy(res.data, "inizio");
           this.setState({ events: sortedRes, isLoading: false });
         })
         .catch(err => console.log(err));

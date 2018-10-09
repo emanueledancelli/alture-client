@@ -23,9 +23,9 @@ class SingleEvent extends Component {
     isDescriptionExtended: false,
     isMapOpen: false,
     selectedEvent: {
-      image: "",
-      name: "",
-      description: "",
+      immagine: "",
+      titolo: "",
+      descrizione: "",
       tags: ""
     }
   };
@@ -60,14 +60,14 @@ class SingleEvent extends Component {
   };
 
   sliceName = () => {
-    if (this.state.selectedEvent.name.length < 25) {
-      return this.state.selectedEvent.name;
+    if (this.state.selectedEvent.titolo.length < 25) {
+      return this.state.selectedEvent.titolo;
     }
-    return this.state.selectedEvent.name.slice(0, 21) + "...";
+    return this.state.selectedEvent.titolo.slice(0, 21) + "...";
   };
 
   sliceDescription = () => {
-    return this.state.selectedEvent.description.slice(0, 200) + "...";
+    return this.state.selectedEvent.descrizione.slice(0, 200) + "...";
   };
 
   render() {
@@ -161,10 +161,10 @@ class SingleEvent extends Component {
       isDescriptionExtended,
       isMapOpen
     } = this.state;
-    const startDate = moment(selectedEvent.start)
+    const startDate = moment(selectedEvent.inizio)
       .locale("it")
       .format("LLLL");
-    const endDate = moment(selectedEvent.end)
+    const endDate = moment(selectedEvent.fine)
       .locale("it")
       .format("LT");
     const currentUrl = "%PUBLIC_URL%" + this.props.location.pathname;
@@ -179,18 +179,19 @@ class SingleEvent extends Component {
         <SingleHeader
           url={currentUrl}
           name={slicedName}
-          image={selectedEvent.image.url}
+          image={selectedEvent.immagine.url}
           onClick={() => this.props.history.goBack()}
         />
         <EventHeader
-          image={selectedEvent.image.url}
-          title={selectedEvent.name}
+          image={selectedEvent.immagine.url}
+          title={selectedEvent.titolo}
+          tags={selectedEvent.tags}
         />
         <MainInfo>
           <InfoContainer>
             <InfoText>
               <LabelIcon className={iconStyle} size={20} />
-              Alture Festival, Padile Running Team
+              {selectedEvent.organizzatori}
             </InfoText>
             <InfoText>
               <AccessTimeIcon className={iconStyle} size={20} />
@@ -199,13 +200,13 @@ class SingleEvent extends Component {
             {isMapOpen ? (
               <InfoText onClick={this.handleMapToggle}>
                 <LocationIcon className={iconStyle} size={20} />
-                {selectedEvent.place}
+                {selectedEvent.luogo}
                 &ensp; - &ensp; <MapToggler>nascondi mappa</MapToggler>
               </InfoText>
             ) : (
               <InfoText onClick={this.handleMapToggle}>
                 <LocationIcon className={iconStyle} size={20} />
-                {selectedEvent.place}
+                {selectedEvent.luogo}
                 &ensp; - &ensp; <MapToggler>mostra mappa</MapToggler>
               </InfoText>
             )}
@@ -214,15 +215,15 @@ class SingleEvent extends Component {
         {isMapOpen && (
           <EventMapComponent
             coords={{
-              lat: selectedEvent.latitude,
-              lng: selectedEvent.Longitude
+              lat: selectedEvent.latitudine,
+              lng: selectedEvent.longitudine
             }}
           />
         )}
         <div className={Description}>
           <span className={informazioni}>Informazioni</span>
           {isDescriptionExtended ? (
-            <p className={descriptionText}>{selectedEvent.description}</p>
+            <p className={descriptionText}>{selectedEvent.descrizione}</p>
           ) : (
             <p className={descriptionText}>{slicedDescription}</p>
           )}
@@ -238,7 +239,7 @@ class SingleEvent extends Component {
             )}
           </div>
         </div>
-        <CallToAction />
+        <CallToAction mail={selectedEvent.email_organizzatore} />
       </React.Fragment>
     );
   }

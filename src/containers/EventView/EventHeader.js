@@ -31,7 +31,7 @@ const EventHeader = props => {
     <Container>
       <Paddings>
         <h1 className="title white">{props.title}</h1>
-        <Text>Alture Festival, Padile Running Team</Text>
+        <Text>{props.tags}</Text>
       </Paddings>
     </Container>
   );

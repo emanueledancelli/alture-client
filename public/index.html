@@ -23,36 +23,6 @@
 
   <head>
     <link rel="manifest" href="/manifest.json" />
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      var OneSignal = window.OneSignal || [];
-      OneSignal.push(function () {
-        OneSignal.init({
-          appId: "1b58d942-efdd-4f7d-a0ba-ca46d0791108",
-          autoRegister: false,
-          notifyButton: {
-            enable: true,
-          },
-          promptOptions: {
-            customlink: {
-              enabled: true, /* Required to use the Custom Link */
-              style: "link", /* Has value of 'button' or 'link' */
-              size: "medium", /* One of 'small', 'medium', or 'large' */
-              color: {
-                button: '#E12D30', /* Color of the button background if style = "button" */
-                text: '#333', /* Color of the prompt's text */
-              },
-              text: {
-                subscribe: "Attiva le notifiche", /* Prompt's text when not subscribed */
-                unsubscribe: "Disattiva le notifiche", /* Prompt's text when subscribed */
-                explanation: "Rimani aggiornato sulle attività di Alture360", /* Optional text appearing before the prompt button */
-              },
-              unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
-            }
-          }
-        });
-      });
-    </script>
   </head>
   <title>Alture360</title>
 </head>

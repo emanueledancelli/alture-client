@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ChevronRightIcon } from "mdi-react";
 import styled, { css } from "react-emotion";
 
-const callToAction = () => {
+const callToAction = props => {
   const Container = styled("div")`
     padding-right: 5%;
     padding-left: 5%;
@@ -33,20 +33,27 @@ const callToAction = () => {
     color: #728dc3;
   `;
 
-  const marginFix = css`
+  const marginFixTop = css`
     margin: 0;
   `;
 
+  const marginFixBottom = css`
+    margin: 0;
+    color: #333;
+  `;
+
   return (
-    <Container>
-      <CtaButton>
-        <LeftContainer>
-          <Info className={marginFix}>Contatti</Info>
-          <p className={marginFix}>mail@mail.com</p>
-        </LeftContainer>
-        <ChevronRightIcon className={iconColor} size={50} />
-      </CtaButton>
-    </Container>
+    <a href={"mailto:" + props.email}>
+      <Container>
+        <CtaButton>
+          <LeftContainer>
+            <Info className={marginFixTop}>Contatti</Info>
+            <p className={marginFixBottom}>{props.mail}</p>
+          </LeftContainer>
+          <ChevronRightIcon className={iconColor} size={50} />
+        </CtaButton>
+      </Container>
+    </a>
   );
 };
 
