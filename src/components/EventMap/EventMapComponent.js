@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import MapContainer from "./EventMapContainer";
 
-class MapComponent extends Component {
+class EventMapComponent extends Component {
   render() {
     return (
       <React.Fragment>
-        <MapContainer />
+        <MapContainer coords={this.props.coords} />
       </React.Fragment>
     );
   }
 }
 
-export default MapComponent;
+export default EventMapComponent;

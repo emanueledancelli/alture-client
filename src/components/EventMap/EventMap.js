@@ -4,14 +4,15 @@ import NewMarker from "./EventMapMarker";
 
 const EventMap = withScriptjs(
   withGoogleMap(props => {
-    const marker = props.events(
-      <NewMarker
-        location={{ lat: props.events.latitude, lng: props.events.Longitude }}
-      />
+    const marker = (
+      <NewMarker location={{ lat: props.coords.lat, lng: props.coords.lng }} />
     );
 
     return (
-      <GoogleMap defaultZoom={11} center={{ lat: 45.79377, lng: 10.27363 }}>
+      <GoogleMap
+        defaultZoom={11}
+        center={{ lat: props.coords.lat, lng: props.coords.lng }}
+      >
         {marker}
       </GoogleMap>
     );

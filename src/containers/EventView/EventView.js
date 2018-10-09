@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import styled, { css, keyframes } from "react-emotion";
-import { ArrowDropDownIcon, ArrowDropUpIcon } from "mdi-react";
+import {
+  ArrowDropDownIcon,
+  ArrowDropUpIcon,
+  LabelIcon,
+  LocationIcon,
+  AccessTimeIcon
+} from "mdi-react";
 import $ from "../../config.js";
 import moment from "moment";
 import "moment/locale/it";
@@ -8,13 +14,14 @@ import "moment/locale/it";
 import SingleHeader from "../../components/SingleHeader/SingleHeader.js";
 import Spinner from "../../components/Spinner/Spinner.js";
 import EventHeader from "./EventHeader.js";
-import NewInfo from "./NewInfo.js";
+import EventMapComponent from "../../components/EventMap/EventMapComponent";
 import CallToAction from "./calltoaction.js";
 
 class SingleEvent extends Component {
   state = {
     isLoading: false,
     isDescriptionExtended: false,
+    isMapOpen: false,
     selectedEvent: {
       image: "",
       name: "",
@@ -43,6 +50,12 @@ class SingleEvent extends Component {
   handleFullDescriptionButton = () => {
     this.setState({
       isDescriptionExtended: !this.state.isDescriptionExtended
+    });
+  };
+
+  handleMapToggle = () => {
+    this.setState({
+      isMapOpen: !this.state.isMapOpen
     });
   };
 
@@ -112,7 +125,42 @@ class SingleEvent extends Component {
       padding-bottom: 3%;
     `;
 
-    const { selectedEvent, isLoading, isDescriptionExtended } = this.state;
+    const InfoText = styled("p")`
+      margin: 0px;
+      padding-top: 0.5em;
+      font-size: 1em;
+      font-weight: 500;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    `;
+
+    const InfoContainer = styled("div")`
+      display: flex;
+      flex-direction: column;
+      height: 15vh;
+      justify-content: space-around;
+    `;
+
+    const MapToggler = styled("span")`
+      color: #728dc3;
+      text-decoration: underline;
+      font-family: Lato;
+      font-weight: 500;
+    `;
+
+    const iconStyle = css`
+      padding-right: 8px;
+      color: #728dc3;
+    `;
+
+    const {
+      selectedEvent,
+      isLoading,
+      isDescriptionExtended,
+      isMapOpen
+    } = this.state;
     const startDate = moment(selectedEvent.start)
       .locale("it")
       .format("LLLL");
@@ -139,13 +187,38 @@ class SingleEvent extends Component {
           title={selectedEvent.name}
         />
         <MainInfo>
-          <NewInfo
-            location={selectedEvent.place}
-            startDate={startDate}
-            endDate={endDate}
-            tags={selectedEvent.tags}
-          />
+          <InfoContainer>
+            <InfoText>
+              <LabelIcon className={iconStyle} size={20} />
+              Alture Festival, Padile Running Team
+            </InfoText>
+            <InfoText>
+              <AccessTimeIcon className={iconStyle} size={20} />
+              {startDate} - {endDate}
+            </InfoText>
+            {isMapOpen ? (
+              <InfoText onClick={this.handleMapToggle}>
+                <LocationIcon className={iconStyle} size={20} />
+                {selectedEvent.place}
+                &ensp; - &ensp; <MapToggler>nascondi mappa</MapToggler>
+              </InfoText>
+            ) : (
+              <InfoText onClick={this.handleMapToggle}>
+                <LocationIcon className={iconStyle} size={20} />
+                {selectedEvent.place}
+                &ensp; - &ensp; <MapToggler>mostra mappa</MapToggler>
+              </InfoText>
+            )}
+          </InfoContainer>
         </MainInfo>
+        {isMapOpen && (
+          <EventMapComponent
+            coords={{
+              lat: selectedEvent.latitude,
+              lng: selectedEvent.Longitude
+            }}
+          />
+        )}
         <div className={Description}>
           <span className={informazioni}>Informazioni</span>
           {isDescriptionExtended ? (

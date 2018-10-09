@@ -1,57 +1,46 @@
 import React from "react";
-import styled from "react-emotion";
+import styled, { css } from "react-emotion";
 import { LabelIcon, LocationIcon, AccessTimeIcon } from "mdi-react";
 
 const NewInfo = props => {
-  const styles = {
-    p: {
-      margin: "0px",
-      paddingTop: "0.5em",
-      fontSize: "1em",
-      fontWeight: "500",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "center"
-    },
-    mona: {
-      margin: "0px",
-      fontSize: "1em",
-      fontWeight: "500",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      textTransform: "capitalize"
-    },
-    icon: {
-      paddingRight: "8px",
-      color: "#728dc3"
-    }
-  };
+  const InfoText = styled("p")`
+    margin: 0px;
+    padding-top: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  `;
 
-  const Container = styled("div")`
+  const InfoContainer = styled("div")`
     display: flex;
     flex-direction: column;
     height: 15vh;
     justify-content: space-around;
   `;
 
+  const iconStyle = css`
+    padding-right: 8px;
+    color: #728dc3;
+  `;
+
   return (
-    <Container>
-      <p style={styles.mona} className={props.className}>
-        <LabelIcon style={styles.icon} size={20} />
+    <InfoContainer>
+      <InfoText>
+        <LabelIcon className={iconStyle} size={20} />
         Alture Festival, Padile Running Team
-      </p>
-      <p style={styles.p} className={props.className}>
-        <AccessTimeIcon style={styles.icon} size={20} />
+      </InfoText>
+      <InfoText>
+        <AccessTimeIcon className={iconStyle} size={20} />
         {props.startDate} - {props.endDate}
-      </p>
-      <p style={styles.p} className={props.className}>
-        <LocationIcon style={styles.icon} size={20} />
+      </InfoText>
+      <InfoText>
+        <LocationIcon className={iconStyle} size={20} />
         {props.location} - mostra mappa
-      </p>
-    </Container>
+      </InfoText>
+    </InfoContainer>
   );
 };
 
