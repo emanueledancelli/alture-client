@@ -23,15 +23,15 @@ class CardList extends Component {
       const end = moment(e.fine)
         .locale("it")
         .format("LT");
-      const image = `http://localhost:1337/${e.immagine.url}`;
+      const image = `${e.acf.immagine.url}`;
       return (
         <Link to={`/eventi/${e.id}`} key={e.id}>
           <Card
-            title={e.titolo}
-            date={date}
-            end={end}
+            title={e.title.rendered}
+            date={e.acf.inizio}
+            end={e.acf.inizio}
             backgroundImage={image}
-            location={e.luogo}
+            location={e.acf.luogo}
           />
         </Link>
       );

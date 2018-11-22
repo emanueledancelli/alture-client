@@ -24,7 +24,7 @@ class SingleEvent extends Component {
     isMapOpen: false,
     selectedEvent: {
       immagine: "",
-      titolo: "",
+      title: "",
       descrizione: "",
       tags: ""
     }
@@ -39,9 +39,24 @@ class SingleEvent extends Component {
   scrollToTop = () => window.scrollTo(0, 0);
 
   getEvents = () => {
-    $.get(`/event/${this.props.match.params.id}`)
+    $.get(`/eventi/${this.props.match.params.id}`)
       .then(res => {
-        this.setState({ selectedEvent: res.data, isLoading: false });
+        //console.log(res.data)
+        this.setState({ 
+            selectedEvent: {
+              title: res.data.title.rendered,
+              descrizione: res.data.acf.descrizione,
+              immagine: res.data.acf.immagine.url,
+              inzio:res.data.acf.inizio,
+              fine:res.data.acf.fine,
+              luogo:res.data.acf.luogo,
+              latitudine: parseFloat(res.data.acf.latitudine),
+              longitudine: parseFloat(res.data.acf.longitudine),
+              organizzatori:res.data.acf.organizzatori,
+              email_organizzatore:res.data.acf.email_organizzatore,
+              tags: ''
+              }, 
+            isLoading: false });
         console.log(this.state.selectedEvent);
       })
       .catch(err => console.log(err));
@@ -60,10 +75,10 @@ class SingleEvent extends Component {
   };
 
   sliceName = () => {
-    if (this.state.selectedEvent.titolo.length < 25) {
-      return this.state.selectedEvent.titolo;
+    if (this.state.selectedEvent.title.length < 25) {
+      return this.state.selectedEvent.title;
     }
-    return this.state.selectedEvent.titolo.slice(0, 21) + "...";
+    return this.state.selectedEvent.title.slice(0, 21) + "...";
   };
 
   sliceDescription = () => {
@@ -179,13 +194,12 @@ class SingleEvent extends Component {
         <SingleHeader
           url={currentUrl}
           name={slicedName}
-          image={selectedEvent.immagine.url}
+          image={selectedEvent.immagine}
           onClick={() => this.props.history.goBack()}
         />
         <EventHeader
-          image={selectedEvent.immagine.url}
-          title={selectedEvent.titolo}
-          tags={selectedEvent.tags}
+          image={selectedEvent.immagine}
+          title={selectedEvent.title}
         />
         <MainInfo>
           <InfoContainer>

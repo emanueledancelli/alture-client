@@ -9,7 +9,7 @@ const EventHeader = props => {
     flex-direction: column;
     justify-content: flex-end;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(http://localhost:1337/${props.image}) center;
+      url(${props.image}) center;
   `;
   const Text = styled("p")`
     font-size: 1em;
@@ -23,7 +23,7 @@ const EventHeader = props => {
     padding-left: 5%;
     padding-right: 5%;
     & h1 {
-      margin-bottom: 0;
+      margin-bottom: 25px;
     }
   `;
 
@@ -31,7 +31,6 @@ const EventHeader = props => {
     <Container>
       <Paddings>
         <h1 className="title white">{props.title}</h1>
-        <Text>{props.tags}</Text>
       </Paddings>
     </Container>
   );
