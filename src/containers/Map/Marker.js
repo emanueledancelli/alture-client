@@ -2,8 +2,6 @@ import React from "react";
 import styled, { css } from "react-emotion";
 import { Link } from "react-router-dom";
 import { Marker } from "react-google-maps";
-import moment from "moment";
-import "moment/locale/it";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
 export default class NewMarker extends React.Component {
@@ -44,9 +42,7 @@ export default class NewMarker extends React.Component {
       text-transform: capitalize;
       color: #728dc3;
     `;
-    const date = moment(this.props.date)
-      .locale("it")
-      .format("LL");
+    const date = this.props.date
 
     const eventInfo = (
       <InfoBox>

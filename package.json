@@ -9,7 +9,6 @@
     "google-map-react": "^1.0.6",
     "lodash": "^4.17.10",
     "mdi-react": "^4.0.0",
-    "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",

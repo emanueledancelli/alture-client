@@ -8,8 +8,6 @@ import {
   AccessTimeIcon
 } from "mdi-react";
 import $ from "../../config.js";
-import moment from "moment";
-import "moment/locale/it";
 
 import SingleHeader from "../../components/SingleHeader/SingleHeader.js";
 import Spinner from "../../components/Spinner/Spinner.js";
@@ -41,14 +39,15 @@ class SingleEvent extends Component {
   getEvents = () => {
     $.get(`/eventi/${this.props.match.params.id}`)
       .then(res => {
-        //console.log(res.data)
         this.setState({ 
             selectedEvent: {
               title: res.data.title.rendered,
               descrizione: res.data.acf.descrizione,
               immagine: res.data.acf.immagine.url,
-              inzio:res.data.acf.inizio,
-              fine:res.data.acf.fine,
+              data_inzio:res.data.acf.data_inizio,
+              ora_inizio: res.data.acf.ora_inizio,
+              data_fine: res.data.acf.data_fine,
+              ora_fine: res.data.acf.ora_fine,
               luogo:res.data.acf.luogo,
               latitudine: parseFloat(res.data.acf.latitudine),
               longitudine: parseFloat(res.data.acf.longitudine),
@@ -57,7 +56,6 @@ class SingleEvent extends Component {
               tags: ''
               }, 
             isLoading: false });
-        console.log(this.state.selectedEvent);
       })
       .catch(err => console.log(err));
   };
@@ -84,6 +82,10 @@ class SingleEvent extends Component {
   sliceDescription = () => {
     return this.state.selectedEvent.descrizione.slice(0, 200) + "...";
   };
+
+  createDescription = () => {
+    return {__html:this.state.selectedEvent.descrizione}
+  }
 
   render() {
     const fadeIn = keyframes`
@@ -176,12 +178,8 @@ class SingleEvent extends Component {
       isDescriptionExtended,
       isMapOpen
     } = this.state;
-    const startDate = moment(selectedEvent.inizio)
-      .locale("it")
-      .format("LLLL");
-    const endDate = moment(selectedEvent.fine)
-      .locale("it")
-      .format("LT");
+    const startDate = selectedEvent.data_inizio;
+    const endDate = selectedEvent.data_fine;
     const currentUrl = "%PUBLIC_URL%" + this.props.location.pathname;
     const slicedName = this.sliceName();
     const slicedDescription = this.sliceDescription();
@@ -239,7 +237,7 @@ class SingleEvent extends Component {
           {isDescriptionExtended ? (
             <p className={descriptionText}>{selectedEvent.descrizione}</p>
           ) : (
-            <p className={descriptionText}>{slicedDescription}</p>
+            <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
           )}
           <div className={showMore} onClick={this.handleFullDescriptionButton}>
             {isDescriptionExtended ? (
