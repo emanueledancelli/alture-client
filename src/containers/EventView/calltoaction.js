@@ -12,7 +12,7 @@ const callToAction = props => {
     width: 100%;
     height: 12vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   `;
 
@@ -46,11 +46,7 @@ const callToAction = props => {
     <a href={"mailto:" + props.email}>
       <Container>
         <CtaButton>
-          <LeftContainer>
-            <Info className={marginFixTop}>Contatti</Info>
-            <p className={marginFixBottom}>{props.mail}</p>
-          </LeftContainer>
-          <ChevronRightIcon className={iconColor} size={50} />
+            <Info className={marginFixTop}>Contatta organizzatori</Info>
         </CtaButton>
       </Container>
     </a>
@@ -58,3 +54,17 @@ const callToAction = props => {
 };
 
 export default callToAction;
+
+
+
+{/* <a href={"mailto:" + props.email}>
+<Container>
+  <CtaButton>
+    <LeftContainer>
+      <Info className={marginFixTop}>Contatti</Info>
+      <p className={marginFixBottom}>{props.mail}</p>
+    </LeftContainer>
+    <ChevronRightIcon className={iconColor} size={50} />
+  </CtaButton>
+</Container>
+</a> */}

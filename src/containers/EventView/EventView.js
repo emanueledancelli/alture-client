@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import styled, { css, keyframes } from "react-emotion";
 import {
-  ArrowDropDownIcon,
-  ArrowDropUpIcon,
   LabelIcon,
   LocationIcon,
   AccessTimeIcon
@@ -18,13 +16,21 @@ import CallToAction from "./calltoaction.js";
 class SingleEvent extends Component {
   state = {
     isLoading: false,
-    isDescriptionExtended: false,
     isMapOpen: false,
     selectedEvent: {
-      immagine: "",
       title: "",
       descrizione: "",
-      tags: ""
+      immagine: "",
+      data_inizio: "",
+      ora_inizio: "",
+      data_fine: "",
+      ora_fine: "",
+      luogo: "",
+      latitudine: "",
+      longitudine: "",
+      organizzatori: "",
+      email_organizzatore: "",
+      tags: ""     
     }
   };
 
@@ -44,7 +50,7 @@ class SingleEvent extends Component {
               title: res.data.title.rendered,
               descrizione: res.data.acf.descrizione,
               immagine: res.data.acf.immagine.url,
-              data_inzio:res.data.acf.data_inizio,
+              data_inizio:res.data.acf.data_inizio,
               ora_inizio: res.data.acf.ora_inizio,
               data_fine: res.data.acf.data_fine,
               ora_fine: res.data.acf.ora_fine,
@@ -58,12 +64,6 @@ class SingleEvent extends Component {
             isLoading: false });
       })
       .catch(err => console.log(err));
-  };
-
-  handleFullDescriptionButton = () => {
-    this.setState({
-      isDescriptionExtended: !this.state.isDescriptionExtended
-    });
   };
 
   handleMapToggle = () => {
@@ -175,14 +175,12 @@ class SingleEvent extends Component {
     const {
       selectedEvent,
       isLoading,
-      isDescriptionExtended,
       isMapOpen
     } = this.state;
     const startDate = selectedEvent.data_inizio;
-    const endDate = selectedEvent.data_fine;
-    const currentUrl = "%PUBLIC_URL%" + this.props.location.pathname;
+    const endDate = selectedEvent.ora_fine;
+    const currentUrl = "https://alture.org/eventi" + this.props.location.pathname;
     const slicedName = this.sliceName();
-    const slicedDescription = this.sliceDescription();
 
     if (isLoading) {
       return <Spinner />;
@@ -193,7 +191,7 @@ class SingleEvent extends Component {
           url={currentUrl}
           name={slicedName}
           image={selectedEvent.immagine}
-          onClick={() => this.props.history.goBack()}
+          onClick={() => this.props.history.push('/')}
         />
         <EventHeader
           image={selectedEvent.immagine}
@@ -234,22 +232,7 @@ class SingleEvent extends Component {
         )}
         <div className={Description}>
           <span className={informazioni}>Informazioni</span>
-          {isDescriptionExtended ? (
-            <p className={descriptionText}>{selectedEvent.descrizione}</p>
-          ) : (
-            <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
-          )}
-          <div className={showMore} onClick={this.handleFullDescriptionButton}>
-            {isDescriptionExtended ? (
-              <p className={helperText}>
-                Visualizza meno <ArrowDropUpIcon size={26} />
-              </p>
-            ) : (
-              <p className={helperText}>
-                Visualizza descrizione completa <ArrowDropDownIcon size={26} />
-              </p>
-            )}
-          </div>
+          <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
         </div>
         <CallToAction mail={selectedEvent.email_organizzatore} />
       </React.Fragment>
