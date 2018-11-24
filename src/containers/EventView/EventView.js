@@ -31,7 +31,8 @@ class SingleEvent extends Component {
       organizzatori: "",
       email_organizzatore: "",
       tags: ""     
-    }
+    },
+    slicedTitle: ''
   };
 
   componentDidMount() {
@@ -60,8 +61,12 @@ class SingleEvent extends Component {
               organizzatori:res.data.acf.organizzatori,
               email_organizzatore:res.data.acf.email_organizzatore,
               tags: ''
-              }, 
+              },
+
             isLoading: false });
+      })
+      .then(() => {
+        this.sliceTitle()
       })
       .catch(err => console.log(err));
   };
@@ -72,15 +77,16 @@ class SingleEvent extends Component {
     });
   };
 
-  sliceName = () => {
+  sliceTitle = () => {
     if (this.state.selectedEvent.title.length < 25) {
-      return this.state.selectedEvent.title;
+      this.setState({
+        slicedName: this.state.selectedEvent.title
+      })
     }
-    return this.state.selectedEvent.title.slice(0, 21) + "...";
-  };
-
-  sliceDescription = () => {
-    return this.state.selectedEvent.descrizione.slice(0, 200) + "...";
+    let slicedTitle = this.state.selectedEvent.title.slice(0, 21) + "...";
+    this.setState({
+      slicedName: slicedTitle
+    })
   };
 
   createDescription = () => {
@@ -161,10 +167,10 @@ class SingleEvent extends Component {
     const {
       selectedEvent,
       isLoading,
-      isMapOpen
+      isMapOpen,
+      slicedName
     } = this.state;
     const currentUrl = "https://alture.org/eventi" + this.props.location.pathname;
-    const slicedName = this.sliceName();
 
     if (isLoading) {
       return <Spinner />;
