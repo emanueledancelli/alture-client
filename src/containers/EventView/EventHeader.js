@@ -11,14 +11,6 @@ const EventHeader = props => {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${props.image}) center;
   `;
-  const Text = styled("p")`
-    font-size: 1em;
-    color: #ffffff;
-    margin-top: 22px;
-    margin-bottom: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-  `;
   const Paddings = styled("div")`
     padding-left: 5%;
     padding-right: 5%;

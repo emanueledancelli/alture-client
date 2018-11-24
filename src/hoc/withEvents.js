@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Spinner from "../components/Spinner/Spinner";
 import _ from 'lodash';
 import $ from "../config";
-import { DetailsIcon } from "mdi-react";
 
 const withEvents = WrappedComponent => {
   return class withEvents extends Component {

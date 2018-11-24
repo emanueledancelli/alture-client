@@ -44,8 +44,6 @@ class NotificationModal extends Component {
       align-items: center;
     `;
 
-    const Text = styled("p")``;
-
     const redPlease = css`
       color: #eb5757;
       font-weight: 700;

@@ -104,7 +104,7 @@ class InfoModal extends Component {
   };
 
   render() {
-    const { isVisible, closeModal } = this.props;
+    const { isVisible } = this.props;
     const { showModal } = this.state;
 
     if (isVisible) {

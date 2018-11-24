@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "react-emotion";
+import styled from "react-emotion";
 
 import PlaceAndDate from "../PlaceAndDate/PlaceAndDate";
 
@@ -20,9 +20,6 @@ const Card = props => {
     box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${props.backgroundImage}) center;
-  `;
-  const header = css`
-    max-width: 80%;
   `;
 
   return (

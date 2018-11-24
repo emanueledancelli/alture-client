@@ -1,6 +1,7 @@
 {
-  "name": "alture360",
+  "name": "alture",
   "version": "0.1.0",
+  "author": "Emanuele Dancelli",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",

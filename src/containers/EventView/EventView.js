@@ -104,11 +104,13 @@ class SingleEvent extends Component {
       padding-bottom: 5%;
       color: #333;
     `;
+    
     const Description = css`
       padding-top: 5%;
       padding-right: 5%;
       padding-left: 5%;
     `;
+    
     const descriptionText = css`
       font-size: 1em;
       line-height: 180%;
@@ -117,31 +119,14 @@ class SingleEvent extends Component {
       margin-bottom: 0;
       margin-top: 20px;
     `;
-    const helperText = css`
-      font-weight: 400;
-      color: #bdbdbd;
-      font-size: 1em;
-      text-align: center;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    `;
+    
     const informazioni = css`
       font-weight: 700;
       font-size: 1.3em;
       color: #728dc3;
       padding-bottom: 30px;
     `;
-    const showMore = css`
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      padding-right: 3%;
-      padding-bottom: 3%;
-    `;
-
+    
     const InfoText = styled("p")`
       margin: 0px;
       padding-top: 0.5em;
