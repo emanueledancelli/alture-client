@@ -46,7 +46,7 @@ const callToAction = props => {
     <a href={"mailto:" + props.email}>
       <Container>
         <CtaButton>
-            <Info className={marginFixTop}>Contatta organizzatori</Info>
+            <Info className={marginFixTop}>Contatta gli organizzatori</Info>
         </CtaButton>
       </Container>
     </a>
