@@ -148,6 +148,7 @@ class SingleEvent extends Component {
       font-size: 1em;
       font-weight: 500;
       display: flex;
+      text-transform: capitalize;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
@@ -177,8 +178,6 @@ class SingleEvent extends Component {
       isLoading,
       isMapOpen
     } = this.state;
-    const startDate = `${selectedEvent.data_inizio} ${selectedEvent.ora_inizio}`
-    const endDate = selectedEvent.ora_fine;
     const currentUrl = "https://alture.org/eventi" + this.props.location.pathname;
     const slicedName = this.sliceName();
 

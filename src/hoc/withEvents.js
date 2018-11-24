@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import Spinner from "../components/Spinner/Spinner";
+import _ from 'lodash';
 import $ from "../config";
-import _ from "lodash";
+import { DetailsIcon } from "mdi-react";
 
 const withEvents = WrappedComponent => {
   return class withEvents extends Component {
     state = {
       isLoading: false,
-      events: []
+      events: [],
     };
+
+    beforeMount
+
+    componentWillMount() {
+      this.getDate();
+    }
 
     componentDidMount() {
       this.setState({
@@ -17,11 +24,20 @@ const withEvents = WrappedComponent => {
       this.fetchEvents();
     }
 
+    getDate = () => {
+      let dateObj = new Date();
+      let month = dateObj.getUTCMonth() + 1; 
+      let day = dateObj.getUTCDate();
+      let year = dateObj.getUTCFullYear();
+      let newDate = `${year}${month}${day}`;
+      this.setState({ today: newDate })
+    }
+
     fetchEvents = () => {
-      $.get("/eventi")
+      $.get("/eventi/?filter[meta_key]=data_inizio&filter[meta_value]=" + this.state.today + "&filter[meta_compare]=>")
         .then(res => {
-          let sortedRes = _.sortBy(res.data, "inizio");
-          this.setState({ events: sortedRes, isLoading: false });
+          let sortedEvents = _.orderBy(res.data, "acf.data_inizio");
+          this.setState({ events: sortedEvents, isLoading: false });
         })
         .catch(err => console.log(err));
     };
