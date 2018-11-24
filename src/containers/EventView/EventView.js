@@ -177,7 +177,7 @@ class SingleEvent extends Component {
       isLoading,
       isMapOpen
     } = this.state;
-    const startDate = `${selectedEvent.data_inizio} ${"  "} ${selectedEvent.ora_inizio}`
+    const startDate = `${selectedEvent.data_inizio} ${selectedEvent.ora_inizio}`
     const endDate = selectedEvent.ora_fine;
     const currentUrl = "https://alture.org/eventi" + this.props.location.pathname;
     const slicedName = this.sliceName();
@@ -205,7 +205,7 @@ class SingleEvent extends Component {
             </InfoText>
             <InfoText>
               <AccessTimeIcon className={iconStyle} size={20} />
-              {startDate} / {endDate}
+              {selectedEvent.data_inizio} &ensp; {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
             </InfoText>
             {isMapOpen ? (
               <InfoText onClick={this.handleMapToggle}>
