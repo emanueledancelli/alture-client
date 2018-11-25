@@ -4,8 +4,11 @@ import NewMarker from "./EventMapMarker";
 
 const EventMap = withScriptjs(
   withGoogleMap(props => {
+
+    // let mapUrl = "https://www.google.com/maps/dir/?api=1&" + props.coords.lat + "," + props.coords.lng
+    
     const marker = (
-      <NewMarker location={{ lat: props.coords.lat, lng: props.coords.lng }} />
+        <NewMarker location={{ lat: props.coords.lat, lng: props.coords.lng }} />    
     );
 
     return (
@@ -13,7 +16,7 @@ const EventMap = withScriptjs(
         defaultZoom={11}
         center={{ lat: props.coords.lat, lng: props.coords.lng }}
       >
-        {marker}
+        {marker} 
       </GoogleMap>
     );
   })

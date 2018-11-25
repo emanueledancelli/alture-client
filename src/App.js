@@ -6,10 +6,10 @@ import "./App.css";
 
 import Home from "./containers/Home/Home";
 import EventView from "./containers/EventView/EventView";
+import Info from "./containers/Info/Info";
 import MapComponent from "./containers/Map/MapComponent";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppNavigation from "./components/AppNavigation/AppNavigation";
-import InfoModal from "./components/InfoModal/InfoModal";
 import NotificationModal from "./components/NotificationModal/NotificationModal";
 
 const AllRoutes = location => {
@@ -17,6 +17,7 @@ const AllRoutes = location => {
     <Switch location={location}>
       <Route exact path="/" component={Home} />
       <Route exact path="/mappa" component={MapComponent} />
+      <Route exact path="/informazioni" component={Info} />
       <Route
         exact
         path="/eventi/:id"
@@ -28,14 +29,7 @@ const AllRoutes = location => {
 
 class App extends Component {
   state = {
-    isInfoModalVisible: false,
     isNotificationModalVisible: false
-  };
-
-  handleModal = () => {
-    this.setState({
-      isInfoModalVisible: !this.state.isInfoModalVisible
-    });
   };
 
   handleNotificationPanel = () => {
@@ -51,25 +45,18 @@ class App extends Component {
           onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
             <div className="App">
-              {location.pathname.startsWith("/eventi/") ? null : (
+              {location.pathname.startsWith("/eventi/") || location.pathname.startsWith("/informazioni") ? null : (
                 <AppHeader
-                  handleModal={this.handleModal}
                   handleNotificationPanel={this.handleNotificationPanel}
                 />
               )}
 
               {AllRoutes(location)}
 
-              {location.pathname.startsWith("/eventi/") ? null : (
+              {location.pathname.startsWith("/eventi/") || location.pathname.startsWith("/informazioni") ? null : (
                 <AppNavigation />
               )}
 
-              {this.state.isInfoModalVisible && (
-                <InfoModal
-                  isVisible={this.state.isInfoModalVisible}
-                  closeModal={this.handleModal}
-                />
-              )}
               {this.state.isNotificationModalVisible && (
                 <NotificationModal onClick={this.handleNotificationPanel} />
               )}

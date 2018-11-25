@@ -1,9 +1,10 @@
 import React from "react";
 import styled, { css } from "react-emotion";
+import { NavLink } from "react-router-dom";
 import { InfoOutlineIcon, NotificationsNoneIcon } from "mdi-react";
 import Logo from "../Logo/Logo";
 
-const AppHeader = ({ handleModal, handleNotificationPanel }) => {
+const AppHeader = ({ handleNotificationPanel }) => {
   const Container = styled("div")`
     display: flex;
     flex-direction: row;
@@ -24,7 +25,9 @@ const AppHeader = ({ handleModal, handleNotificationPanel }) => {
   `;
   return (
     <Container>
-      <InfoOutlineIcon onClick={handleModal} className={IconStyle} size={26} />
+      <NavLink to="/informazioni">
+        <InfoOutlineIcon className={IconStyle} size={26} />
+      </NavLink>
       <Logo />
       <NotificationsNoneIcon
         onClick={handleNotificationPanel}
