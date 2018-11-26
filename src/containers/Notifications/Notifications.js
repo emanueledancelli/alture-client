@@ -40,6 +40,9 @@ class Notifications extends Component {
     const paddingLeft = css`
         margin-left: 5%;
     `
+    const hideMe = css`
+        display: none;
+    `
 
 
     return (
@@ -50,7 +53,7 @@ class Notifications extends Component {
             />
             <Body>
             <h1>Notifiche</h1>
-            <div className="onesignal-customlink-container"></div>        
+            <div className="onesignal-customlink-container"></div>
             </Body>
             <Footer>
                 <div className={paddingLeft}>
