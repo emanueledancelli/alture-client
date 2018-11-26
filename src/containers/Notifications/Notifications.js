@@ -11,7 +11,39 @@ class Notifications extends Component {
 
     scrollToTop = () => window.scrollTo(0, 0);
 
+    
+
     render() {
+
+    var OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+          OneSignal.init({
+            appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6",
+            allowLocalhostAsSecureOrigin: true,
+            promptOptions: {
+            customlink: {
+              enabled: true, /* Required to use the Custom Link */
+              style: "button", /* Has value of 'button' or 'link' */
+              size: "medium", /* One of 'small', 'medium', or 'large' */
+              color: {
+                button: '#E12D30', /* Color of the button background if style = "button" */
+                text: '#FFFFFF', /* Color of the prompt's text */
+              },
+              text: {
+                subscribe: "ATTIVA LE NOTIFICHE", /* Prompt's text when not subscribed */
+                unsubscribe: "DISATTIVA LE NOTIFICHE", /* Prompt's text when subscribed */
+                explanation: "Rimani aggiornato sulle attività di Alture", /* Optional text appearing before the prompt button */
+              },
+              unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
+            },
+            welcomeNotification: {
+            "title": "Alture",
+            "message": "Grazie per aver attivato le notifiche!",
+            "url": "https://alture.org"
+            }
+          }
+        })
+      });
  
     const Body = styled("div")`
         margin-top: 14vh;
@@ -40,8 +72,8 @@ class Notifications extends Component {
     const paddingLeft = css`
         margin-left: 5%;
     `
-    const hideMe = css`
-        display: none;
+    const marginBottom = css`
+        margin-bottom: 40px;
     `
 
 
@@ -52,7 +84,7 @@ class Notifications extends Component {
                 onClick={() => this.props.history.goBack() } 
             />
             <Body>
-            <h1>Notifiche</h1>
+            <h1 className={marginBottom}>Notifiche</h1>
             <div className="onesignal-customlink-container"></div>
             </Body>
             <Footer>
