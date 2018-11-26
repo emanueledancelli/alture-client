@@ -41,8 +41,6 @@ class SingleEvent extends Component {
     this.getEvents();
   }
 
-  scrollToTop = () => window.scrollTo(0, 0);
-
   getEvents = () => {
     $.get(`/eventi/${this.props.match.params.id}`)
       .then(res => {
@@ -70,6 +68,8 @@ class SingleEvent extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  scrollToTop = () => window.scrollTo(0, 0);
 
   handleMapToggle = () => {
     this.setState({

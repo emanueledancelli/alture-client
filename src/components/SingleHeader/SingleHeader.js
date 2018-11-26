@@ -14,6 +14,10 @@ class SingleHeader extends Component {
     window.addEventListener("scroll", this.handleScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   handleScroll = () => {
     if (window.scrollY > 0) {
       this.setState({

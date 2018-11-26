@@ -1,22 +1,22 @@
-import React from 'react';
-import styled, { css } from "react-emotion";
-import { CloseCircleOutlineIcon } from "mdi-react";
+import React, {Component} from 'react';
+import styled from "react-emotion";
+import { Link } from "react-router-dom";
+import InfoHeader from './InfoHeader';
 
-const Info = props => {
+class Info extends Component {
+    
+    componentDidMount () {
+        this.scrollToTop()
+    }
 
-    const Header = styled("div")`
-        display: flex;
-        height: 14vh;
-        padding-right: 5%;
-        padding-left: 5%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-    `
+    scrollToTop = () => window.scrollTo(0, 0);
+
+    render() {
+ 
     const Body = styled("div")`
+        margin-top: 14vh;
         flex: 1;
         padding: 5%;
-
     `
     const Footer = styled("div")`
         display: flex;
@@ -25,6 +25,12 @@ const Info = props => {
         padding-left: 5%;
         justify-content: space-between;
         align-items: center;
+        color: #828282;
+        border-top: 1px solid rgba(0,0,0,0.2);
+        font-size: 0.8em;
+        & a {
+            color: #828282;
+        }
     `
 
     const Text = styled("p")`
@@ -34,15 +40,29 @@ const Info = props => {
         margin-bottom: 0;
         margin-top: 20px;
     `
+    const ContactLinks = styled('div')`
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 5%;
+        margin-bottom: 8%;
+        & p {
+            color: #333;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        & a {
+            color: #333;
+        }
+
+    `
 
     return (
         <React.Fragment>
-            <Header>
-                <CloseCircleOutlineIcon 
-                    onClick={() => this.props.history.goBack() } 
-                    size={30} 
-                />
-            </Header>
+            <InfoHeader
+                pageTitle="Alture"
+                onClick={() => this.props.history.goBack() } 
+            />
             <Body>
             <h1>Alture</h1>
             <Text> 
@@ -61,13 +81,23 @@ const Info = props => {
                 di quello che siamo e di quello che sentiamo che ci manca. Perchè esplorare, in fondo, significa sognare 
                 di scoprire ciò che possiamo solo immaginare.
             </Text>
+            <ContactLinks>
+                <h3>Contatti</h3>
+                <p><a href="mailto:info@associazioneilcapannone.org">Mail</a></p>            
+                <p><a href="https://www.instagram.com/a.alture/" target="_blank" rel="noopener noreferrer">Instagram</a></p> 
+                <p><a href="https://www.facebook.com/A.Alture/" target="_blank" rel="noopener noreferrer">Facebook</a></p> 
+            </ContactLinks>
             </Body>
             <Footer>
+                <Link to="/privacypolicy">
                 <p>Privacy Policy</p>
-                <p><a href="https://emanueledancelli.com" target="_blank">ED</a></p>
+
+                </Link>
+                <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
             </Footer>
         </React.Fragment>            
     )
+    }
 }
 
 export default Info;
