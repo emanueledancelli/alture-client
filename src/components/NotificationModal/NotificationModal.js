@@ -29,7 +29,7 @@ class NotificationModal extends Component {
       z-index: 100;
       animation: ${slideIn} 0.5s ease-in;
     `;
-    
+
     const Center = css`
       display: flex;
       justify-content: center;
@@ -39,7 +39,7 @@ class NotificationModal extends Component {
     return (
       <Shade className={Center} onClick={this.props.onClick}>
         <Container>
-          <div class='onesignal-customlink-container'></div>
+          <div className="onesignal-customlink-container"></div>
         </Container>
       </Shade>
     );
