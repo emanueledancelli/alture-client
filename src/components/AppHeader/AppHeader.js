@@ -29,11 +29,9 @@ const AppHeader = ({ handleNotificationPanel }) => {
         <InfoOutlineIcon className={IconStyle} size={26} />
       </NavLink>
       <Logo />
-      <NotificationsNoneIcon
-        onClick={handleNotificationPanel}
-        className={IconStyle}
-        size={26}
-      />
+      <NavLink to="/notifiche">
+        <NotificationsNoneIcon className={IconStyle} size={26} />
+      </NavLink>
     </Container>
   );
 };

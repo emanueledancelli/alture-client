@@ -39,7 +39,6 @@ h1 {
 }
 
 .App {
-  min-height: 100vh;
   max-width: 940px;
   margin: 0 auto;
 }

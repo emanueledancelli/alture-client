@@ -49,15 +49,7 @@ class Privacy extends Component {
             color: #828282;
         }
     `
-
-    const Text = styled("p")`
-        font-size: 1em;
-        line-height: 180%;
-        color: #333;
-        margin-bottom: 0;
-        margin-top: 20px;
-    `   
-
+    
     return (
         <React.Fragment>
             <InfoHeader

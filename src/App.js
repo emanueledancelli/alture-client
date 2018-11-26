@@ -7,11 +7,11 @@ import "./App.css";
 import Home from "./containers/Home/Home";
 import EventView from "./containers/EventView/EventView";
 import Info from "./containers/Info/Info";
-import Privacy from "./containers/Privacy/Privacy"
+import Privacy from "./containers/Privacy/Privacy";
+import Notifications from "./containers/Notifications/Notifications";
 import MapComponent from "./containers/Map/MapComponent";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppNavigation from "./components/AppNavigation/AppNavigation";
-import NotificationModal from "./components/NotificationModal/NotificationModal";
 
 const AllRoutes = location => {
   return (
@@ -20,6 +20,7 @@ const AllRoutes = location => {
       <Route exact path="/mappa" component={MapComponent} />
       <Route exact path="/informazioni" component={Info} />
       <Route exact path="/privacypolicy" component={Privacy} />
+      <Route exact path="/notifiche" component={Notifications} />
       <Route
         exact
         path="/eventi/:id"
@@ -30,16 +31,6 @@ const AllRoutes = location => {
 };
 
 class App extends Component {
-  state = {
-    isNotificationModalVisible: false
-  };
-
-  handleNotificationPanel = () => {
-    this.setState({
-      isNotificationModalVisible: !this.state.isNotificationModalVisible
-    });
-  };
-
   render() {
     return (
       <Provider store={store}>
@@ -49,22 +40,18 @@ class App extends Component {
             <div className="App">
               { location.pathname.startsWith("/eventi/") 
                 || location.pathname.startsWith("/informazioni")
-                || location.pathname.startsWith("/privacypolicy") ? null : (
-                <AppHeader
-                  handleNotificationPanel={this.handleNotificationPanel}
-                />
+                || location.pathname.startsWith("/privacypolicy")
+                || location.pathname.startsWith("/notifiche") ? null : (
+                <AppHeader />
               )}
 
               {AllRoutes(location)}
 
               { location.pathname.startsWith("/eventi/") 
                 || location.pathname.startsWith("/informazioni")
-                || location.pathname.startsWith("/privacypolicy") ? null : (
+                || location.pathname.startsWith("/privacypolicy")
+                || location.pathname.startsWith("/notifiche") ? null : (
                 <AppNavigation />
-              )}
-
-              {this.state.isNotificationModalVisible && (
-                <NotificationModal onClick={this.handleNotificationPanel} />
               )}
             </div>
           )}
