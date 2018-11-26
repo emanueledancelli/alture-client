@@ -4,46 +4,41 @@ import { Link } from "react-router-dom";
 import InfoHeader from '../Info/InfoHeader';
 
 class Notifications extends Component {
+    state = {
+        isSubscribed: true,
+        supported: true
+    }
     
     componentDidMount () {
         this.scrollToTop()
+        this.handleNotification()
     }
 
     scrollToTop = () => window.scrollTo(0, 0);
 
-    
+    subscribe = () => {
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(["registerForPushNotifications"]);
+      }
+
+    handleNotification = () => {
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+        if (!OneSignal.isPushNotificationsSupported()) {
+            this.setState({ supported: false })
+            return; //if not supported fuck it show info
+        }
+        OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+            if (isEnabled) {
+                this.setState({ isSubscribed: true }) // show already subscribed prompt
+            } else {
+                this.setState({ isSubscribed: false }) // showsubscribe prompt, onclick launch this.subscribe
+            }
+        });
+    });
+    }
 
     render() {
-
-    var OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-          OneSignal.init({
-            appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6",
-            allowLocalhostAsSecureOrigin: true,
-            promptOptions: {
-            customlink: {
-              enabled: true, /* Required to use the Custom Link */
-              style: "button", /* Has value of 'button' or 'link' */
-              size: "medium", /* One of 'small', 'medium', or 'large' */
-              color: {
-                button: '#E12D30', /* Color of the button background if style = "button" */
-                text: '#FFFFFF', /* Color of the prompt's text */
-              },
-              text: {
-                subscribe: "ATTIVA LE NOTIFICHE", /* Prompt's text when not subscribed */
-                unsubscribe: "DISATTIVA LE NOTIFICHE", /* Prompt's text when subscribed */
-                explanation: "Rimani aggiornato sulle attività di Alture", /* Optional text appearing before the prompt button */
-              },
-              unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
-            },
-            welcomeNotification: {
-            "title": "Alture",
-            "message": "Grazie per aver attivato le notifiche!",
-            "url": "https://alture.org"
-            }
-          }
-        })
-      });
  
     const Body = styled("div")`
         margin-top: 14vh;
@@ -85,7 +80,9 @@ class Notifications extends Component {
             />
             <Body>
             <h1 className={marginBottom}>Notifiche</h1>
-            <div className="onesignal-customlink-container"></div>
+            {/* <div className="onesignal-customlink-container"></div> */}
+            { this.state.isSubscribed ? (<p>DISATTIVA LE NOTIFICHE</p>) : (<p onClick={this.subscribe}>ATTIVA LE NOTIFICHE</p>)}
+            { this.state.supported ? null : <p>Le notifiche non sono supportate dal browser in uso ;(</p>}
             </Body>
             <Footer>
                 <div className={paddingLeft}>
