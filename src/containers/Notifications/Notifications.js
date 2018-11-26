@@ -4,39 +4,14 @@ import { Link } from "react-router-dom";
 import InfoHeader from '../Info/InfoHeader';
 
 class Notifications extends Component {
-    state = {
-        isSubscribed: true,
-        supported: true
-    }
     
     componentDidMount () {
         this.scrollToTop()
-        this.handleNotification()
     }
 
     scrollToTop = () => window.scrollTo(0, 0);
 
-    subscribe = () => {
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(["registerForPushNotifications"]);
-      }
-
-    handleNotification = () => {
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-        if (!OneSignal.isPushNotificationsSupported()) {
-            this.setState({ supported: false })
-            return; //if not supported fuck it show info
-        }
-        OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-            if (isEnabled) {
-                this.setState({ isSubscribed: true }) // show already subscribed prompt
-            } else {
-                this.setState({ isSubscribed: false }) // showsubscribe prompt, onclick launch this.subscribe
-            }
-        });
-    });
-    }
+    
 
     render() {
  
@@ -80,9 +55,7 @@ class Notifications extends Component {
             />
             <Body>
             <h1 className={marginBottom}>Notifiche</h1>
-            {/* <div className="onesignal-customlink-container"></div> */}
-            { this.state.isSubscribed ? (<p>DISATTIVA LE NOTIFICHE</p>) : (<p onClick={this.subscribe}>ATTIVA LE NOTIFICHE</p>)}
-            { this.state.supported ? null : <p>Le notifiche non sono supportate dal browser in uso ;(</p>}
+            <div className="onesignal-customlink-container"></div>
             </Body>
             <Footer>
                 <div className={paddingLeft}>
