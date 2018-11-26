@@ -51,7 +51,7 @@ class NotificationModal extends Component {
 
     return (
       <Shade className={Center} onClick={this.props.onClick}>
-        {this.state.isNotificationOn ? (
+       {/*  {this.state.isNotificationOn ? (
           <Container>
             <p>Le notifiche sono attivate</p>
             <p className={redPlease} onClick={this.handleNotification}>
@@ -65,7 +65,8 @@ class NotificationModal extends Component {
               ATTIVA LE NOTIFICHE
             </p>
           </Container>
-        )}
+        )} */}
+        <div class='onesignal-customlink-container'></div>
       </Shade>
     );
   }
