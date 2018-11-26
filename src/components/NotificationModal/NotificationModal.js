@@ -36,10 +36,19 @@ class NotificationModal extends Component {
       align-items: center;
     `;
 
+    const white = css`
+          background-color: white;
+          position: fixed;
+          top:0;
+          left:0;
+          height: 100vh;
+          width: 100%;
+    `
+
     return (
-      <Shade className={Center} onClick={this.props.onClick}>
-          <div className="onesignal-customlink-container"></div>
-      </Shade>
+      <div className={white}>
+          <div className="onesignal-customlink-container"></div>        
+      </div>
     );
   }
 }
