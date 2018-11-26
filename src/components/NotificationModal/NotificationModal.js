@@ -38,9 +38,7 @@ class NotificationModal extends Component {
 
     return (
       <Shade className={Center} onClick={this.props.onClick}>
-        <Container>
           <div className="onesignal-customlink-container"></div>
-        </Container>
       </Shade>
     );
   }
