@@ -4,15 +4,6 @@ import styled, { css, keyframes } from "react-emotion";
 import Shade from "../Shade/Shade";
 
 class NotificationModal extends Component {
-  state = {
-    isNotificationOn: false
-  };
-
-  handleNotification = () => {
-    this.setState({
-      isNotificationOn: !this.state.isNotificationOn
-    });
-  };
 
   render() {
     const slideIn = keyframes`
@@ -38,35 +29,18 @@ class NotificationModal extends Component {
       z-index: 100;
       animation: ${slideIn} 0.5s ease-in;
     `;
+    
     const Center = css`
       display: flex;
       justify-content: center;
       align-items: center;
     `;
 
-    const redPlease = css`
-      color: #eb5757;
-      font-weight: 700;
-    `;
-
     return (
       <Shade className={Center} onClick={this.props.onClick}>
-       {/*  {this.state.isNotificationOn ? (
-          <Container>
-            <p>Le notifiche sono attivate</p>
-            <p className={redPlease} onClick={this.handleNotification}>
-              DISATTIVA LE NOTIFICHE
-            </p>
-          </Container>
-        ) : (
-          <Container>
-            <p>Rimani aggiornato sulle attività di Alture360</p>
-            <p className={redPlease} onClick={this.handleNotification}>
-              ATTIVA LE NOTIFICHE
-            </p>
-          </Container>
-        )} */}
-        <div class='onesignal-customlink-container'></div>
+        <Container>
+          <div class='onesignal-customlink-container'></div>
+        </Container>
       </Shade>
     );
   }
