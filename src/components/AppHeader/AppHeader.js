@@ -1,18 +1,11 @@
 import React from "react";
-import styled, { css, keyframes } from "react-emotion";
+import styled, { css } from "react-emotion";
 import { NavLink } from "react-router-dom";
 import { InfoOutlineIcon, NotificationsNoneIcon} from "mdi-react";
 import Logo from "../../logo300x90.png";
 
 const AppHeader = () => {
-    const Shake = keyframes`
-    from {
-      transform: rotate(10deg)
-    }
-    to {
-      transform: rotate(-10deg)
-    }
-  `;
+
   const Container = styled("div")`
     display: flex;
     flex-direction: row;
