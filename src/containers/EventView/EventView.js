@@ -112,7 +112,7 @@ class SingleEvent extends Component {
     `;
     
     const Description = css`
-      padding-top: 5%;
+      padding-top: 3%;
       padding-right: 5%;
       padding-left: 5%;
     `;
@@ -124,6 +124,10 @@ class SingleEvent extends Component {
       animation: ${fadeIn} 0.5s ease-out;
       margin-bottom: 0;
       margin-top: 20px;
+      & a {
+        color: #333;
+        text-decoration: underline;
+      }
     `;
     
     const informazioni = css`
@@ -132,6 +136,11 @@ class SingleEvent extends Component {
       color: #728dc3;
       padding-bottom: 30px;
     `;
+
+    const padfx = css`
+      color: #333;
+      font-size: 1.3em;
+    `
     
     const InfoText = styled("p")`
       margin: 0px;
@@ -153,15 +162,15 @@ class SingleEvent extends Component {
     `;
 
     const MapToggler = styled("span")`
-      color: #728dc3;
+      color: #333;
       text-decoration: underline;
       font-family: Lato;
-      font-weight: 500;
+      font-weight: 600;
     `;
 
     const iconStyle = css`
       padding-right: 8px;
-      color: #728dc3;
+      color: #6D9B8D;
     `;
 
     const {
@@ -221,7 +230,7 @@ class SingleEvent extends Component {
           />
         )}
         <div className={Description}>
-          <span className={informazioni}>Informazioni</span>
+          <h3 className={padfx}>Informazioni</h3>
           <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
         </div>
         <CallToAction mail={selectedEvent.email_organizzatore} />

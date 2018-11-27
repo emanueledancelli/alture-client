@@ -31,15 +31,15 @@ const AppNavigation = () => {
     }
   `;
   const Icon = css`
-    color: #b8c6e1;
+    color: rgba(0,0,0,0.2);
   `;
   const Selected = css`
     & svg {
-      color: #728dc3;
+      color: #6D9B8D;
       animation: ${Shake} 0.2s 2 ease-out;
     }
     & span {
-      color: #728dc3;
+      color: #6D9B8D;
     }
   `;
   const navbarStyle = css`
@@ -51,7 +51,7 @@ const AppNavigation = () => {
   const textStyle = css`
     font-size: 0.9em;
     font-weight: 600;
-    color: #b8c6e1;
+    color: rgba(0,0,0,0.2);
     margin-top: 3px;
   `;
 

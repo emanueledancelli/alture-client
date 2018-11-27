@@ -6,7 +6,7 @@ const callToAction = props => {
   const Container = styled("div")`
     padding-right: 5%;
     padding-left: 5%;
-    background-color: #e9ecf2;
+    background-color: #6D9B8D;
   `;
 
   const CtaButton = styled("div")`
@@ -18,9 +18,9 @@ const callToAction = props => {
   `;
 
   const Info = styled("p")`
-    font-weight: 700;
-    font-size: 1.3em;
-    color: #728dc3;
+    font-weight: 600;
+    font-size: 1em;
+    color: #fff;
   `;
 
   const marginFixTop = css`

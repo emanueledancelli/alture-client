@@ -23,7 +23,7 @@ const NewInfo = props => {
 
   const iconStyle = css`
     padding-right: 8px;
-    color: #728dc3;
+    color: #6D9B8D;
   `;
 
   return (
