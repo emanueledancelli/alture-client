@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import styled from "react-emotion";
 import InfoHeader from '../Info/InfoHeader';
+import Spinner from '../../components/Spinner/Spinner';
 import $ from "../../config.js";
 
 class Privacy extends Component {
     state = {
+        isLoading: false,
         privacy: ""
     }
 
     componentDidMount () {
+        this.setState({ isLoading: true });
         this.getPrivacy()
         this.scrollToTop()
     }
@@ -18,7 +21,10 @@ class Privacy extends Component {
     getPrivacy = () => {
         $.get(`/pages/60`)
             .then(res => {
-                this.setState({ privacy: res.data.content.rendered })
+                this.setState({ 
+                    privacy: res.data.content.rendered,
+                    isLoading: false
+                 })
             })
             .catch(err => console.log(err));
     };
@@ -29,6 +35,8 @@ class Privacy extends Component {
     
 
     render() {
+    
+    const { isLoading } = this.state
  
     const Body = styled("div")`
         margin-top: 14vh;
@@ -57,7 +65,7 @@ class Privacy extends Component {
                 onClick={() => this.props.history.goBack() } 
             />
             <Body>
-            <div dangerouslySetInnerHTML={this.createPrivacy()}></div>
+            {isLoading ? (<Spinner />) : <div dangerouslySetInnerHTML={this.createPrivacy()}></div>}
             </Body>
             <Footer>
                 <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
