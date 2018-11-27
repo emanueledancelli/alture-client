@@ -40,7 +40,7 @@ export default class NewMarker extends React.Component {
     const dateStyle = css`
       font-size: 1.5em;
       text-transform: capitalize;
-      color: #728dc3;
+      color: #6D9B8D;
     `;
     const date = this.props.date
 

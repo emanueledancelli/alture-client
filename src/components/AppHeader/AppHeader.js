@@ -1,10 +1,18 @@
 import React from "react";
-import styled, { css } from "react-emotion";
+import styled, { css, keyframes } from "react-emotion";
 import { NavLink } from "react-router-dom";
-import { InfoOutlineIcon, NotificationsNoneIcon } from "mdi-react";
+import { InfoOutlineIcon, NotificationsNoneIcon, HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
 import Logo from "../../logo300x90.png";
 
-const AppHeader = ({ handleNotificationPanel }) => {
+const AppHeader = () => {
+    const Shake = keyframes`
+    from {
+      transform: rotate(10deg)
+    }
+    to {
+      transform: rotate(-10deg)
+    }
+  `;
   const Container = styled("div")`
     display: flex;
     flex-direction: row;
@@ -23,18 +31,19 @@ const AppHeader = ({ handleNotificationPanel }) => {
     color: rgba(0,0,0,0.2);
     padding-top: 2px;
   `;
-
-
+  
   return (
-    <Container>
-      <NavLink to="/informazioni">
-        <InfoOutlineIcon className={IconStyle} size={26} />
-      </NavLink>
-      <img src={Logo} alt="Logo" height="20px" />
-      <NavLink to="/notifiche">
-        <NotificationsNoneIcon className={IconStyle} size={26} />
-      </NavLink>
-    </Container>
+    <React.Fragment>
+      <Container>
+        <NavLink to="/informazioni">
+          <InfoOutlineIcon className={IconStyle} size={26} />
+        </NavLink>
+        <img src={Logo} alt="Logo" height="20px" />
+        <NavLink to="/notifiche">
+          <NotificationsNoneIcon className={IconStyle} size={26} />
+        </NavLink>
+      </Container>
+    </React.Fragment>
   );
 };
 

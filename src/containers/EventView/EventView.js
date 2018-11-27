@@ -129,13 +129,7 @@ class SingleEvent extends Component {
         text-decoration: underline;
       }
     `;
-    
-    const informazioni = css`
-      font-weight: 700;
-      font-size: 1.3em;
-      color: #728dc3;
-      padding-bottom: 30px;
-    `;
+
 
     const padfx = css`
       color: #333;
@@ -179,7 +173,7 @@ class SingleEvent extends Component {
       isMapOpen,
       slicedName
     } = this.state;
-    const currentUrl = "https://alture.org/eventi" + this.props.location.pathname;
+    const currentUrl = "https://alture.org" + this.props.location.pathname;
 
     if (isLoading) {
       return <Spinner />;

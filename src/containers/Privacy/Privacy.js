@@ -42,6 +42,9 @@ class Privacy extends Component {
         margin-top: 14vh;
         flex: 1;
         padding: 5%;
+        @media (min-width: 740px) {
+            padding: 0%;
+          }
     `
     const Footer = styled("div")`
         display: flex;
@@ -56,6 +59,9 @@ class Privacy extends Component {
         & a {
             color: #828282;
         }
+        @media (min-width: 740px) {
+            padding: 0%;
+          }
     `
     
     return (

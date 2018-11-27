@@ -50,6 +50,9 @@ class InfoHeader extends Component {
         & svg {
             color: #bdbdbd;
         }
+        @media (min-width: 740px) {
+          display: none;
+        }
     `
     const scrolled = css`
       height: 10vh !important;

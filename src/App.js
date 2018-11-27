@@ -12,6 +12,7 @@ import Notifications from "./containers/Notifications/Notifications";
 import MapComponent from "./containers/Map/MapComponent";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppNavigation from "./components/AppNavigation/AppNavigation";
+import DesktopNavbar from "./components/DesktopNavbar/DesktopNavbar"
 
 const AllRoutes = location => {
   return (
@@ -38,6 +39,7 @@ class App extends Component {
           onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
             <div className="App">
+              <DesktopNavbar />
               { location.pathname.startsWith("/eventi/") 
                 || location.pathname.startsWith("/informazioni")
                 || location.pathname.startsWith("/privacypolicy")

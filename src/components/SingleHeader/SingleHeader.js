@@ -60,6 +60,9 @@ class SingleHeader extends Component {
       color: transparent;
       transition: all 0.3s ease-in;
       z-index: 97;
+      @media (min-width: 740px) {
+        display: none;
+      }
     `;
     const IconStyle = css`
       color: #fff;

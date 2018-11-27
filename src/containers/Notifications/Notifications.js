@@ -11,13 +11,16 @@ class Notifications extends Component {
 
     scrollToTop = () => window.scrollTo(0, 0);
 
-    
+    reloadPage = () => Location.reload() 
 
     render() {
  
     const Body = styled("div")`
         margin-top: 14vh;
         padding: 5%;
+        @media (min-width: 740px) {
+            padding: 0%;
+          }
     `
     const Footer = styled("div")`
         display: flex;
@@ -33,15 +36,24 @@ class Notifications extends Component {
         & a {
             color: #828282;
         }
+        @media (min-width: 740px) {
+            width: 940px;
+          }
     `
     
     const paddingRight = css`
         padding-right: 5%;
+        @media (min-width: 740px) {
+            padding: 0%;
+          }
     `
 
     const paddingLeft = css`
-        margin-left: 5%;
-    `
+        padding-left: 5%;
+        @media (min-width: 740px) {
+            padding: 0%;
+          }
+        `
     const marginBottom = css`
         margin-bottom: 40px;
     `
