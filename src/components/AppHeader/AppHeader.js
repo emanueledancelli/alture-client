@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css, keyframes } from "react-emotion";
 import { NavLink } from "react-router-dom";
-import { InfoOutlineIcon, NotificationsNoneIcon, HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
+import { InfoOutlineIcon, NotificationsNoneIcon} from "mdi-react";
 import Logo from "../../logo300x90.png";
 
 const AppHeader = () => {
