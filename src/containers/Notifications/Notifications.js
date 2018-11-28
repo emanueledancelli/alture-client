@@ -7,18 +7,29 @@ class Notifications extends Component {
     
     componentDidMount () {
         this.scrollToTop()
+        this.initOneSignal("mount")
+    }
+
+    componentWillUnmount() {
         this.initOneSignal()
     }
 
     scrollToTop = () => window.scrollTo(0, 0);
 
-    initOneSignal = () => {
-        var SDK= document.createElement('script');
+    initOneSignal = (param) => {
+        var SDK = document.createElement('script');
         SDK.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
-        document.head.appendChild(SDK);
-        var script= document.createElement('script');
+        var script = document.createElement('script');
         script.text = "var OneSignal = window.OneSignal || [];\r\n  OneSignal.push(function() {\r\n    OneSignal.init({\r\n      appId: \"b80e7963-2d68-4e15-ad8d-c79702ee21e6\",\r\n    });\r\n  });";
-        document.head.appendChild(script);
+        
+        if(param = "mount") {
+            document.head.appendChild(SDK);
+            document.head.appendChild(script);
+        }
+        else {
+            document.head.removeChild(SDK);
+            document.head.removeChild(script);
+        }
     }
 
     render() {
