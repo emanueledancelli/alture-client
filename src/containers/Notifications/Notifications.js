@@ -1,18 +1,25 @@
 import React, {Component} from 'react';
 import styled, {css} from "react-emotion";
 import { Link } from "react-router-dom";
-import {Helmet} from "react-helmet";
 import InfoHeader from '../Info/InfoHeader';
 
 class Notifications extends Component {
     
     componentDidMount () {
         this.scrollToTop()
+        this.initOneSignal()
     }
 
     scrollToTop = () => window.scrollTo(0, 0);
 
-    reloadPage = () => Location.reload() 
+    initOneSignal = () => {
+        var SDK= document.createElement('script');
+        SDK.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
+        document.head.appendChild(SDK);
+        var script= document.createElement('script');
+        script.text = "var OneSignal = window.OneSignal || [];\r\n  OneSignal.push(function() {\r\n    OneSignal.init({\r\n      appId: \"b80e7963-2d68-4e15-ad8d-c79702ee21e6\",\r\n    });\r\n  });";
+        document.head.appendChild(script);
+    }
 
     render() {
  
@@ -62,12 +69,6 @@ class Notifications extends Component {
 
     return (
         <React.Fragment>
-
-            <Helmet>
-                <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-                <script src="./OneSignal.js" async=""></script>
-            </Helmet>
-
             <InfoHeader
                 pageTitle="Notifiche"
                 onClick={() => this.props.history.goBack() } 
