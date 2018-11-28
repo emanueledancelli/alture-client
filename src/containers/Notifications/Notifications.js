@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import styled, {css} from "react-emotion";
 import { Link } from "react-router-dom";
 import InfoHeader from '../Info/InfoHeader';
+import Spinner from '../../components/Spinner/Spinner';
 
 class Notifications extends Component {
+    state = {
+        isLoading : true
+    }
     
     componentDidMount () {
+        setTimeout(this.renderPage, 1500)
         this.scrollToTop()
         this.initOneSignal("mount")
     }
@@ -14,9 +19,15 @@ class Notifications extends Component {
         this.initOneSignal()
     }
 
+    renderPage = () => {
+        this.setState({
+            isLoading: false
+        })
+    }
+
     scrollToTop = () => window.scrollTo(0, 0);
 
-    initOneSignal = (param) => {
+    initOneSignal = param => {
         var SDK = document.createElement('script');
         SDK.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
         var script = document.createElement('script');
@@ -33,7 +44,8 @@ class Notifications extends Component {
     }
 
     render() {
- 
+    let { isLoading } = this.state
+        
     const Body = styled("div")`
         margin-top: 14vh;
         padding: 5%;
@@ -76,8 +88,9 @@ class Notifications extends Component {
     const marginBottom = css`
         margin-bottom: 40px;
     `
-
-
+    if(isLoading) {
+        return ( <Spinner /> ) 
+    }
     return (
         <React.Fragment>
             <InfoHeader
