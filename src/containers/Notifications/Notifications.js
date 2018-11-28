@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled, {css} from "react-emotion";
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 import InfoHeader from '../Info/InfoHeader';
 
 class Notifications extends Component {
@@ -61,6 +62,12 @@ class Notifications extends Component {
 
     return (
         <React.Fragment>
+
+            <Helmet>
+                <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+                <script src="./OneSignal.js" async=""></script>
+            </Helmet>
+
             <InfoHeader
                 pageTitle="Notifiche"
                 onClick={() => this.props.history.goBack() } 
