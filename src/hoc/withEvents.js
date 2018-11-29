@@ -24,7 +24,8 @@ const withEvents = WrappedComponent => {
     }
 
     getDate = () => {
-      let dateObj = new Date();
+      let today = new Date()
+      let dateObj = new Date(today.getTime() - (24 * 60 * 60 * 1000));
       let month = dateObj.getUTCMonth() + 1; 
       let day = dateObj.getUTCDate();
       let year = dateObj.getUTCFullYear();
@@ -35,8 +36,10 @@ const withEvents = WrappedComponent => {
     fetchEvents = () => {
       $.get("/eventi/?filter[meta_key]=data_inizio&filter[meta_value]=" + this.state.today + "&filter[meta_compare]=>")
         .then(res => {
+          console.log(res)
           let sortedEvents = _.orderBy(res.data, "acf.data_inizio");
           this.setState({ events: sortedEvents, isLoading: false });
+          console.log(this.state.events)
         })
         .catch(err => console.log(err));
     };

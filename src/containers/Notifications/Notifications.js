@@ -36,10 +36,12 @@ class Notifications extends Component {
         if(param = "mount") {
             document.head.appendChild(SDK);
             document.head.appendChild(script);
+            return
         }
         else {
             document.head.removeChild(SDK);
             document.head.removeChild(script);
+            return
         }
     }
 
