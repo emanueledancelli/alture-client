@@ -8,6 +8,8 @@ Development version *on staging branch* [here](https://staging.alture.org).
 
 Alture works by fetching data from a RestAPI provided by a headless installation of WordPress, more info.
 
+&nbsp;
+
 ## Getting started
 
 Be sure to have [Node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and [Git](https://git-scm.com/) installed on your machine before starting.
@@ -32,6 +34,8 @@ or
 
 Alture uses create-react-app scripts, for more info [create-react-app](https://github.com/facebook/create-react-app)
 
+&nbsp;
+
 ## Built with:
 
 The App is made with [React](https://reactjs.org/) and it uses a few other libraries.
@@ -43,9 +47,13 @@ The App is made with [React](https://reactjs.org/) and it uses a few other libra
 - Http client [axios](https://github.com/axios/axios)
 - Utilities [lodash](https://github.com/lodash/lodash)
 
+&nbsp;
+
 ## Author(s)
 
 Emanuele Dancelli - [GitHub](https://github.com/emanueledancelli) - [Website](https://emanueledancelli.com)
+
+&nbsp;
 
 ## License
 
