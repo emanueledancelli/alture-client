@@ -1,10 +1,12 @@
-# Alture360, client
+# Alture
 
-This is the client side of [Alture360 Progressive Web App](https://alture360.surge.sh).
+This is the client side of [Alture](https://alture.org) Progressive Web App.
 
-You can check the live version of the PWA [here](https://alture360.surge.sh).
+Live version *on master branch* [here](https://alture.org).
 
-Serverside API is found at [Alture360, server](https://github.com/emanueledancelli/Alture360-server).
+Development version *on staging branch* [here](https://staging.alture.org).
+
+Alture works by fetching data from a RestAPI provided by a headless installation of WordPress, more info.
 
 ## Getting started
 
@@ -12,11 +14,11 @@ Be sure to have [Node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) an
 
 Download or clone this repository:
 
-`git clone https://github.com/emanueledancelli/Alture360-client`
+`git clone https://github.com/emanueledancelli/alture.org-client`
 
 cd into project folder and install dependecies
 
-`cd alture360-client`
+`cd alture.org-client`
 
 `npm i`
 
@@ -24,7 +26,11 @@ Develop locally with
 
 `npm run start`
 
-Alture360 uses create-react-app scripts, for more info [create-react-app](https://github.com/facebook/create-react-app)
+or 
+
+`yarn start`
+
+Alture uses create-react-app scripts, for more info [create-react-app](https://github.com/facebook/create-react-app)
 
 ## Built with:
 
