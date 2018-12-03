@@ -1,5 +1,2 @@
 # Let react-router handle routing
 /* /index.html 200
-
-# Redirect default Netlify subdomain to primary domain
-https://alture-staging.netlify.com/* https://staging.alture.org/:splat 301!
