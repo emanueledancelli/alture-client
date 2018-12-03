@@ -13,8 +13,6 @@ const NewMap = withScriptjs(
       let parsedLong = parseFloat(e.acf.longitudine);
       let formattedDate = moment(e.acf.data_inizio).locale("it").format("MMMM D, YYYY");
 
-
-
       return    (<NewMarker
                     location = {{ lat: parsedLat, lng: parsedLong }}
                     name = {e.title.rendered}

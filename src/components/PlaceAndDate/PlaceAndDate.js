@@ -7,7 +7,7 @@ const PlaceAndDate = props => {
       margin: "0px",
       paddingTop: "0.5em",
       fontSize: "1em",
-      fontWeight: "500",
+      fontWeight: "400",
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-start",
@@ -16,7 +16,7 @@ const PlaceAndDate = props => {
     mona: {
       margin: "0px",
       fontSize: "1em",
-      fontWeight: "500",
+      fontWeight: "400",
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-start",

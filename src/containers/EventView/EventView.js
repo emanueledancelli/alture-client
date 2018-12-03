@@ -142,7 +142,7 @@ class SingleEvent extends Component {
       margin: 0px;
       padding-top: 0.5em;
       font-size: 1em;
-      font-weight: 500;
+      font-weight: 400;
       display: flex;
       text-transform: capitalize;
       flex-direction: row;

@@ -19,8 +19,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# netlify
-/public/robots.txt
-/public/_redirects*
-/public/_redirects*.*

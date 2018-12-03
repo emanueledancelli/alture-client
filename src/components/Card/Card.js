@@ -20,6 +20,7 @@ const Card = props => {
     box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${props.backgroundImage}) center;
+    background-size: cover;
   `;
 
   return (

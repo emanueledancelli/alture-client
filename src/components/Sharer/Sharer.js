@@ -52,8 +52,8 @@ const Sharer = props => {
     align-items: center;
   `;
 
-  const Paragraph = styled("span")`
-    font-weight: 600;
+  const Paragraph = styled("p")`
+    font-weight: 400;
     font-size: 1em;
     color: #333333;
     margin-top: 10px;

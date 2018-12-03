@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Spinner from "../components/Spinner/Spinner";
-import _ from 'lodash';
+import orderBy from 'lodash/orderBy'
 import $ from "../config";
 
 const withEvents = WrappedComponent => {
@@ -40,7 +40,7 @@ const withEvents = WrappedComponent => {
         })
         .then(() => {
           //let filteredEvents = this.state.events.filter(e => e.acf.data_inizio >= this.state.today)
-          let sortedEvents = _.orderBy(this.state.events, "acf.data_inizio");
+          let sortedEvents = orderBy(this.state.events, "acf.data_inizio");
           this.setState({ events: sortedEvents })
         })
         .catch(err => console.log(err));
