@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled, { css, keyframes } from "react-emotion";
+import moment from "moment";
+import "moment/locale/it";
 import {
   LabelIcon,
   LocationIcon,
@@ -174,6 +176,7 @@ class SingleEvent extends Component {
       slicedName
     } = this.state;
     const currentUrl = "https://alture.org" + this.props.location.pathname;
+    const dataInizio = moment(selectedEvent.data_inizio).locale("it").format("MMMM D, YYYY")
 
     if (isLoading) {
       return <Spinner />;
@@ -198,7 +201,7 @@ class SingleEvent extends Component {
             </InfoText>
             <InfoText>
               <AccessTimeIcon className={iconStyle} size={20} />
-              {selectedEvent.data_inizio} &ensp; {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
+              {dataInizio} &ensp; {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
             </InfoText>
             {isMapOpen ? (
               <InfoText onClick={this.handleMapToggle}>
