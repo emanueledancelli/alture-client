@@ -10,7 +10,7 @@ class Notifications extends Component {
     }
     
     componentDidMount () {
-        setTimeout(this.renderPage, 1500)
+        setTimeout(this.renderPage, 1000)
         this.scrollToTop()
         this.initOneSignal("mount")
     }
