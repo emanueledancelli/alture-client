@@ -85,7 +85,7 @@ class SingleHeader extends Component {
 
     return (
 
-      <React.Fragment>
+      <>
 
         <div className={container + " " + (isScrolled ? scrolledDiv : "")}>
           <div onClick={this.props.onClick}>
@@ -101,7 +101,7 @@ class SingleHeader extends Component {
 
         { isSharingOpen && <Sharer url={this.props.url} onClick={this.sharerComponentHandler} /> }
       
-      </React.Fragment>
+      </>
 
     );
   }

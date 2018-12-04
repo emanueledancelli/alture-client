@@ -10,10 +10,10 @@ import {
 } from "mdi-react";
 import $ from "../../config.js";
 
-import SingleHeader from "./components/SingleHeader.js";
-import Spinner from "../../components/common/Spinner.js";
-import Header from "./components/Header.js";
-import CallToAction from "./components/CallToAction.js";
+import SingleHeader from "./components/EventHeader";
+import Spinner from "../../components/common/Spinner";
+import Header from "./components/Header";
+import Contact from "./components/Contact";
 
 export default class SingleEvent extends Component {
   state = {
@@ -190,7 +190,7 @@ export default class SingleEvent extends Component {
       return <Spinner />;
     }
     return (
-      <React.Fragment>
+      <>
         <SingleHeader
           url={currentUrl}
           name={slicedName}
@@ -219,8 +219,8 @@ export default class SingleEvent extends Component {
           <h3 className={padfx}>Informazioni</h3>
           <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
         </div>
-        <CallToAction mail={selectedEvent.email_organizzatore} />
-      </React.Fragment>
+        <Contact mail={selectedEvent.email_organizzatore} />
+      </>
     );
   }
 }

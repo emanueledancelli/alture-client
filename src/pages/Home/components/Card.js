@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.scss";
 
-import PlaceAndDate from "./PlaceAndDate";
+import CardDetails from "./CardDetails";
 
 const Card = props => {
 
@@ -16,8 +16,7 @@ const Card = props => {
           {props.title}
         </h1>
         <div>
-          <PlaceAndDate
-            className="white"
+          <CardDetails
             location={props.location}
             date={props.date}
             endDate={props.end}

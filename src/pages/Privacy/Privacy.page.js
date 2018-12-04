@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import styled from "react-emotion";
-import InfoHeader from '../../components/PagesHeader';
+import "./Privacy.page.scss"
+
+import PagesHeader from '../../components/PagesHeader';
 import Spinner from '../../components/common/Spinner';
-import $ from "../../config.js";
+import axios from "../../config.js";
 
 class Privacy extends Component {
     state = {
@@ -19,7 +20,7 @@ class Privacy extends Component {
     scrollToTop = () => window.scrollTo(0, 0);
 
     getPrivacy = () => {
-        $.get(`/pages/60`)
+        axios.get(`/pages/60`)
             .then(res => {
                 this.setState({ 
                     privacy: res.data.content.rendered,
@@ -35,49 +36,28 @@ class Privacy extends Component {
     
 
     render() {
-    
-    const { isLoading } = this.state
- 
-    const Body = styled("div")`
-        margin-top: 14vh;
-        flex: 1;
-        padding: 5%;
-        @media (min-width: 740px) {
-            padding: 0%;
-          }
-    `
-    const Footer = styled("div")`
-        display: flex;
-        flex-direction: row;
-        padding-right: 5%;
-        padding-left: 5%;
-        justify-content: flex-end;
-        align-items: center;
-        color: #828282;
-        border-top: 1px solid rgba(0,0,0,0.2);
-        font-size: 0.8em;
-        & a {
-            color: #828282;
+        const { isLoading } = this.state
+
+        if(isLoading) {
+            return <Spinner />
         }
-        @media (min-width: 740px) {
-            padding: 0%;
-          }
-    `
-    
-    return (
-        <React.Fragment>
-            <InfoHeader
-                pageTitle="Privacy Policy"
-                onClick={() => this.props.history.goBack() } 
-            />
-            <Body>
-            {isLoading ? (<Spinner />) : <div dangerouslySetInnerHTML={this.createPrivacy()}></div>}
-            </Body>
-            <Footer>
-                <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
-            </Footer>
-        </React.Fragment>            
-    )
+        return (
+            <>
+
+                <PagesHeader
+                    pageTitle="Privacy Policy"
+                    onClick={() => this.props.history.goBack() } 
+                />
+
+                <div className="privacy__body">
+                    <div dangerouslySetInnerHTML={this.createPrivacy()}></div>
+                </div>
+                <div className="privacy__footer">
+                    <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
+                </div>
+
+            </>            
+        );
     }
 }
 

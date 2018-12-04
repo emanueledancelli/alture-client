@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import styled, {css} from "react-emotion";
+import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
-import InfoHeader from '../../components/PagesHeader';
+
+import PagesHeader from '../../components/PagesHeader';
 import Spinner from '../../components/common/Spinner';
 
 class Notifications extends Component {
@@ -48,70 +49,37 @@ class Notifications extends Component {
     render() {
     let { isLoading } = this.state
         
-    const Body = styled("div")`
-        margin-top: 14vh;
-        padding: 5%;
-        @media (min-width: 740px) {
-            padding: 0%;
-          }
-    `
-    const Footer = styled("div")`
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        color: #828282;
-        border-top: 1px solid rgba(0,0,0,0.2);
-        font-size: 0.8em;
-        & a {
-            color: #828282;
-        }
-        @media (min-width: 740px) {
-            width: 940px;
-          }
-    `
-    
-    const paddingRight = css`
-        padding-right: 5%;
-        @media (min-width: 740px) {
-            padding: 0%;
-          }
-    `
-
-    const paddingLeft = css`
-        padding-left: 5%;
-        @media (min-width: 740px) {
-            padding: 0%;
-          }
-        `
-    const marginBottom = css`
-        margin-bottom: 40px;
-    `
     if(isLoading) {
         return ( <Spinner /> ) 
     }
     return (
-        <React.Fragment>
-            <InfoHeader
+        <>
+
+            <PagesHeader
                 pageTitle="Notifiche"
                 onClick={() => this.props.history.goBack() } 
             />
-            <Body>
-            <h1 className={marginBottom}>Notifiche</h1>
-            <div className="onesignal-customlink-container"></div>
-            </Body>
-            <Footer>
-                <div className={paddingLeft}>
+
+            <div className="not__body">
+                <h1 className="not--mb">Notifiche</h1>
+
+                <div className="onesignal-customlink-container"></div>
+            
+            </div>
+            <div className="not__footer">
+                <div className="not--pl">
+
                     <Link to="/privacypolicy">
                         <p>Privacy Policy</p>
                     </Link>
+                
                 </div>
-                <p className={paddingRight}><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
-            </Footer>
-        </React.Fragment>            
+                <p className="not--pr">
+                    <a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a>
+                </p>
+            </div>
+
+        </>            
     )
     }
 }
