@@ -4,15 +4,16 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "./App.scss";
 
-import Home from "./containers/Home/Home";
-import EventView from "./containers/EventView/EventView";
-import Info from "./containers/Info/Info";
-import Privacy from "./containers/Privacy/Privacy";
-import Notifications from "./containers/Notifications/Notifications";
-import MapComponent from "./containers/Map/MapComponent";
-import AppHeader from "./components/AppHeader/AppHeader";
-import AppNavigation from "./components/AppNavigation/AppNavigation";
-import DesktopNavbar from "./components/DesktopNavbar/DesktopNavbar"
+import Home from "./pages/Home/Home.page";
+import EventView from "./pages/Event/Event.page";
+import Info from "./pages/Info/Info.page";
+import Privacy from "./pages/Privacy/Privacy.page";
+import Notifications from "./pages/Notifications/Notifications.page";
+import MapComponent from "./pages/Map/Map.page";
+
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import DesktopHeader from "./components/DesktopHeader"
 
 const AllRoutes = location => {
   return (
@@ -39,12 +40,12 @@ class App extends Component {
           onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
             <div className="App">
-              <DesktopNavbar />
+              <DesktopHeader />
               { location.pathname.startsWith("/eventi/") 
                 || location.pathname.startsWith("/informazioni")
                 || location.pathname.startsWith("/privacypolicy")
                 || location.pathname.startsWith("/notifiche") ? null : (
-                <AppHeader />
+                <Header />
               )}
 
               {AllRoutes(location)}
@@ -53,7 +54,7 @@ class App extends Component {
                 || location.pathname.startsWith("/informazioni")
                 || location.pathname.startsWith("/privacypolicy")
                 || location.pathname.startsWith("/notifiche") ? null : (
-                <AppNavigation />
+                <Navigation />
               )}
             </div>
           )}
