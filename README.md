@@ -2,11 +2,7 @@
 
 This is the client side of [Alture](https://alture.org) Progressive Web App.
 
-Live version *on master branch* [here](https://alture.org).
-
-Development version *on staging branch* [here](https://staging.alture.org).
-
-Alture works by fetching data from a RestAPI provided by a headless installation of WordPress, more info.
+Alture works by fetching data from a RestAPI provided by a headless installation of WordPress, more info coming soon(tm).
 
 &nbsp;
 
@@ -22,15 +18,11 @@ cd into project folder and install dependecies
 
 `cd alture.org-client`
 
-`npm i`
+`npm i` or `yarn`
 
 Develop locally with
 
-`npm run start`
-
-or 
-
-`yarn start`
+`npm run start` or `yarn start`
 
 Alture uses create-react-app scripts, for more info [create-react-app](https://github.com/facebook/create-react-app)
 
