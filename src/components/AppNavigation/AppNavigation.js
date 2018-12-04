@@ -31,7 +31,7 @@ const AppNavigation = () => {
     }
   `;
   const Icon = css`
-    color: rgba(0,0,0,0.2);
+    color: #7f8483;
   `;
   const Selected = css`
     & svg {
@@ -51,7 +51,7 @@ const AppNavigation = () => {
   const textStyle = css`
     font-size: 0.9em;
     font-weight: 600;
-    color: rgba(0,0,0,0.2);
+    color: #7f8483;
     margin-top: 3px;
   `;
 

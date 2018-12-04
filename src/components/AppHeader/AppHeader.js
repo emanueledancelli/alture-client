@@ -21,7 +21,7 @@ const AppHeader = () => {
     }
   `;
   const IconStyle = css`
-    color: rgba(0,0,0,0.2);
+    color: #7f8483;
     padding-top: 2px;
   `;
   
