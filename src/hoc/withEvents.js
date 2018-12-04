@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Spinner from "../components/Spinner/Spinner";
+import Spinner from "../components/common/Spinner";
 import orderBy from 'lodash/orderBy'
 import $ from "../config";
 
