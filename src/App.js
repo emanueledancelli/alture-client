@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import "./App.css";
+import "./App.scss";
 
 import Home from "./containers/Home/Home";
 import EventView from "./containers/EventView/EventView";

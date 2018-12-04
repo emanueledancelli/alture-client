@@ -74,8 +74,8 @@ class SingleHeader extends Component {
       color: #333333 !important;
       opacity: 1 !important;
       font-size: 1em;
-      font-weight: 400;
-      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 1.2);
+      font-weight: 700;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       & svg {
@@ -84,28 +84,25 @@ class SingleHeader extends Component {
     `;
 
     return (
+
       <React.Fragment>
+
         <div className={container + " " + (isScrolled ? scrolledDiv : "")}>
           <div onClick={this.props.onClick}>
-            <ChevronLeftIcon
-              className={IconStyle}
-              size={isScrolled ? 40 : 45}
-            />
+            <ChevronLeftIcon className={IconStyle} size={isScrolled ? 40 : 45} />
           </div>
           <div>
             <span>{this.props.name}</span>
           </div>
           <div onClick={this.shareButtonHandler}>
-            <ShareVariantIcon
-              className={IconStyle}
-              size={isScrolled ? 26 : 30}
-            />
+            <ShareVariantIcon className={IconStyle} size={isScrolled ? 26 : 30} />
           </div>
         </div>
-        {isSharingOpen ? (
-          <Sharer url={this.props.url} onClick={this.sharerComponentHandler} />
-        ) : null}
+
+        { isSharingOpen && <Sharer url={this.props.url} onClick={this.sharerComponentHandler} /> }
+      
       </React.Fragment>
+
     );
   }
 }

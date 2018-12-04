@@ -5,7 +5,8 @@ import "moment/locale/it";
 import {
   LabelIcon,
   LocationIcon,
-  AccessTimeIcon
+  AccessTimeIcon,
+  OpenInNewIcon
 } from "mdi-react";
 import $ from "../../config.js";
 
@@ -15,7 +16,7 @@ import EventHeader from "./EventHeader.js";
 import EventMapComponent from "../../components/EventMap/EventMapComponent";
 import CallToAction from "./calltoaction.js";
 
-class SingleEvent extends Component {
+export default class SingleEvent extends Component {
   state = {
     isLoading: false,
     isMapOpen: false,
@@ -114,7 +115,6 @@ class SingleEvent extends Component {
     `;
     
     const Description = css`
-      padding-top: 3%;
       padding-right: 5%;
       padding-left: 5%;
     `;
@@ -129,9 +129,9 @@ class SingleEvent extends Component {
       & a {
         color: #333;
         text-decoration: underline;
+        font-weight: bold;
       }
     `;
-
 
     const padfx = css`
       color: #333;
@@ -140,7 +140,7 @@ class SingleEvent extends Component {
     
     const InfoText = styled("p")`
       margin: 0px;
-      padding-top: 0.5em;
+      padding-top: 0.7em;
       font-size: 1em;
       font-weight: 400;
       display: flex;
@@ -148,12 +148,15 @@ class SingleEvent extends Component {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      & a {
+        text-decoration: none;
+        color: #333;
+      }
     `;
 
     const InfoContainer = styled("div")`
       display: flex;
       flex-direction: column;
-      height: 15vh;
       justify-content: space-around;
     `;
 
@@ -169,6 +172,11 @@ class SingleEvent extends Component {
       color: #6D9B8D;
     `;
 
+    const superStyle = css`
+      color: #333;
+      padding-left: 5px;
+    `
+
     const {
       selectedEvent,
       isLoading,
@@ -176,6 +184,7 @@ class SingleEvent extends Component {
       slicedName
     } = this.state;
     const currentUrl = "https://alture.org" + this.props.location.pathname;
+    const formattedTitle = selectedEvent.luogo.replace(/[^A-Z0-9]/ig, "+");
     const dataInizio = moment(selectedEvent.data_inizio).locale("it").format("MMMM D, YYYY")
 
     if (isLoading) {
@@ -186,7 +195,6 @@ class SingleEvent extends Component {
         <SingleHeader
           url={currentUrl}
           name={slicedName}
-          image={selectedEvent.immagine}
           onClick={() => this.props.history.push('/')}
         />
         <EventHeader
@@ -196,36 +204,18 @@ class SingleEvent extends Component {
         <MainInfo>
           <InfoContainer>
             <InfoText>
-              <LabelIcon className={iconStyle} size={20} />
-              {selectedEvent.organizzatori}
+              <LabelIcon className={iconStyle} size={20} /> {selectedEvent.organizzatori}
             </InfoText>
             <InfoText>
-              <AccessTimeIcon className={iconStyle} size={20} />
-              {dataInizio} &ensp; {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
+              <AccessTimeIcon className={iconStyle} size={20} /> {dataInizio} &ensp;&ensp; ore: {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
             </InfoText>
-            {isMapOpen ? (
-              <InfoText onClick={this.handleMapToggle}>
-                <LocationIcon className={iconStyle} size={20} />
-                {selectedEvent.luogo}
-                &ensp; - &ensp; <MapToggler>nascondi mappa</MapToggler>
-              </InfoText>
-            ) : (
-              <InfoText onClick={this.handleMapToggle}>
-                <LocationIcon className={iconStyle} size={20} />
-                {selectedEvent.luogo}
-                &ensp; - &ensp; <MapToggler>mostra mappa</MapToggler>
-              </InfoText>
-            )}
+            <InfoText>
+              <LocationIcon className={iconStyle} size={20} /> 
+              <a href={"https://www.google.com/maps/search/" + formattedTitle} target="_blank" rel="noopener noreferrer">{selectedEvent.luogo}</a>
+              <OpenInNewIcon className={superStyle} size={14} />
+            </InfoText>
           </InfoContainer>
         </MainInfo>
-        {isMapOpen && (
-          <EventMapComponent
-            coords={{
-              lat: selectedEvent.latitudine,
-              lng: selectedEvent.longitudine
-            }}
-          />
-        )}
         <div className={Description}>
           <h3 className={padfx}>Informazioni</h3>
           <div dangerouslySetInnerHTML={this.createDescription()} className={descriptionText}></div>
@@ -236,4 +226,3 @@ class SingleEvent extends Component {
   }
 }
 
-export default SingleEvent;
