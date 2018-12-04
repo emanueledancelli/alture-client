@@ -74,8 +74,8 @@ class SingleHeader extends Component {
       color: #333333 !important;
       opacity: 1 !important;
       font-size: 1em;
-      font-weight: 400;
-      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 1.2);
+      font-weight: 700;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
       & svg {

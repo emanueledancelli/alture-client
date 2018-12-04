@@ -16,7 +16,7 @@ import EventHeader from "./EventHeader.js";
 import EventMapComponent from "../../components/EventMap/EventMapComponent";
 import CallToAction from "./calltoaction.js";
 
-class SingleEvent extends Component {
+export default class SingleEvent extends Component {
   state = {
     isLoading: false,
     isMapOpen: false,
@@ -129,6 +129,7 @@ class SingleEvent extends Component {
       & a {
         color: #333;
         text-decoration: underline;
+        font-weight: bold;
       }
     `;
 
@@ -171,6 +172,11 @@ class SingleEvent extends Component {
       color: #6D9B8D;
     `;
 
+    const superStyle = css`
+      color: #333;
+      padding-left: 5px;
+    `
+
     const {
       selectedEvent,
       isLoading,
@@ -201,11 +207,12 @@ class SingleEvent extends Component {
               <LabelIcon className={iconStyle} size={20} /> {selectedEvent.organizzatori}
             </InfoText>
             <InfoText>
-              <AccessTimeIcon className={iconStyle} size={20} /> {dataInizio} &ensp; alle {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
+              <AccessTimeIcon className={iconStyle} size={20} /> {dataInizio} &ensp;&ensp; ore: {selectedEvent.ora_inizio} - {selectedEvent.ora_fine}
             </InfoText>
             <InfoText>
               <LocationIcon className={iconStyle} size={20} /> 
               <a href={"https://www.google.com/maps/search/" + formattedTitle} target="_blank" rel="noopener noreferrer">{selectedEvent.luogo}</a>
+              <OpenInNewIcon className={superStyle} size={14} />
             </InfoText>
           </InfoContainer>
         </MainInfo>
@@ -219,4 +226,3 @@ class SingleEvent extends Component {
   }
 }
 
-export default SingleEvent;
