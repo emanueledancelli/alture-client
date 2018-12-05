@@ -12,6 +12,7 @@
     "mdi-react": "^4.0.0",
     "moment": "^2.22.2",
     "node-sass": "^4.10.0",
+    "normalize.css": "^8.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",
