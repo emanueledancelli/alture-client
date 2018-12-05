@@ -3,7 +3,7 @@ import "./Navigation.scss"
 import { NavLink } from "react-router-dom";
 import { HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
 
-const Navigation = () => {
+export const Navigation = () => {
   
   return (
     <div className="nav__container">
@@ -21,5 +21,3 @@ const Navigation = () => {
     </div>
   );
 };
-
-export default Navigation;

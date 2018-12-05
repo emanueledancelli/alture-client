@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { InfoOutlineIcon, NotificationsNoneIcon, HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
 import Logo from "../logo300x90.png";
 
-const DesktopHeader = () => {
+export const DesktopHeader = () => {
 
   return (
     <>
@@ -42,5 +42,3 @@ const DesktopHeader = () => {
     </>
   );
 };
-
-export default DesktopHeader;

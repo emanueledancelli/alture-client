@@ -34,7 +34,7 @@ export default class SingleEvent extends Component {
       email_organizzatore: "",
       tags: ""     
     },
-    slicedTitle: ''
+    slicedTitle: ""
   };
 
   componentDidMount() {
@@ -60,7 +60,7 @@ export default class SingleEvent extends Component {
               longitudine: parseFloat(res.data.acf.longitudine),
               organizzatori:res.data.acf.organizzatori,
               email_organizzatore:res.data.acf.email_organizzatore,
-              tags: ''
+              tags: ""
               },
 
             isLoading: false });
@@ -194,7 +194,7 @@ export default class SingleEvent extends Component {
         <SingleHeader
           url={currentUrl}
           name={slicedName}
-          onClick={() => this.props.history.push('/')}
+          onClick={() => this.props.history.push("/")}
         />
         <Header
           image={selectedEvent.immagine}

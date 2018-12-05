@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
 
-import PagesHeader from '../../components/PagesHeader';
-import Spinner from '../../components/common/Spinner';
+import { PagesHeader } from "../../components";
+import Spinner from "../../components/common/Spinner";
 
 class Notifications extends Component {
     state = {
@@ -29,9 +29,9 @@ class Notifications extends Component {
     scrollToTop = () => window.scrollTo(0, 0);
 
     initOneSignal = param => {
-        var SDK = document.createElement('script');
+        var SDK = document.createElement("script");
         SDK.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
-        var script = document.createElement('script');
+        var script = document.createElement("script");
         script.text = "var OneSignal = window.OneSignal || [];\r\n  OneSignal.push(function() {\r\n    OneSignal.init({\r\n      appId: \"b80e7963-2d68-4e15-ad8d-c79702ee21e6\",\r\n    });\r\n  });";
         
         if(param = "mount") {

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import "./Privacy.page.scss"
 
-import PagesHeader from '../../components/PagesHeader';
-import Spinner from '../../components/common/Spinner';
+import { PagesHeader } from "../../components";
+import Spinner from "../../components/common/Spinner";
 import axios from "../../config.js";
 
 class Privacy extends Component {

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./Spinner.scss"
-import { SyncIcon } from 'mdi-react';
+import { SyncIcon } from "mdi-react";
 
 const Spinner = () => {
     return (

@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store";
-import "./App.scss";
+import store from "store";
 
-import Home from "./pages/Home/Home.page";
-import EventView from "./pages/Event/Event.page";
-import Info from "./pages/Info/Info.page";
-import Privacy from "./pages/Privacy/Privacy.page";
-import Notifications from "./pages/Notifications/Notifications.page";
-import MapComponent from "./pages/Map/Map.page";
+import "styles/index.scss";
 
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
-import DesktopHeader from "./components/DesktopHeader"
+import { Home } from "pages/Home";
+import EventView from "pages/Event/Event.page";
+import Info from "pages/Info/Info.page";
+import Privacy from "pages/Privacy/Privacy.page";
+import Notifications from "pages/Notifications/Notifications.page";
+import MapComponent from "pages/Map/Map.page";
+
+import { Header, Navigation, DesktopHeader } from "components";
 
 const AllRoutes = location => {
   return (

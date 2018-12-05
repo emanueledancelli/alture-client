@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { InfoOutlineIcon, NotificationsNoneIcon} from "mdi-react";
 import Logo from "../logo300x90.png";
 
-const Header = () => {
+export const Header = () => {
   
   return (
     <>
@@ -20,5 +20,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;

@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import "./PagesHeader.scss"
 import { CloseCircleOutlineIcon } from "mdi-react";
 
 
-class InfoHeader extends Component {
+export class PagesHeader extends Component {
     state = {
         isSharingOpen: false,
         isScrolled: false
@@ -14,7 +14,7 @@ class InfoHeader extends Component {
       }
 
       componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener("scroll", this.handleScroll);
       }
     
     
@@ -48,5 +48,3 @@ class InfoHeader extends Component {
         )
     }
 }
-
-export default InfoHeader;
