@@ -1,0 +1,19 @@
+.ehero {
+
+    &__container {
+        height: 42vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-size: cover;
+    }
+
+    &__paddings {
+        padding: 0 5%;
+        & h1 {
+          margin-bottom: 25px;
+        }
+    }
+
+}
