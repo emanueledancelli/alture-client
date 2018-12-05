@@ -2,7 +2,7 @@ import React from "react";
 import "./DesktopHeader.scss";
 import { NavLink, Link } from "react-router-dom";
 import { InfoOutlineIcon, NotificationsNoneIcon, HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
-import Logo from "../logo300x90.png";
+import Logo from "logo.png";
 
 export const DesktopHeader = () => {
 

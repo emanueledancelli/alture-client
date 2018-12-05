@@ -1,7 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { PagesHeader } from "../../components";
+import { PagesHeader } from "components";
+import { Seo } from "components/common";
+import Logo from "logo.png";
 
 export class Info extends Component {
     
@@ -15,6 +17,13 @@ export class Info extends Component {
 
         return (
             <>
+
+                <Seo 
+                    title="Informazioni - Alture"
+                    description="Informazioni sull'iniziativa Alture" 
+                    url="https://alture.org/informazioni" 
+                    image={Logo}
+                />
 
                 <PagesHeader
                     pageTitle="Alture"

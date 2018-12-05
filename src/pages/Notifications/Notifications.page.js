@@ -3,7 +3,8 @@ import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
 
 import { PagesHeader } from "components";
-import { Spinner } from "components/common";
+import { Spinner, Seo } from "components/common";
+import Logo from "logo.png";
 
 export class Notifications extends Component {
     state = {
@@ -54,6 +55,13 @@ export class Notifications extends Component {
     }
     return (
         <>
+
+            <Seo 
+                title="Notifiche - Alture"
+                description="Rimani aggiornato sull'attività di Alture con le notifiche" 
+                url="https://alture.org/notifiche" 
+                image={Logo}
+            />
 
             <PagesHeader
                 pageTitle="Notifiche"

@@ -4,7 +4,7 @@ import "moment/locale/it";
 import $ from "../../config.js";
 
 import { Hero, Contact, TopBar, Description } from "./components";
-import { Spinner } from "components/common";
+import { Spinner, Seo } from "components/common";
 
 export class Event extends Component {
   state = {
@@ -86,16 +86,12 @@ export class Event extends Component {
   }
 
   render() {
-
-    const {
-      event,
-      isLoading,
-      slicedName
-    } = this.state;
-    const currentUrl = "https://alture.org" + this.props.location.pathname;
-    const formattedTitle = event.luogo.replace(/[^A-Z0-9]/ig, "+");
-    const gmapsUrl = "https://www.google.com/maps/search/" + formattedTitle;
+    const { event, isLoading, slicedName } = this.state;
     const formattedDate = moment(event.data_inizio).locale("it").format("MMMM D, YYYY");
+    const formattedPlace = event.luogo.replace(/[^A-Z0-9]/ig, "+");
+    const currentUrl = "https://alture.org" + this.props.location.pathname;
+    const gmapsUrl = "https://www.google.com/maps/search/" + formattedPlace;
+    const seoDescription = event.title + " si terrà presso " + event.luogo + " il " + formattedDate + ". ";
     const eventTimes = formattedDate + "  ore: " + event.ora_inizio + " " + event.ora_fine;
 
     if (isLoading) {
@@ -103,6 +99,12 @@ export class Event extends Component {
     }
     return (
       <>
+        <Seo 
+          title={event.title + " - Alture"}
+          description={seoDescription}
+          url={currentUrl} 
+          image={event.immagine}
+        />
 
         <TopBar
           url={currentUrl}

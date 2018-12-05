@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./Privacy.page.scss"
 
 import { PagesHeader } from "components";
-import { Spinner } from "components/common";
+import { Spinner, Seo } from "components/common";
 import axios from "config.js";
+import Logo from "logo.png";
 
 export class Privacy extends Component {
     state = {
@@ -43,6 +44,12 @@ export class Privacy extends Component {
         }
         return (
             <>
+                <Seo 
+                    title="Privacy Polici - Alture"
+                    description="Privacy Policy di Alture" 
+                    url="https://alture.org/notifiche" 
+                    image={Logo}
+                />
 
                 <PagesHeader
                     pageTitle="Privacy Policy"
