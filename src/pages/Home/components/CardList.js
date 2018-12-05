@@ -5,7 +5,7 @@ import moment from "moment";
 import "moment/locale/it";
 
 import Card from "./Card.js";
-import withEvents from "../../../hoc/withEvents";
+import withEvents from "hoc/withEvents";
 
 class CardList extends Component {
 
