@@ -20,13 +20,13 @@ export class App extends Component {
 
               <DesktopHeader />
 
-              {location.pathname === ("/") || location.pathname.startsWith("/mappa") 
+              {location.pathname === ("/") || location.pathname.startsWith("/Mappa") 
                 ? <Header />
                 : null }
 
               {Routes(location)}
 
-              {location.pathname === ("/") || location.pathname.startsWith("/mappa") 
+              {location.pathname === ("/") || location.pathname.startsWith("/Mappa") 
                 ? <Navigation />
                 : null }
 
