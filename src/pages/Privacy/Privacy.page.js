@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./Privacy.page.scss"
 
-import { PagesHeader } from "../../components";
-import Spinner from "../../components/common/Spinner";
-import axios from "../../config.js";
+import { PagesHeader } from "components";
+import { Spinner } from "components/common";
+import axios from "config.js";
 
-class Privacy extends Component {
+export class Privacy extends Component {
     state = {
         isLoading: false,
         privacy: ""
@@ -60,5 +60,3 @@ class Privacy extends Component {
         );
     }
 }
-
-export default Privacy;

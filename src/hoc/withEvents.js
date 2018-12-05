@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Spinner from "../components/common/Spinner";
+import { Spinner } from "components/common";
 import orderBy from "lodash/orderBy"
-import $ from "../config";
+import $ from "config";
 
 const withEvents = WrappedComponent => {
   return class withEvents extends Component {

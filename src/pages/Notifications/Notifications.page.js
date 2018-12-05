@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
 
-import { PagesHeader } from "../../components";
-import Spinner from "../../components/common/Spinner";
+import { PagesHeader } from "components";
+import { Spinner } from "components/common";
 
-class Notifications extends Component {
+export class Notifications extends Component {
     state = {
         isLoading : true
     }
@@ -83,5 +83,3 @@ class Notifications extends Component {
     )
     }
 }
-
-export default Notifications;

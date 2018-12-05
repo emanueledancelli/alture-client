@@ -3,7 +3,7 @@ import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { PagesHeader } from "../../components";
 
-class Info extends Component {
+export class Info extends Component {
     
     componentDidMount () {
         this.scrollToTop()
@@ -59,5 +59,3 @@ class Info extends Component {
         );
     }
 }
-
-export default Info;

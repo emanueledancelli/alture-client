@@ -4,10 +4,9 @@ import "moment/locale/it";
 import $ from "../../config.js";
 
 import { Hero, Contact, TopBar, Description } from "./components";
+import { Spinner } from "components/common";
 
-import Spinner from "../../components/common/Spinner";
-
-export default class SingleEvent extends Component {
+export class Event extends Component {
   state = {
     isLoading: false,
     event: {

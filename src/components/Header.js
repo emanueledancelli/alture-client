@@ -1,8 +1,8 @@
 import React from "react";
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
-import { InfoOutlineIcon, NotificationsNoneIcon} from "mdi-react";
-import Logo from "../logo300x90.png";
+import { InfoOutlineIcon, NotificationsNoneIcon } from "mdi-react";
+import Logo from "logo300x90.png";
 
 export const Header = () => {
   

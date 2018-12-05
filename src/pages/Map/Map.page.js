@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import MapContainer from "./components/Container";
 
-class MapComponent extends Component {
+export class Map extends Component {
     render() {
         return (
             <>
@@ -10,5 +10,3 @@ class MapComponent extends Component {
         );
     }
 }
-
-export default MapComponent;
