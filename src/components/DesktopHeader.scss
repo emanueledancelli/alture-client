@@ -1,0 +1,63 @@
+.dheader {
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        width: 940px;
+        background-color: white;
+        height: 12vh;
+        margin-bottom: 40px;
+        justify-content: space-between;
+        align-items: center;
+        color: #333;
+        transition: all 0.3s ease-in;
+        @media (max-width: 740px) {
+          display: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 25px;
+    }
+
+    &__link--active {
+        & svg {
+            color: #6D9B8D;
+            animation: shake 0.2s 2 ease-out;
+          }
+          & span {
+            color: #6D9B8D;
+          }
+    }
+
+    &__text {
+        font-size: 0.9em;
+        font-weight: 600;
+        color: rgba(0,0,0,0.2);
+        margin-top: 3px;
+    }
+    
+    &__icon {
+        color: rgba(0,0,0,0.2);
+        padding-top: 2px;
+    }
+
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(10deg)
+      }
+      to {
+        transform: rotate(-10deg)
+      }
+}

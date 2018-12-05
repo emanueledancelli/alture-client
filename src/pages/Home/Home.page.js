@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CardList from "./components/CardList";
 
-class Home extends Component {
+export class Home extends Component {
   componentDidMount() {
     this.scrollToTop();
   }
@@ -10,11 +10,10 @@ class Home extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <CardList />
-      </React.Fragment>
+      </>
     );
   }
 }
 
-export default Home;

@@ -1,0 +1,23 @@
+.header {
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: white;
+        height: 12vh;
+        justify-content: space-around;
+        align-items: center;
+        color: #333;
+        transition: all 0.3s ease-in;
+        @media (min-width: 740px) {
+          display: none;
+        } 
+    }
+
+    &__icon {
+        color: #7f8483;
+        padding-top: 2px;
+    }
+
+}

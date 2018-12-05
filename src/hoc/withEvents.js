@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Spinner from "../components/common/Spinner";
-import orderBy from 'lodash/orderBy'
-import $ from "../config";
+import { Spinner } from "components/common";
+import orderBy from "lodash/orderBy"
+import $ from "config";
 
 const withEvents = WrappedComponent => {
   return class withEvents extends Component {
@@ -9,8 +9,6 @@ const withEvents = WrappedComponent => {
       isLoading: false,
       events: [],
     };
-
-    beforeMount
 
     componentWillMount() {
       this.getDate();
@@ -27,7 +25,7 @@ const withEvents = WrappedComponent => {
       let today = new Date()
       let dateObj = new Date(today.getTime() - (24 * 60 * 60 * 1000));
       let month = dateObj.getUTCMonth() + 1; 
-      let day = (dateObj.getDate() < 10 ? '0' : '') + dateObj.getDate();;
+      let day = (dateObj.getDate() < 10 ? "0" : "") + dateObj.getDate();;
       let year = dateObj.getUTCFullYear();
       let newDate = `${year}${month}${day}`;
       this.setState({ today: newDate })

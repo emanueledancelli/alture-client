@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NewMap from './Settings';
-import withEvents from '../../../hoc/withEvents';
+import NewMap from "./Settings";
+import withEvents from "../../../hoc/withEvents";
 
 class MapContainer extends Component {
 
