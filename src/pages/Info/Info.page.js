@@ -2,21 +2,17 @@ import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { PagesHeader } from "components";
-import { Seo } from "components/common";
+import { Seo, ScrollToTop } from "components/common";
 import Logo from "logo.png";
 
 export class Info extends Component {
-    
-    componentDidMount () {
-        this.scrollToTop()
-    }
-
-    scrollToTop = () => window.scrollTo(0, 0);
 
     render() {
 
         return (
             <>
+
+                <ScrollToTop />
 
                 <Seo 
                     title="Informazioni - Alture"

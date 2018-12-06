@@ -1,18 +1,18 @@
 import React, { Component } from "react";
+import withEvents from "hoc/withEvents";
 import CardList from "./components/CardList";
+import { Seo, ScrollToTop } from "components/common";
+
 import Logo from "logo.png";
-import { Seo } from "components/common";
 
-export class Home extends Component {
-  componentDidMount() {
-    this.scrollToTop();
-  }
-
-  scrollToTop = () => window.scrollTo(0, 0);
+class Home extends Component {
 
   render() {
     return (
       <>
+
+        <ScrollToTop />
+
         <Seo 
           title="Home - Alture"
           description="Homepage dell'iniziativa Alture" 
@@ -20,9 +20,13 @@ export class Home extends Component {
           image={Logo}
         />
 
-        <CardList />
+        <CardList 
+          events={this.props.events}
+        />
+      
       </>
     );
   }
 }
 
+export default withEvents(Home);
