@@ -1,9 +1,9 @@
 import React from "react";
 import "./Card.scss";
 
-import CardDetails from "./CardDetails";
+import {CardDetails} from "./CardDetails";
 
-const Card = props => {
+export const Card = props => {
 
   const background = {
     background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" + props.backgroundImage + ") center"
@@ -26,4 +26,3 @@ const Card = props => {
   );
 };
 
-export default Card;

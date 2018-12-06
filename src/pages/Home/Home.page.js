@@ -1,13 +1,23 @@
 import React, { Component } from "react";
-import withEvents from "hoc/withEvents";
-import CardList from "./components/CardList";
-import { Seo, ScrollToTop } from "components/common";
-
+import PropTypes from "prop-types";
+import { fetchEvents } from "actions/eventsActions";
+import { connect } from "react-redux";
+import { CardList } from "./components";
+import { Seo, ScrollToTop, Spinner } from "components/common";
 import Logo from "logo.png";
 
 class Home extends Component {
 
+  componentDidMount() {
+    this.props.fetchEvents()
+  }
+
   render() {
+
+    const { store } = this.props
+
+
+
     return (
       <>
 
@@ -19,14 +29,26 @@ class Home extends Component {
           url="https://alture.org" 
           image={Logo}
         />
-
-        <CardList 
+        {/* <CardList 
           events={this.props.events}
-        />
+        /> */}
       
       </>
     );
   }
 }
 
-export default withEvents(Home);
+Home.propTypes = {
+  fetchEvents: PropTypes.func.isRequired,
+  store: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = {
+  fetchEvents
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

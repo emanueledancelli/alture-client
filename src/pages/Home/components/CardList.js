@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment/locale/it";
 
-import Card from "./Card.js";
+import { Card } from "./Card.js";
 
-class CardList extends Component {
+export class CardList extends Component {
 
   render() {
 
@@ -36,4 +36,3 @@ class CardList extends Component {
   }
 }
 
-export default CardList;

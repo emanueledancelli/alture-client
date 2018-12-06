@@ -2,7 +2,7 @@ import React from "react";
 import "./CardDetails.scss"
 import { CalendarTodayIcon, LocationOnIcon } from "mdi-react";
 
-const CardDetails = props => {
+export const CardDetails = props => {
 
   return (
     <>
@@ -18,4 +18,3 @@ const CardDetails = props => {
   );
 };
 
-export default CardDetails;
