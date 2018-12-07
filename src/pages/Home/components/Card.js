@@ -6,7 +6,8 @@ import {CardDetails} from "./CardDetails";
 export const Card = props => {
 
   const background = {
-    background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" + props.backgroundImage + ") center"
+    background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" + props.backgroundImage + ") center",
+    backgroundSize: "cover"
   }
 
   return (
