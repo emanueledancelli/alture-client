@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchEvents } from "actions/eventsActions";
-import _ from 'lodash';
+import { filterSingleEvent } from "actions/singleActions";
 import moment from "moment";
 import "moment/locale/it";
 import { Hero, Contact, TopBar, Description } from "./components";
@@ -31,53 +31,53 @@ class Single extends Component {
 
   render() {
     const { events } = this.props;
-    const getEventToShow = this.getEvents(events.data)
-    const e = { ...getEventToShow[0]} //event to show as object
-    console.log(e)
+    let filtered = events.data.filter(e => e.id == this.props.match.params.id)
+    let single = {...filtered[0]}
+    console.log(single)
 
     //get single event
-/* 
-    const formattedDate = moment(e.acf.data_inizio).locale("it").format("MMMM D, YYYY");
-    const formattedPlace = e.acf.luogo.replace(/[^A-Z0-9]+/ig, "+");
+
+    const formattedDate = moment(single.acf.data_inizio).locale("it").format("MMMM D, YYYY");
+    const formattedPlace = single.acf.luogo.replace(/[^A-Z0-9]+/ig, "+");
     const currentUrl = "https://alture.org" + this.props.location.pathname;
     const gmapsUrl = "https://www.google.com/maps/search/" + formattedPlace;
-    const seoDescription = e.title.rendered + " si terrà presso " + e.acf.luogo + " il " + formattedDate + ". ";
-    const eventTimes = formattedDate + "  ore: " + e.acf.ora_inizio + " " + e.acf.ora_fine;
- */
+    const seoDescription = single.title.rendered + " si terrà presso " + single.acf.luogo + " il " + formattedDate + ". ";
+    const eventTimes = formattedDate + "  ore: " + single.acf.ora_inizio + " " + single.acf.ora_fine
+
     return (
       <>
 
         <ScrollToTop />
 
-        {/* <Seo 
-          title={event.title + " - Alture"}
+        <Seo 
+          title={single.title.rendered + " - Alture"}
           description={seoDescription}
           url={currentUrl} 
-          image={event.immagine}
-        />
+          //image={e.immagine}
+        /> 
 
         <TopBar
           url={currentUrl}
-          name={slicedName}
+          //name={slicedName}
           onClick={() => this.props.history.push("/")}
         />
 
         <Hero
-          image={event.immagine}
-          title={event.title}
+          image={single.acf.immagine.url}
+          title={single.title.rendered}
         />
 
         <Description
-          organizers={event.organizzatori}
+          organizers={single.acf.organizzatori}
           dates={eventTimes}
           mapUrl={gmapsUrl}
-          place={event.luogo}
-          info={this.createDescription()}
+          place={single.acf.luogo}
+          //info={this.createDescription()}
         />
 
         <Contact 
-          mail={event.email_organizzatore} 
-        /> */}
+          mail={single.acf.email_organizzatore} 
+        /> 
       
       </>
     );
@@ -96,7 +96,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  fetchEvents
+  fetchEvents,
+  filterSingleEvent
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Single);

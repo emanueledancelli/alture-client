@@ -1,10 +1,16 @@
-import { FETCH_EVENTS_BEGINS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE } from "actions/types";
+import { 
+  FETCH_EVENTS_BEGINS, 
+  FETCH_EVENTS_SUCCESS, 
+  FETCH_EVENTS_FAILURE, 
+  GET_SINGLE_EVENT, 
+  CLEAN_SINGLE_EVENT } from "actions/types";
 
 const initialState = {
   isLoading: false,
   isFetched: false,
   data: [],
-  error: null
+  error: null,
+  single: null
 };
 
 export default function(state = initialState, action) {
@@ -26,6 +32,16 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: false,
         error: action.payload.message
+      }
+    case GET_SINGLE_EVENT:
+      return {
+        ...state,
+        single: action.payload
+      }
+    case CLEAN_SINGLE_EVENT:
+      return {
+        ...state,
+        single: null
       }
     default:
       return state;
