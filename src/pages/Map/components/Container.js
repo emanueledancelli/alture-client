@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NewMap from "./Settings";
-import withEvents from "../../../hoc/withEvents";
 
 class MapContainer extends Component {
 
@@ -19,4 +18,4 @@ class MapContainer extends Component {
 	}
 }
 
-export default withEvents(MapContainer);
+export default MapContainer;
