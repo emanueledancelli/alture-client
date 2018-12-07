@@ -32,12 +32,14 @@ Alture uses create-react-app scripts, for more info [create-react-app](https://g
 
 The App is made with [React](https://reactjs.org/) and it uses a few other libraries.
 
-- App Bootstrapping with [create-react-app](https://github.com/facebook/create-react-app)
-- Styling [react-emotion](https://github.com/emotion-js/emotion)
+- App bootstrapping with [create-react-app](https://github.com/facebook/create-react-app)
+- State management [Redux](https://github.com/reduxjs/redux), [react-redux](https://github.com/reduxjs/react-redux), [redux-thunk](https://github.com/reduxjs/redux-thunk)
 - Animations [react-pose](https://github.com/Popmotion/popmotion/tree/master/packages/react-pose)
 - Routing [react-router](https://github.com/ReactTraining/react-router)
-- Http client [axios](https://github.com/axios/axios)
-- Utilities [lodash](https://github.com/lodash/lodash)
+- SEO [react-helmet](https://github.com/nfl/react-helmet)
+- Http client [Axios](https://github.com/axios/axios)
+- Utilities [Lodash](https://github.com/lodash/lodash), [Moment](https://github.com/moment/moment/)
+- Styling [Scss](https://sass-lang.com/)
 
 &nbsp;
 
