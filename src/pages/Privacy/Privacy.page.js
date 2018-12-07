@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Privacy.page.scss"
 
 import { PagesHeader } from "components";
-import { Spinner, Seo } from "components/common";
+import { Spinner, Seo, ScrollToTop } from "components/common";
 import axios from "config.js";
 import Logo from "logo.png";
 
@@ -15,10 +15,7 @@ export class Privacy extends Component {
     componentDidMount () {
         this.setState({ isLoading: true });
         this.getPrivacy()
-        this.scrollToTop()
     }
-
-    scrollToTop = () => window.scrollTo(0, 0);
 
     getPrivacy = () => {
         axios.get(`/pages/60`)
@@ -44,8 +41,11 @@ export class Privacy extends Component {
         }
         return (
             <>
+
+                <ScrollToTop />
+
                 <Seo 
-                    title="Privacy Polici - Alture"
+                    title="Privacy Policy - Alture"
                     description="Privacy Policy di Alture" 
                     url="https://alture.org/notifiche" 
                     image={Logo}
@@ -59,6 +59,7 @@ export class Privacy extends Component {
                 <div className="privacy__body">
                     <div dangerouslySetInnerHTML={this.createPrivacy()}></div>
                 </div>
+
                 <div className="privacy__footer">
                     <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>
                 </div>
