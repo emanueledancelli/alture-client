@@ -14,7 +14,7 @@ class Home extends Component {
 
   render() {
 
-    const { store } = this.props
+    const { events } = this.props
 
     return (
       <>
@@ -27,9 +27,13 @@ class Home extends Component {
           url="https://alture.org" 
           image={Logo}
         />
-        {/* <CardList 
-          events={this.props.events}
-        /> */}
+
+        {events.isLoading 
+        ? <Spinner />
+        : <CardList 
+            events={events.data}
+          />}
+
       
       </>
     );
@@ -38,12 +42,14 @@ class Home extends Component {
 
 Home.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
-  store: PropTypes.object.isRequired
+  events: PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({
-  ...state
-})
+const mapStateToProps = state => {
+  return {
+    events: state.events
+  }
+}
 
 const mapDispatchToProps = {
   fetchEvents

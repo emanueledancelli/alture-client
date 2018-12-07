@@ -1,4 +1,4 @@
-import { FETCH_EVENTS_BEGINS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE } from "../actions/types";
+import { FETCH_EVENTS_BEGINS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE } from "actions/types";
 
 const initialState = {
   isLoading: false,
