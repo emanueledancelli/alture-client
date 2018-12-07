@@ -17,7 +17,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        data: action.payload.data
+        data: action.payload
       };
     case FETCH_EVENTS_FAILURE:
       return {
