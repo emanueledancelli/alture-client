@@ -2,6 +2,7 @@ import { FETCH_EVENTS_BEGINS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE } from 
 
 const initialState = {
   isLoading: false,
+  isFetched: false,
   data: [],
   error: null
 };
@@ -17,6 +18,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
+        isFetched: true,
         data: action.payload
       };
     case FETCH_EVENTS_FAILURE:
