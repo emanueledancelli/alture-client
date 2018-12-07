@@ -16,8 +16,6 @@ class Home extends Component {
 
     const { store } = this.props
 
-
-
     return (
       <>
 
