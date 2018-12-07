@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "store";
 import { Routes } from "routes";
-
-import "styles/index.scss";
-
 import { Header, Navigation, DesktopHeader } from "components";
 
+import "styles/index.scss";
 
 export class App extends Component {
   render() {
     return (
-      <Provider store={store}>
         <Route
           onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
@@ -33,7 +28,6 @@ export class App extends Component {
             </div>
           )}
         />
-      </Provider>
     );
   }
 }

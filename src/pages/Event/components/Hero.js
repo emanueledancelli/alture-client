@@ -4,7 +4,8 @@ import "./Hero.scss"
 export const Hero = ({image, title}) => {
 
   const background = {
-    background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" + image + ") center"
+    background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" + image + ") center",
+    backgroundSize: "cover"
   }
 
   return (
