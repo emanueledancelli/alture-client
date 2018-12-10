@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { Home } from "pages/Home";
-import { Event } from "pages/Event";
+import { Single } from "pages/Single";
 import { Info } from "pages/Info";
 import { Privacy } from "pages/Privacy";
 import { Notifications }  from "pages/Notifications";
@@ -18,8 +18,8 @@ export const Routes = location => {
           <Route exact path="/notifiche" component={Notifications} />
           <Route
             exact
-            path="/eventi/:id"
-            render={routeProps => <Event {...routeProps} />}
+            path="/eventi/:id/:title"
+            render={routeProps => <Single {...routeProps} />}
           />
         </Switch>
       );

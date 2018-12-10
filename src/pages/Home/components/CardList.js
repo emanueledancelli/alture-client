@@ -14,9 +14,10 @@ export class CardList extends Component {
       
       const image = `${e.acf.immagine.url}`;
       const dataInizio = moment(e.acf.data_inizio).locale("it").format("MMMM D, YYYY")
+      const formatTitle = e.title.rendered.replace(/[^A-Z0-9]+/ig, "-");
       
       return (
-        <Link to={`/eventi/${e.id}`} key={e.id}>
+        <Link to={`/eventi/${e.id}/${formatTitle}`} key={e.id}>
           <Card
             title={e.title.rendered}
             date={`${dataInizio} ${e.acf.ora_inizio}`}

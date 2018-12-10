@@ -1,10 +1,13 @@
-import { FETCH_EVENTS_BEGINS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE } from "actions/types";
+import { 
+  FETCH_EVENTS_BEGINS, 
+  FETCH_EVENTS_SUCCESS, 
+  FETCH_EVENTS_FAILURE } from "actions/types";
 
 const initialState = {
   isLoading: false,
   isFetched: false,
   data: [],
-  error: null
+  error: null,
 };
 
 export default function(state = initialState, action) {
@@ -26,7 +29,7 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: false,
         error: action.payload.message
-      }
+      };
     default:
       return state;
   }

@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { fetchEvents } from "actions/eventsActions";
 import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, ScrollToTop, Spinner } from "components/common";
 import Logo from "logo.png";
 
 class Home extends Component {
-
-  componentDidMount() {
-    this.props.fetchEvents()
-  }
 
   render() {
 
@@ -41,7 +36,6 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  fetchEvents: PropTypes.func.isRequired,
   events: PropTypes.object.isRequired
 }
 
@@ -51,8 +45,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = {
-  fetchEvents
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
