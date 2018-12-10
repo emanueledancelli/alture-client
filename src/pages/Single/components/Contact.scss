@@ -1,6 +1,14 @@
 .contact {
     padding: 0 5%;
     background-color: #6D9B8D;
+
+
+    @media (min-width: 740px) {
+        max-width: 940px;
+        margin: 2% auto;
+        padding: 0;
+    }
+
     
     &__container {
         width: 100%;

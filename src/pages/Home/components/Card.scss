@@ -9,4 +9,14 @@
     justify-content: space-around;
     box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
 
+    @media (min-width: 740px) {
+        min-height: 40vh;
+        max-width: 940px;
+
+        & h1 {
+            font-size: 1.5em;
+        }
+
+    }
+
 }

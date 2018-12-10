@@ -5,7 +5,9 @@
         flex: 1;
         padding: 5%;
         @media (min-width: 740px) {
-            padding: 0%;
+            padding: 5% 0 0;
+            max-width: 940px;
+            margin: 0 auto;
           }
     }
 
@@ -22,7 +24,7 @@
             color: #828282;
         }
         @media (min-width: 740px) {
-            padding: 0%;
+            display: none;
           }
     }
 

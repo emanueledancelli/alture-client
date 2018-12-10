@@ -4,5 +4,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 11vh;
+    @media (min-width: 740px) {
+        min-height: 60vh;
+        max-width: 940px;
+        margin: 2% auto;
+    }
 
 }

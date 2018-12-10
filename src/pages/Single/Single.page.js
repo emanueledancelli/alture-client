@@ -39,7 +39,7 @@ class Single extends Component {
           image={events.single.acf.immagine.url}
         />
 
-
+        
           <TopBar
             url={`https://alture.org${this.props.location.pathname}`}
             name={this.createSlicedTitle(events.single.title.rendered)}
