@@ -18,10 +18,11 @@ export default class NewMarker extends React.Component {
   render() {
     const { isInfoBoxVisible } = this.state;
     const date = this.props.date
+    const formatTitle = this.props.name.replace(/[^A-Z0-9]+/ig, "-");
 
     const eventInfo = (
       <InfoBox>
-        <Link to={`/eventi/${this.props.id}`}>
+        <Link to={`/eventi/${this.props.id}/${formatTitle}`}>
           <div className="marker__container">
             <h1 className="title black">{this.props.name}</h1>
             <p className="marker__date">{date}</p>
