@@ -18,8 +18,8 @@ export class App extends Component {
               {location.pathname === ("/") || location.pathname.startsWith("/Mappa") 
                 ? <Header />
                 : null }
-
-              {Routes(location)}
+              
+                  {Routes(location)}
 
               {location.pathname === ("/") || location.pathname.startsWith("/Mappa") 
                 ? <Navigation />
@@ -29,6 +29,6 @@ export class App extends Component {
           )}
         />
     );
-  }
+ }
 }
 

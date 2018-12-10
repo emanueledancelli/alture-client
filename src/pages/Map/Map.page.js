@@ -1,21 +1,17 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { fetchEvents } from "actions/eventsActions";
 import { connect } from "react-redux";
 import MapContainer from "./components/Container";
 import { Seo, Spinner } from "components/common";
 import Logo from "logo.png";
 
-class Map extends Component {
 
-    componentDidMount() {
-        this.props.fetchEvents()
-    }
+class Map extends Component {
 
     render() {
 
         const { events } = this.props
-
+    
         return (
             <>
 
@@ -27,10 +23,8 @@ class Map extends Component {
                 />
 
                 {events.isLoading 
-                ? <Spinner />
-                : <MapContainer 
-                    events={events.data}
-                />}
+                    ? <Spinner />
+                    : <MapContainer events={events.data} />}
             
             </>
         );
@@ -38,7 +32,6 @@ class Map extends Component {
 }
 
 Map.propTypes = {
-    fetchEvents: PropTypes.func.isRequired,
     events: PropTypes.object.isRequired
   }
   
@@ -48,8 +41,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = {
-  fetchEvents
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Map)
+export default connect(mapStateToProps)(Map)
