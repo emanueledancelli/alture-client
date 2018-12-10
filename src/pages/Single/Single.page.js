@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Spring } from 'react-spring';
 import { Hero, Contact, TopBar, Description } from "./components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
 import moment from "moment";
@@ -39,31 +40,42 @@ class Single extends Component {
           image={events.single.acf.immagine.url}
         />
 
-        
-          <TopBar
-            url={`https://alture.org${this.props.location.pathname}`}
-            name={this.createSlicedTitle(events.single.title.rendered)}
-            onClick={() => this.props.history.push("/")}
-          />
 
-          <Hero
-            image={events.single.acf.immagine.url}
-            title={events.single.title.rendered}
-          />
-  
-          <Description
-            organizers={events.single.acf.organizzatori}
-            dates={this.createEventTimes(events.single.acf.data_inizio, events.single.acf.ora_inizio, events.single.acf.ora_fine)}
-            mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
-            place={events.single.acf.luogo}
-            info={this.createHtmlDescription(events.single.acf.descrizione)}
-          /> 
+        <Spring 
+          from={{ opacity: 0, transform: 'translateX(100px)' }}
+          to={{ opacity: 1, transform: 'translateX(0)' }}
+        >
+        {props => 
 
-          <Contact 
-            mail={events.single.acf.email_organizzatore} 
-          />
+          <div style={props}> 
 
-      
+
+            <TopBar
+              url={`https://alture.org${this.props.location.pathname}`}
+              name={this.createSlicedTitle(events.single.title.rendered)}
+              onClick={() => this.props.history.push("/")}
+            />
+
+            <Hero
+              image={events.single.acf.immagine.url}
+              title={events.single.title.rendered}
+            />
+    
+            <Description
+              organizers={events.single.acf.organizzatori}
+              dates={this.createEventTimes(events.single.acf.data_inizio, events.single.acf.ora_inizio, events.single.acf.ora_fine)}
+              mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
+              place={events.single.acf.luogo}
+              info={this.createHtmlDescription(events.single.acf.descrizione)}
+            /> 
+
+            <Contact 
+              mail={events.single.acf.email_organizzatore} 
+            />
+          </div>}
+
+        </Spring>
+
       </>
     );
   }

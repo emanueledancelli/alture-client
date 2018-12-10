@@ -30,7 +30,7 @@ export class CardList extends Component {
     });
 
     return (
-      <div className="cardlist">
+      <div className="cardlist" style={this.props.style}>
         {cardList}
       </div>
     );

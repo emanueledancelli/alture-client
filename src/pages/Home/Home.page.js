@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, ScrollToTop, Spinner } from "components/common";
+import { Spring } from 'react-spring';
 import Logo from "logo.png";
 
 class Home extends Component {
@@ -25,9 +26,15 @@ class Home extends Component {
 
         {events.isLoading 
         ? <Spinner />
-        : <CardList 
-            events={events.data}
-          />}
+        : (
+            <Spring
+              from={{ opacity: 0}}
+              to={{ opacity: 1 }}
+            >
+              {({ opacity }) =>  <CardList style={{opacity}} events={events.data} />}
+            </Spring>
+        )
+        }
 
       
       </>
