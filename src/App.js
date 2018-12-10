@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { Routes } from "routes";
-import { Header, Navigation, DesktopHeader } from "components";
+import { Header, Navigation, DesktopHeader, DesktopFooter } from "components";
 
 import "styles/index.scss";
 
@@ -11,7 +11,7 @@ export class App extends Component {
         <Route
           onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
-            <div className="App">
+            <div>
 
               <DesktopHeader />
 
@@ -24,6 +24,8 @@ export class App extends Component {
               {location.pathname === ("/") || location.pathname.startsWith("/Mappa") 
                 ? <Navigation />
                 : null }
+
+              <DesktopFooter />
 
             </div>
           )}
