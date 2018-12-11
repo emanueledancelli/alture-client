@@ -2,9 +2,26 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { CardList } from "./components";
+import posed from 'react-pose';
 import { Seo, ScrollToTop, Spinner } from "components/common";
-import { Spring } from 'react-spring';
 import Logo from "logo.png";
+
+const Animated = posed.div({
+  enter: { 
+    y: 0, 
+    opacity: 1,
+    transition: {
+      y: { ease: 'easeOut', duration: 200 },
+    } 
+  },
+  exit: { 
+    y: '100%',
+    opacity: 0,
+    transition: {
+      y: { ease: 'easeOut', duration: 200 },
+    }  
+  },
+});
 
 class Home extends Component {
 
@@ -13,7 +30,7 @@ class Home extends Component {
     const { events } = this.props
 
     return (
-      <>
+      <Animated>
 
         <ScrollToTop />
 
@@ -25,19 +42,12 @@ class Home extends Component {
         />
 
         {events.isLoading 
-        ? <Spinner />
-        : (
-            <Spring
-              from={{ opacity: 0}}
-              to={{ opacity: 1 }}
-            >
-              {({ opacity }) =>  <CardList style={{opacity}} events={events.data} />}
-            </Spring>
-        )
+          ? <Spinner />
+          : <CardList events={events.data} />
         }
 
       
-      </>
+      </Animated>
     );
   }
 }

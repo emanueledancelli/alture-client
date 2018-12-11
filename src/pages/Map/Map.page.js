@@ -3,7 +3,26 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux";
 import MapContainer from "./components/Container";
 import { Seo, Spinner } from "components/common";
+import posed from "react-pose";
 import Logo from "logo.png";
+
+const Animated = posed.div({
+    enter: { 
+      y: 0,
+      opacity: 1, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      } 
+    },
+    exit: { 
+      y: '100%',
+      opacity: 0, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      }  
+    },
+  });
+
 
 
 class Map extends Component {
@@ -13,7 +32,7 @@ class Map extends Component {
         const { events } = this.props
     
         return (
-            <>
+            <Animated>
 
                 <Seo 
                     title="Mappa - Alture"
@@ -26,7 +45,7 @@ class Map extends Component {
                     ? <Spinner />
                     : <MapContainer events={events.data} />}
             
-            </>
+            </Animated>
         );
     }
 }

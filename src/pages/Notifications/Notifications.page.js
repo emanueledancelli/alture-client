@@ -1,30 +1,37 @@
 import React, {Component} from "react";
 import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
-
+import posed from "react-pose"
 import { PagesHeader } from "components";
-import { Spinner, Seo } from "components/common";
+import { Seo } from "components/common";
 import Logo from "logo.png";
 
+const Animated = posed.div({
+    enter: { 
+      y: 0,
+      opacity: 1, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      } 
+    },
+    exit: { 
+      y: '100%',
+      opacity: 0, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      }  
+    },
+  });
+
 export class Notifications extends Component {
-    state = {
-        isLoading : true
-    }
     
     componentDidMount () {
-        setTimeout(this.renderPage, 1000)
         this.scrollToTop()
         this.initOneSignal("mount")
     }
 
     componentWillUnmount() {
         this.initOneSignal()
-    }
-
-    renderPage = () => {
-        this.setState({
-            isLoading: false
-        })
     }
 
     scrollToTop = () => window.scrollTo(0, 0);
@@ -48,13 +55,10 @@ export class Notifications extends Component {
     }
 
     render() {
-    let { isLoading } = this.state
         
-    if(isLoading) {
-        return ( <Spinner /> ) 
-    }
+
     return (
-        <>
+        <Animated>
 
             <Seo 
                 title="Notifiche - Alture"
@@ -87,7 +91,7 @@ export class Notifications extends Component {
                 </p>
             </div>
 
-        </>            
+        </Animated>            
     )
     }
 }
