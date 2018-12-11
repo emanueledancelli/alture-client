@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Spring } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 import { Hero, Contact, TopBar, Description } from "./components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
 import moment from "moment";
@@ -40,21 +40,22 @@ class Single extends Component {
           image={events.single.acf.immagine.url}
         />
 
+        <TopBar
+          url={`https://alture.org${this.props.location.pathname}`}
+          name={this.createSlicedTitle(events.single.title.rendered)}
+          onClick={() => this.props.history.push("/")}
+        />
 
-        <Spring 
-          from={{ opacity: 0, transform: 'translateX(100px)' }}
-          to={{ opacity: 1, transform: 'translateX(0)' }}
+
+        <Transition
+          config={config.slow}
+          from={{ transform: 'translateX(150px)', opacity: 0 }}
+          enter={{ transform: 'translateX(0px)', opacity: 1 }}
+          leave={{ transform: 'translateX(150px)', opacity: 0 }}
         >
-        {props => 
+        {item => props => 
 
-          <div style={props}> 
-
-
-            <TopBar
-              url={`https://alture.org${this.props.location.pathname}`}
-              name={this.createSlicedTitle(events.single.title.rendered)}
-              onClick={() => this.props.history.push("/")}
-            />
+          <animated.div style={props}> 
 
             <Hero
               image={events.single.acf.immagine.url}
@@ -72,9 +73,10 @@ class Single extends Component {
             <Contact 
               mail={events.single.acf.email_organizzatore} 
             />
-          </div>}
 
-        </Spring>
+          </animated.div>}
+
+        </Transition>
 
       </>
     );

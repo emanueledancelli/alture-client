@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
+import { Transition, animated } from 'react-spring';
 import { Link } from "react-router-dom";
 import { PagesHeader } from "components";
 import { Seo, ScrollToTop } from "components/common";
@@ -58,9 +59,10 @@ export class Info extends Component {
                     </Link>
 
                     <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>  
+                
                 </div>
-
-            </>            
+                
+            </>
         );
     }
 }
