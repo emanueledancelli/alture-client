@@ -5,11 +5,9 @@ import { Header, Navigation, DesktopHeader, DesktopFooter } from "components";
 
 import "styles/index.scss";
 
-export class App extends Component {
-  render() {
+export const App = () => {
     return (
         <Route
-          onUpdate={() => window.scrollTo(0, 0)}
           render={({ location }) => (
             <div>
 
@@ -31,6 +29,5 @@ export class App extends Component {
           )}
         />
     );
- }
 }
 
