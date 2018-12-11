@@ -2,15 +2,33 @@ import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { PagesHeader } from "components";
+import posed from "react-pose";
 import { Seo, ScrollToTop } from "components/common";
 import Logo from "logo.png";
 
-export class Info extends Component {
+const Animated = posed.div({
+    enter: { 
+      y: 0,
+      opacity: 1, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      } 
+    },
+    exit: { 
+      y: '100%',
+      opacity: 0, 
+      transition: {
+        y: { ease: 'easeOut', duration: 400 },
+      }  
+    },
+  });
 
+export class Info extends Component {
+    
     render() {
 
         return (
-            <>
+            <Animated className="info">
 
                 <ScrollToTop />
 
@@ -58,9 +76,10 @@ export class Info extends Component {
                     </Link>
 
                     <p><a href="https://github.com/emanueledancelli" target="_blank" rel="noopener noreferrer">ED</a></p>  
+                
                 </div>
-
-            </>            
+                
+            </Animated>
         );
     }
 }

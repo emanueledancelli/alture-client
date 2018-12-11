@@ -3,8 +3,24 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Hero, Contact, TopBar, Description } from "./components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
+import posed from 'react-pose';
 import moment from "moment";
 import "moment/locale/it";
+
+const Animated = posed.div({
+  enter: { 
+    x: 0, 
+    transition: {
+      x: { ease: 'easeOut', duration: 300 },
+    } 
+  },
+  exit: { 
+    x: '100%',
+    transition: {
+      x: { ease: 'easeOut', duration: 300 },
+    }  
+  },
+});
 
 
 class Single extends Component {
@@ -28,7 +44,7 @@ class Single extends Component {
       return <Spinner />
     }
     return (
-      <>
+      <Animated>
 
         <ScrollToTop />
 
@@ -39,32 +55,30 @@ class Single extends Component {
           image={events.single.acf.immagine.url}
         />
 
-        
-          <TopBar
-            url={`https://alture.org${this.props.location.pathname}`}
-            name={this.createSlicedTitle(events.single.title.rendered)}
-            onClick={() => this.props.history.push("/")}
-          />
+        <TopBar
+          url={`https://alture.org${this.props.location.pathname}`}
+          name={this.createSlicedTitle(events.single.title.rendered)}
+          onClick={() => this.props.history.push("/")}
+        />
 
-          <Hero
-            image={events.single.acf.immagine.url}
-            title={events.single.title.rendered}
-          />
-  
-          <Description
-            organizers={events.single.acf.organizzatori}
-            dates={this.createEventTimes(events.single.acf.data_inizio, events.single.acf.ora_inizio, events.single.acf.ora_fine)}
-            mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
-            place={events.single.acf.luogo}
-            info={this.createHtmlDescription(events.single.acf.descrizione)}
-          /> 
+        <Hero
+          image={events.single.acf.immagine.url}
+          title={events.single.title.rendered}
+        />
 
-          <Contact 
-            mail={events.single.acf.email_organizzatore} 
-          />
+        <Description
+          organizers={events.single.acf.organizzatori}
+          dates={this.createEventTimes(events.single.acf.data_inizio, events.single.acf.ora_inizio, events.single.acf.ora_fine)}
+          mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
+          place={events.single.acf.luogo}
+          info={this.createHtmlDescription(events.single.acf.descrizione)}
+        />
 
-      
-      </>
+        <Contact 
+          mail={events.single.acf.email_organizzatore} 
+        />
+
+      </Animated>
     );
   }
 }
