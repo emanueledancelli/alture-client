@@ -5,22 +5,22 @@ import { Home } from "pages/Home";
 import { Single } from "pages/Single";
 import { Info } from "pages/Info";
 import { Privacy } from "pages/Privacy";
-import { Notifications }  from "pages/Notifications";
+import { Notifications } from "pages/Notifications";
 import { Map } from "pages/Map";
 
 export const Routes = location => {
-    return (
-        <Switch location={location}>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/mappa" component={Map} />
-          <Route exact path="/informazioni" component={Info} />
-          <Route exact path="/privacypolicy" component={Privacy} />
-          <Route exact path="/notifiche" component={Notifications} />
-          <Route
-            exact
-            path="/eventi/:id/:title"
-            render={routeProps => <Single {...routeProps} />}
-          />
-        </Switch>
-      );
-}
+  return (
+    <Switch location={location}>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/mappa" component={Map} />
+      <Route exact path="/informazioni" component={Info} />
+      <Route exact path="/privacypolicy" component={Privacy} />
+      <Route exact path="/notifiche" component={Notifications} />
+      <Route
+        exact
+        path="/eventi/:id/:title"
+        render={routeProps => <Single {...routeProps} />}
+      />
+    </Switch>
+  );
+};

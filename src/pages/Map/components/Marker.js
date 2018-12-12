@@ -17,8 +17,8 @@ export default class NewMarker extends React.Component {
 
   render() {
     const { isInfoBoxVisible } = this.state;
-    const date = this.props.date
-    const formatTitle = this.props.name.replace(/[^A-Z0-9]+/ig, "-");
+    const date = this.props.date;
+    const formatTitle = this.props.name.replace(/[^A-Z0-9]+/gi, "-");
 
     const eventInfo = (
       <InfoBox>

@@ -1,6 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://api.alture.org/wp-json/wp/v2"
-  });
-  
+  baseURL: "https://api.alture.org/wp-json/wp/v2"
+});

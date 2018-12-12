@@ -2,7 +2,7 @@
 
 This is the client side of [Alture](https://alture.org) Progressive Web App.
 
-Alture works by fetching data from a RestAPI provided by a headless installation of WordPress, more info coming soon(tm).
+Alture works by fetching data from a Rest API provided by a headless installation of WordPress, more info coming soon(tm).
 
 &nbsp;
 

@@ -5,20 +5,22 @@ import "moment/locale/it";
 import NewMarker from "./Marker";
 
 const NewMap = withScriptjs(
-  
   withGoogleMap(props => {
     const markers = props.events.map(e => {
-
       let parsedLat = parseFloat(e.acf.latitudine);
       let parsedLong = parseFloat(e.acf.longitudine);
-      let formattedDate = moment(e.acf.data_inizio).locale("it").format("MMMM D, YYYY");
+      let formattedDate = moment(e.acf.data_inizio)
+        .locale("it")
+        .format("MMMM D, YYYY");
 
-      return    (<NewMarker
-                    location = {{ lat: parsedLat, lng: parsedLong }}
-                    name = {e.title.rendered}
-                    id = {e.id}
-                    date = {formattedDate}
-                />)
+      return (
+        <NewMarker
+          location={{ lat: parsedLat, lng: parsedLong }}
+          name={e.title.rendered}
+          id={e.id}
+          date={formattedDate}
+        />
+      );
     });
 
     return (

@@ -7,15 +7,14 @@ import "moment/locale/it";
 import { Card } from "./Card.js";
 
 export class CardList extends Component {
-
   render() {
-
     const cardList = this.props.events.map(e => {
-      
       const image = `${e.acf.immagine.url}`;
-      const dataInizio = moment(e.acf.data_inizio).locale("it").format("MMMM D, YYYY")
-      const formatTitle = e.title.rendered.replace(/[^A-Z0-9]+/ig, "-");
-      
+      const dataInizio = moment(e.acf.data_inizio)
+        .locale("it")
+        .format("MMMM D, YYYY");
+      const formatTitle = e.title.rendered.replace(/[^A-Z0-9]+/gi, "-");
+
       return (
         <Link to={`/eventi/${e.id}/${formatTitle}`} key={e.id}>
           <Card
@@ -36,4 +35,3 @@ export class CardList extends Component {
     );
   }
 }
-

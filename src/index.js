@@ -8,12 +8,14 @@ import store from "store";
 import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 
-store.dispatch(fetchEvents())
+store.dispatch(fetchEvents());
 
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>, document.getElementById("root"));
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById("root")
+);
 registerServiceWorker();
