@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { formatDate, formatTitle } from "utils";
 import { Hero, Contact, TopBar, Description } from "./components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
 import posed from "react-pose";
-import moment from "moment";
-import "moment/locale/it";
 
 const Animated = posed.div({
   enter: {
@@ -33,17 +32,13 @@ class Single extends Component {
   createSeoTitle = title => title + " - Alture";
 
   createGmapsUrl = place =>
-    `https://www.google.com/maps/search/${place.replace(/[^A-Z0-9]+/gi, "+")}`;
+    `https://www.google.com/maps/search/${formatTitle(place, "plus")}`;
 
   createEventTimes = (date, start, end) =>
-    `${moment(date)
-      .locale("it")
-      .format("MMMM D, YYYY")} ore: ${start} ${end}`;
+    `${formatDate(date)} ore: ${start} ${end}`;
 
   createSeoDescription = (name, place, date) =>
-    `${name} si terrà presso ${place} il ${moment(date)
-      .locale("it")
-      .format("MMMM D, YYYY")}.`;
+    `${name} si terrà presso ${place} il ${formatDate(date)}.`;
 
   render() {
     const { events } = this.props;
