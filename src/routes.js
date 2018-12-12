@@ -1,5 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { Header, Navigation, DesktopHeader, DesktopFooter } from "components";
+import posed, { PoseGroup } from "react-pose";
+import "styles/index.scss";
 
 import { Home } from "pages/Home";
 import { Single } from "pages/Single";
@@ -8,7 +11,7 @@ import { Privacy } from "pages/Privacy";
 import { Notifications } from "pages/Notifications";
 import { Map } from "pages/Map";
 
-export const Routes = location => {
+const Routes = location => {
   return (
     <Switch location={location}>
       <Route exact path="/" component={Home} />
@@ -22,5 +25,39 @@ export const Routes = location => {
         render={routeProps => <Single {...routeProps} />}
       />
     </Switch>
+  );
+};
+
+const RoutesContainer = posed.div({
+  enter: { beforeChildren: true }
+});
+
+export const App = () => {
+  return (
+    <Route
+      render={({ location }) => (
+        <div>
+          <DesktopHeader />
+
+          <PoseGroup>
+            <RoutesContainer key={location.pathname}>
+              {location.pathname === "/" ||
+              location.pathname.startsWith("/Mappa") ? (
+                <Header />
+              ) : null}
+
+              {Routes(location)}
+
+              {location.pathname === "/" ||
+              location.pathname.startsWith("/Mappa") ? (
+                <Navigation />
+              ) : null}
+            </RoutesContainer>
+          </PoseGroup>
+
+          <DesktopFooter />
+        </div>
+      )}
+    />
   );
 };
