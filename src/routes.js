@@ -29,7 +29,8 @@ const Routes = location => {
 };
 
 const RoutesContainer = posed.div({
-  enter: { beforeChildren: true }
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
 });
 
 export const App = () => {
@@ -41,11 +42,6 @@ export const App = () => {
 
           <PoseGroup>
             <RoutesContainer key={location.pathname}>
-              {location.pathname === "/" ||
-              location.pathname.startsWith("/Mappa") ? (
-                <Header />
-              ) : null}
-
               {Routes(location)}
 
               {location.pathname === "/" ||

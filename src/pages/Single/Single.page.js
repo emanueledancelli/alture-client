@@ -10,13 +10,13 @@ const Animated = posed.div({
   enter: {
     x: 0,
     transition: {
-      x: { ease: "easeOut", duration: 300 }
+      x: { ease: "linear", duration: 250 }
     }
   },
   exit: {
     x: "100%",
     transition: {
-      x: { ease: "easeOut", duration: 300 }
+      x: { ease: "linear", duration: 250 }
     }
   }
 });
