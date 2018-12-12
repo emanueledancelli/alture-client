@@ -36,6 +36,7 @@ export const App = () => {
   return (
     <Route
       render={({ location }) => (
+        <>
           <DesktopHeader />
 
           <PoseGroup>
@@ -55,6 +56,7 @@ export const App = () => {
           </PoseGroup>
 
           <DesktopFooter />
+        </>
       )}
     />
   );

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MapContainer from "./components/Container";
@@ -23,24 +23,20 @@ const Animated = posed.div({
   }
 });
 
-class Map extends Component {
-  render() {
-    const { events } = this.props;
+const Map = ({ events }) => {
+  return (
+    <Animated>
+      <Seo
+        title="Mappa - Alture"
+        description="Mappa degli eventi di Alture"
+        url="https://alture.org/Mappa"
+        image={Logo}
+      />
 
-    return (
-      <Animated>
-        <Seo
-          title="Mappa - Alture"
-          description="Mappa degli eventi di Alture"
-          url="https://alture.org/Mappa"
-          image={Logo}
-        />
-
-        {events.isLoading ? <Spinner /> : <MapContainer events={events.data} />}
-      </Animated>
-    );
-  }
-}
+      {events.isLoading ? <Spinner /> : <MapContainer events={events.data} />}
+    </Animated>
+  );
+};
 
 Map.propTypes = {
   events: PropTypes.object.isRequired

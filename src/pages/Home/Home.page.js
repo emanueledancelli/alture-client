@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { CardList } from "./components";
@@ -23,26 +23,22 @@ const Animated = posed.div({
   }
 });
 
-class Home extends Component {
-  render() {
-    const { events } = this.props;
+const Home = ({ events }) => {
+  return (
+    <Animated>
+      <ScrollToTop />
 
-    return (
-      <Animated>
-        <ScrollToTop />
+      <Seo
+        title="Home - Alture"
+        description="Homepage dell'iniziativa Alture"
+        url="https://alture.org"
+        image={Logo}
+      />
 
-        <Seo
-          title="Home - Alture"
-          description="Homepage dell'iniziativa Alture"
-          url="https://alture.org"
-          image={Logo}
-        />
-
-        {events.isLoading ? <Spinner /> : <CardList events={events.data} />}
-      </Animated>
-    );
-  }
-}
+      {events.isLoading ? <Spinner /> : <CardList events={events.data} />}
+    </Animated>
+  );
+};
 
 Home.propTypes = {
   events: PropTypes.object.isRequired

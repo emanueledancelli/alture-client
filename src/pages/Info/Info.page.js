@@ -10,6 +10,7 @@ const Animated = posed.div({
   enter: {
     y: 0,
     opacity: 1,
+    staggerChildren: 50,
     transition: {
       y: { ease: "easeOut", duration: 400 }
     }
@@ -17,6 +18,7 @@ const Animated = posed.div({
   exit: {
     y: "100%",
     opacity: 0,
+    staggerChildren: 50,
     transition: {
       y: { ease: "easeOut", duration: 400 }
     }

@@ -3,7 +3,7 @@ import "./Notifications.page.scss";
 import { Link } from "react-router-dom";
 import posed from "react-pose";
 import { PagesHeader } from "components";
-import { Seo } from "components/common";
+import { Seo, ScrollToTop } from "components/common";
 import Logo from "logo.png";
 
 const Animated = posed.div({
@@ -25,37 +25,27 @@ const Animated = posed.div({
 
 export class Notifications extends Component {
   componentDidMount() {
-    this.scrollToTop();
     this.initOneSignal("mount");
-  }
-
-  componentWillUnmount() {
-    this.initOneSignal();
   }
 
   scrollToTop = () => window.scrollTo(0, 0);
 
-  initOneSignal = param => {
+  initOneSignal = () => {
     var SDK = document.createElement("script");
     SDK.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
     var script = document.createElement("script");
     script.text =
       'var OneSignal = window.OneSignal || [];\r\n  OneSignal.push(function() {\r\n    OneSignal.init({\r\n      appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6",\r\n    });\r\n  });';
 
-    if ((param = "mount")) {
-      document.head.appendChild(SDK);
-      document.head.appendChild(script);
-      return;
-    } else {
-      document.head.removeChild(SDK);
-      document.head.removeChild(script);
-      return;
-    }
+    document.head.appendChild(SDK);
+    document.head.appendChild(script);
   };
 
   render() {
     return (
       <Animated>
+        <ScrollToTop />
+
         <Seo
           title="Notifiche - Alture"
           description="Rimani aggiornato sull'attività di Alture con le notifiche"
