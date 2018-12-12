@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./Privacy.page.scss";
-
 import { PagesHeader } from "components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
-import axios from "config.js";
+import { getPrivacy } from "api";
 import Logo from "logo.png";
 
 export class Privacy extends Component {
@@ -14,12 +13,11 @@ export class Privacy extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    this.getPrivacy();
+    this.fetchPrivacy();
   }
 
-  getPrivacy = () => {
-    axios
-      .get(`/pages/60`)
+  fetchPrivacy = () => {
+    getPrivacy()
       .then(res => {
         this.setState({
           privacy: res.data.content.rendered,
