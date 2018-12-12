@@ -5,7 +5,6 @@ import { InfoOutlineIcon, NotificationsNoneIcon } from "mdi-react";
 import Logo from "logo.png";
 
 export const Header = () => {
-  
   return (
     <>
       <div className="header__container">

@@ -42,6 +42,10 @@ export const App = () => {
 
           <PoseGroup>
             <RoutesContainer key={location.pathname}>
+              {location.pathname === "/" ||
+              location.pathname.startsWith("/Mappa") ? (
+                <Header />
+              ) : null}
               {Routes(location)}
 
               {location.pathname === "/" ||

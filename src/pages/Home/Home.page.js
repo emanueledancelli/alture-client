@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { CardList } from "./components";
 import posed from "react-pose";
-import { ScrollToTop, Seo, Spinner } from "components/common";
-import { Header, Navigation } from "components";
+import { Seo, Spinner } from "components/common";
 import Logo from "logo.png";
 
 const Animated = posed.div({
@@ -30,7 +29,6 @@ const Animated = posed.div({
 const Home = ({ events }) => {
   return (
     <>
-      <Header />
       <Animated>
         <Seo
           title="Home - Alture"

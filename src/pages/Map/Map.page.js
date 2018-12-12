@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MapContainer from "./components/Container";
 import { Seo, Spinner } from "components/common";
-import { Header, Navigation } from "components";
 import posed from "react-pose";
 import Logo from "logo.png";
 
@@ -26,17 +25,15 @@ const Animated = posed.div({
 
 const Map = ({ events }) => {
   return (
-    <>
+    <Animated>
       <Seo
         title="Mappa - Alture"
         description="Mappa degli eventi di Alture"
         url="https://alture.org/Mappa"
         image={Logo}
       />
-
-      <Header />
       {events.isLoading ? <Spinner /> : <MapContainer events={events.data} />}
-    </>
+    </Animated>
   );
 };
 
