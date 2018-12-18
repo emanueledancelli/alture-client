@@ -6,29 +6,10 @@ import posed from "react-pose";
 import { Seo, ScrollToTop } from "components/common";
 import Logo from "logo.png";
 
-const Animated = posed.div({
-  enter: {
-    y: 0,
-    opacity: 1,
-    staggerChildren: 50,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  },
-  exit: {
-    y: "100%",
-    opacity: 0,
-    staggerChildren: 50,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  }
-});
-
 export class Info extends Component {
   render() {
     return (
-      <Animated className="info">
+      <>
         <ScrollToTop />
 
         <Seo
@@ -107,7 +88,7 @@ export class Info extends Component {
             </a>
           </p>
         </div>
-      </Animated>
+      </>
     );
   }
 }

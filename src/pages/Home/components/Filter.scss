@@ -1,0 +1,14 @@
+select {
+  background-color: white;
+}
+
+.filtermenu {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  flex-direction: row;
+  font-family: "Raleway";
+  justify-content: flex-end;
+  align-items: center;
+}

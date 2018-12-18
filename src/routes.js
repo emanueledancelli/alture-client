@@ -42,14 +42,12 @@ export const App = () => {
 
           <PoseGroup>
             <RoutesContainer key={location.pathname}>
-              {location.pathname === "/" ||
-              location.pathname.startsWith("/Mappa") ? (
-                <Header />
-              ) : null}
+              {location.pathname.startsWith("/mappa") ? <Header /> : null}
+
               {Routes(location)}
 
               {location.pathname === "/" ||
-              location.pathname.startsWith("/Mappa") ? (
+              location.pathname.startsWith("/mappa") ? (
                 <Navigation />
               ) : null}
             </RoutesContainer>
