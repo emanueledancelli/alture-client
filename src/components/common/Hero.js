@@ -1,7 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { CloseCircleOutlineIcon } from "mdi-react";
 import Filter from "../../pages/Home/components/Filter";
 import "./Hero.scss";
+
+const CloseButton = () => {
+  return (
+    <Link to="/informazioni">
+      <CloseCircleOutlineIcon className="header__icon" size={26} />
+    </Link>
+  );
+};
 
 export class Hero extends Component {
   state = {
@@ -30,13 +40,16 @@ export class Hero extends Component {
 
   render() {
     const { isScrolled } = this.state;
-    const { title, filter } = this.props;
+    const { title, filter, close, hasBorder } = this.props;
+    const bottomBorder = {
+      borderBottom: "0.5px solid rgba(0,0,0,0.1)"
+    };
 
     return (
       <>
-        <div className="filter__container">
+        <div style={hasBorder && bottomBorder} className="filter__container">
           <h1>{title}</h1>
-          {filter ? <Filter /> : null}
+          {filter && <Filter />}
         </div>
 
         <div
@@ -45,7 +58,8 @@ export class Hero extends Component {
           }
         >
           <h1>{title}</h1>
-          {filter ? <Filter /> : null}
+          {filter && <Filter />}
+          {close && <CloseButton />}
         </div>
       </>
     );
@@ -54,5 +68,7 @@ export class Hero extends Component {
 
 Hero.propTypes = {
   title: PropTypes.string.isRequired,
-  hasFilter: PropTypes.bool
+  filter: PropTypes.bool,
+  close: PropTypes.bool,
+  hasBorder: PropTypes.bool
 };

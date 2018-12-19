@@ -29,25 +29,49 @@ export class Info extends Component {
           <div className="info__menu">
             <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
-              <span>Esplorando i confini</span>
+              <Link to="/esplorando-i-confini">
+                <span>Esplorando i confini</span>
+              </Link>
             </div>
             <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
-              <span>Gestisci le notifiche</span>
+              <Link to="/notifiche">
+                <span>Gestisci le notifiche</span>
+              </Link>
             </div>
             <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
-              <span>Dai un feedback</span>
+              <Link to="/feedback">
+                <span>Dai un feedback</span>
+              </Link>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <Link to="/privacypolicy">
+                <span>Privacy policy</span>
+              </Link>
             </div>
           </div>
           <div className="info__old">
             <div className="info__menu__item">
               <OpenInNewIcon className="info__icon" size={20} />
-              <span>Alture Festival 2017</span>
+              <a
+                href="https://2017.alture.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Alture Festival 2017</span>
+              </a>
             </div>
             <div className="info__menu__item">
               <OpenInNewIcon className="info__icon" size={20} />
-              <span>Alture Festival 2016</span>
+              <a
+                href="http://alturefestival.associazioneilcapannone.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Alture Festival 2016</span>
+              </a>
             </div>
           </div>
           <div className="info__contact">
@@ -59,11 +83,23 @@ export class Info extends Component {
             <div className="info__contact__items">
               <div className="info__contact__item">
                 <WebIcon className="info__icon" size={20} />
-                <span>Website</span>
+                <a
+                  href="http://www.associazioneilcapannone.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Website</span>
+                </a>
               </div>
               <div className="info__contact__item">
                 <MailOutlineIcon className="info__icon" size={20} />
-                <span>Mail</span>
+                <a
+                  href="mailto:info@associazioneilcapannone.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Mail</span>
+                </a>
               </div>
               <div className="info__contact__item">
                 <img
@@ -73,7 +109,13 @@ export class Info extends Component {
                   height="20px"
                   width="20px"
                 />
-                <span>Facebook</span>
+                <a
+                  href="https://www.facebook.com/A.Alture/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Facebook</span>
+                </a>
               </div>
               <div className="info__contact__item">
                 <img
@@ -83,12 +125,15 @@ export class Info extends Component {
                   height="20px"
                   width="20px"
                 />
-                <span>Instagram</span>
+                <a
+                  href="https://www.instagram.com/a.alture/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Instagram</span>
+                </a>
               </div>
             </div>
-          </div>
-          <div className="info__privacy">
-            <span>Privacy Policy</span>
           </div>
         </div>
       </>
