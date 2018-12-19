@@ -1,52 +1,58 @@
 .info {
-  background-color: white;
+  margin-bottom: 11vh;
+  &__menu {
+    padding: 10px 6%;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 
-  &__body {
-    flex: 1;
-    padding: 0 6%;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    @media (min-width: 740px) {
-      padding: 5% 0 0;
-      max-width: 940px;
-      margin: 0 auto;
+    &__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 16px;
+      padding: 20px 0;
+      font-weight: bold;
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
-
-  &__footer {
-    display: flex;
-    flex-direction: row;
-    padding: 0 5%;
-    justify-content: space-between;
-    align-items: center;
-    color: #828282;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    font-size: 0.8em;
-    & a {
-      color: #828282;
+  &__contact {
+    padding: 35px 6%;
+    line-height: 150%;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    &__items {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-    @media (min-width: 740px) {
-      display: none;
+    &__heading {
+      font-weight: bold;
+    }
+    &__item {
+      display: flex;
+      min-width: 50%;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 16px;
+      padding: 5px 0;
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
-
-  &__text {
-    font-size: 1em;
-    line-height: 180%;
-    color: #333;
-    margin: 20px 0 0;
+  &__privacy {
+    padding: 35px 6%;
   }
-
-  &__links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 5% 0 8%;
-    & p {
-      color: #333;
-      margin: 0.5em 0;
-    }
-    & a {
-      color: #333;
-    }
+  &__old {
+    padding: 10px 6%;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+  &__icon {
+    color: rgba(0, 0, 0, 0.2);
+    margin-right: 8px;
   }
 }

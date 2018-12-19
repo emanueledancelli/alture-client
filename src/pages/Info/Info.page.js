@@ -2,14 +2,20 @@ import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { Seo, ScrollToTop, Hero, Header } from "components/common";
+import {
+  ChevronRightIcon,
+  OpenInNewIcon,
+  WebIcon,
+  MailOutlineIcon
+} from "mdi-react";
 import Logo from "logo.png";
+import Facebook from "facebook-brands.svg";
+import Instagram from "instagram-brands.svg";
 
 export class Info extends Component {
   render() {
     return (
       <>
-        <ScrollToTop />
-
         <Seo
           title="Informazioni - Alture"
           description="Informazioni sull'iniziativa Alture"
@@ -19,9 +25,79 @@ export class Info extends Component {
 
         <Header />
         <Hero title="Informazioni" />
+        <div className="info">
+          <div className="info__menu">
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <span>Esplorando i confini</span>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <span>Gestisci le notifiche</span>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <span>Dai un feedback</span>
+            </div>
+          </div>
+          <div className="info__old">
+            <div className="info__menu__item">
+              <OpenInNewIcon className="info__icon" size={20} />
+              <span>Alture Festival 2017</span>
+            </div>
+            <div className="info__menu__item">
+              <OpenInNewIcon className="info__icon" size={20} />
+              <span>Alture Festival 2016</span>
+            </div>
+          </div>
+          <div className="info__contact">
+            <span>A cura di:</span>
+            <br />
+            <span className="info__contact__heading">
+              Associazione Il Capannone
+            </span>
+            <div className="info__contact__items">
+              <div className="info__contact__item">
+                <WebIcon className="info__icon" size={20} />
+                <span>Website</span>
+              </div>
+              <div className="info__contact__item">
+                <MailOutlineIcon className="info__icon" size={20} />
+                <span>Mail</span>
+              </div>
+              <div className="info__contact__item">
+                <img
+                  src={Facebook}
+                  className="info__icon"
+                  alt="Facebook"
+                  height="20px"
+                  width="20px"
+                />
+                <span>Facebook</span>
+              </div>
+              <div className="info__contact__item">
+                <img
+                  src={Instagram}
+                  className="info__icon"
+                  alt="Instagram"
+                  height="20px"
+                  width="20px"
+                />
+                <span>Instagram</span>
+              </div>
+            </div>
+          </div>
+          <div className="info__privacy">
+            <span>Privacy Policy</span>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
 
-        <div className="info__body">
-          <p className="info__text">
+{
+  /*  <p className="info__text">
             Lo spirito dell"esploratore è dentro ciascuno di noi. L"uomo nasce
             esploratore, il desiderio di scoprire cosa si cela oltre il cancello
             o dall"altro lato della montagna è una sua tensione naturale. E,
@@ -42,48 +118,5 @@ export class Info extends Component {
             che siamo e di quello che sentiamo che ci manca. Perchè esplorare,
             in fondo, significa sognare di scoprire ciò che possiamo solo
             immaginare.
-          </p>
-          <div className="info__links">
-            <h3>Contatti</h3>
-            <p>
-              <a href="mailto:info@associazioneilcapannone.org">Mail</a>
-            </p>
-            <p>
-              <a
-                href="https://www.instagram.com/a.alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.facebook.com/A.Alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </p>
-          </div>
-        </div>
-        <div className="info__footer">
-          <Link to="/privacypolicy">
-            <p>Privacy Policy</p>
-          </Link>
-
-          <p>
-            <a
-              href="https://github.com/emanueledancelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ED
-            </a>
-          </p>
-        </div>
-      </>
-    );
-  }
+          </p> */
 }

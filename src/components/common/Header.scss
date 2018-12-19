@@ -1,4 +1,25 @@
 .header {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 8vh;
+  justify-content: space-between;
+  padding: 0 6%;
+  align-items: center;
+  color: #333;
+  transition: all 0.3s ease-in;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 740px) {
+    display: none;
+  }
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    min-width: 40%;
+  }
   &__icon {
     display: flex;
     justify-content: center;
@@ -6,43 +27,5 @@
     padding: 5px;
     margin-left: 10px;
     fill: rgba(0, 0, 0, 0.2);
-  }
-  &__container {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    height: 8vh;
-    justify-content: space-between;
-    padding: 0 6%;
-    align-items: center;
-    color: #333;
-    transition: all 0.3s ease-in;
-    z-index: 1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-    @media (min-width: 740px) {
-      display: none;
-    }
-
-    & span {
-      font-weight: 500;
-      font-size: 0.9em;
-      padding: 5px;
-    }
-  }
-  &__filter {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    min-width: 40%;
-    &--border-left {
-      padding: 5px;
-      border-radius: 5px;
-    }
-    &--border-right {
-      margin-right: 10px;
-      border-radius: 5px;
-      padding: 5px;
-    }
   }
 }
