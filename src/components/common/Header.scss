@@ -1,6 +1,5 @@
 .header {
   &__icon {
-    //color: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +36,6 @@
     justify-content: flex-end;
     min-width: 40%;
     &--border-left {
-      //border: 1px solid rgba(0, 0, 0, 0.1);
       padding: 5px;
       border-radius: 5px;
     }
@@ -45,7 +43,6 @@
       margin-right: 10px;
       border-radius: 5px;
       padding: 5px;
-      //border: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
 }
