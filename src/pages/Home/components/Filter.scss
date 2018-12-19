@@ -1,9 +1,13 @@
 select {
-  background-color: white;
+  background-color: #6d9b8d;
+}
+
+select:focus {
+  outline: none;
 }
 
 .filtermenu {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #6d9b8d;
   display: flex;
   padding: 5px 5px 5px 5px;
   border-radius: 5px;

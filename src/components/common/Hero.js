@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import { ChevronDownIcon } from "mdi-react";
-import Filter from "./Filter";
+import PropTypes from "prop-types";
+import Filter from "../../pages/Home/components/Filter";
 import "./Hero.scss";
 
 export class Hero extends Component {
   state = {
-    isScrolled: false,
-    selectedValue: "",
-    selectValues: ["In Arrivo", "Nuovi"]
+    isScrolled: false
   };
 
   componentDidMount() {
@@ -30,20 +28,15 @@ export class Hero extends Component {
     }
   };
 
-  handleSelect = event => {
-    this.setState({
-      selectedValue: event.target.value
-    });
-  };
-
   render() {
     const { isScrolled } = this.state;
+    const { title, filter } = this.props;
 
     return (
       <>
         <div className="filter__container">
-          <h1>Eventi</h1>
-          <Filter />
+          <h1>{title}</h1>
+          {filter ? <Filter /> : null}
         </div>
 
         <div
@@ -51,10 +44,15 @@ export class Hero extends Component {
             "filter__container--scrolled " + (isScrolled ? "" : "hide")
           }
         >
-          <h1>Eventi</h1>
-          <Filter />
+          <h1>{title}</h1>
+          {filter ? <Filter /> : null}
         </div>
       </>
     );
   }
 }
+
+Hero.propTypes = {
+  title: PropTypes.string.isRequired,
+  hasFilter: PropTypes.bool
+};

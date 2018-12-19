@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { CardList, NoEvents, Header, Filter, Hero } from "./components";
-import { Seo, Spinner } from "components/common";
+import { CardList } from "./components";
+import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
 import Logo from "logo.png";
 
@@ -38,7 +38,7 @@ class Home extends React.Component {
       <>
         <SeoTags />
         <Header />
-        <Hero />
+        <Hero title="Eventi" filter />
         {isLoading ? <Spinner /> : <CardList {...eventsList} />}
       </>
     );

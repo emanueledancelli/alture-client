@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { PagesHeader } from "components";
-import posed from "react-pose";
-import { Seo, ScrollToTop } from "components/common";
+import { Seo, ScrollToTop, Hero, Header } from "components/common";
 import Logo from "logo.png";
 
 export class Info extends Component {
@@ -19,13 +17,10 @@ export class Info extends Component {
           image={Logo}
         />
 
-        <PagesHeader
-          pageTitle="Alture"
-          onClick={() => this.props.history.goBack()}
-        />
+        <Header />
+        <Hero title="Informazioni" />
 
         <div className="info__body">
-          <h1>Alture</h1>
           <p className="info__text">
             Lo spirito dell"esploratore è dentro ciascuno di noi. L"uomo nasce
             esploratore, il desiderio di scoprire cosa si cela oltre il cancello
