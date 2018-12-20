@@ -12,7 +12,7 @@
       align-items: center;
       font-size: 16px;
       padding: 20px 0;
-      font-weight: bold;
+      font-weight: 500;
       color: #333;
       & a {
         text-decoration: none;
@@ -38,7 +38,10 @@
       }
     }
     &__heading {
-      font-weight: bold;
+      font-weight: 400;
+    }
+    &__before {
+      color: rgba(0, 0, 0, 0.2);
     }
     &__item {
       display: flex;

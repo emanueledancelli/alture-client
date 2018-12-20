@@ -1,3 +1,85 @@
 .feedback {
   padding: 35px 6%;
+
+  & input {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 5%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &::placeholder {
+      color: #333;
+      font-family: "Raleway";
+    }
+  }
+  & textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5%;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &::placeholder {
+      color: #333;
+      font-family: "Raleway";
+    }
+  }
+
+  & button {
+    background-color: #6d9b8d;
+    font-family: "Raleway";
+    border: none;
+    padding: 5%;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 50%;
+  }
+  &__privacy {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 0.7em;
+    & a {
+      color: #333;
+      text-decoration: underline;
+    }
+  }
+
+  &__icon {
+    color: #6d9b8d;
+    animation: bumP 500ms ease-out forwards;
+    margin: 35px 0;
+    transition: rotate, scale;
+    animation-name: bump;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in, ease-out;
+    animation-iteration-count: 1, 1;
+  }
+  &__success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

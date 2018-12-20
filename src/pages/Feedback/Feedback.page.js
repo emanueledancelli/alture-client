@@ -2,6 +2,7 @@ import React from "react";
 import posed from "react-pose";
 import { Seo, ScrollToTop, Header, Hero } from "components/common";
 import { CheckCircleOutlineIcon } from "mdi-react";
+import { Link } from "react-router-dom";
 import "./Feedback.page.scss";
 
 const Animated = posed.div({
@@ -31,11 +32,12 @@ export class Feedback extends React.Component {
   state = {
     mail: "",
     message: "",
-    submitSuccess: false,
-    errorMessage: ""
+    errorMessage: "",
+    submitSuccess: false
   };
 
   handleSubmit = e => {
+    this.setState({ isSending: true });
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -43,12 +45,14 @@ export class Feedback extends React.Component {
     })
       .then(() => {
         this.setState({
-          submitSuccess: true
+          submitSuccess: true,
+          isSending: false
         });
       })
       .catch(error => {
         this.setState({
-          errorMessage: error
+          errorMessage: error,
+          isSending: false
         });
       });
 
@@ -67,13 +71,15 @@ export class Feedback extends React.Component {
         <Hero close hasBorder title="Feedback" />
         <div className="feedback">
           {submitSuccess ? (
-            <>
+            <div className="feedback__success">
               <span>
                 Il tuo messaggio è stato inviato con successo, grazie!
               </span>
               <br />
-              <CheckCircleOutlineIcon size={54} className="feedback__icon" />
-            </>
+              <Link to="/informazioni">
+                <CheckCircleOutlineIcon size={80} className="feedback__icon" />
+              </Link>
+            </div>
           ) : (
             <>
               <span>
@@ -86,7 +92,7 @@ export class Feedback extends React.Component {
                       type="email"
                       name="email"
                       value={email}
-                      placeholder="La tua email"
+                      placeholder="Email *"
                       onChange={this.handleChange}
                     />
                   </label>
@@ -102,11 +108,14 @@ export class Feedback extends React.Component {
                   </label>
                 </p>
                 <p>
-                  <button className="feedback__button" type="submit">
-                    Invia
-                  </button>
+                  <button type="submit">Invia</button>
                 </p>
               </form>
+              <p className="feedback__privacy">
+                * L'indirizzo email fornito verrà utilizzato solo ed
+                esclusivamente per rispondere a questo feedback. Per maggiori
+                info: <Link to="/privacypolicy">Privacy policy</Link>.
+              </p>
             </>
           )}
         </div>

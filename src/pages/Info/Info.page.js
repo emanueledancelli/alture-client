@@ -52,30 +52,8 @@ export class Info extends Component {
               </Link>
             </div>
           </div>
-          <div className="info__old">
-            <div className="info__menu__item">
-              <OpenInNewIcon className="info__icon" size={20} />
-              <a
-                href="https://2017.alture.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Alture Festival 2017</span>
-              </a>
-            </div>
-            <div className="info__menu__item">
-              <OpenInNewIcon className="info__icon" size={20} />
-              <a
-                href="http://alturefestival.associazioneilcapannone.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Alture Festival 2016</span>
-              </a>
-            </div>
-          </div>
           <div className="info__contact">
-            <span>A cura di:</span>
+            <span className="info__contact__before">A cura di:</span>
             <br />
             <span className="info__contact__heading">
               Associazione Il Capannone

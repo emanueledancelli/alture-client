@@ -3,6 +3,24 @@ import "./Privacy.page.scss";
 import { Spinner, Seo, Hero, Header, ScrollToTop } from "components/common";
 import { getPrivacy } from "api";
 import Logo from "logo.png";
+import posed from "react-pose";
+
+const Animated = posed.div({
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { ease: "easeOut", duration: 400 }
+    }
+  },
+  exit: {
+    y: "100%",
+    opacity: 0,
+    transition: {
+      y: { ease: "easeOut", duration: 400 }
+    }
+  }
+});
 
 export class Privacy extends Component {
   state = {
