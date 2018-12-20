@@ -19,6 +19,9 @@
   &__menu {
     display: flex;
     flex-direction: row;
+    &__item {
+      width: 25%;
+    }
   }
 
   &__link {

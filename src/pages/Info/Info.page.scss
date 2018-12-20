@@ -27,21 +27,24 @@
     padding: 35px 6%;
     line-height: 150%;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    font-weight: 400;
     &__items {
       margin-top: 20px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      width: 100%;
       & a {
         color: #333;
         text-decoration: none;
       }
     }
     &__heading {
-      font-weight: 400;
+      font-size: 0.9em;
     }
     &__before {
       color: rgba(0, 0, 0, 0.2);
+      font-size: 0.9em;
     }
     &__item {
       display: flex;
@@ -49,7 +52,7 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      font-size: 16px;
+      font-size: 0.9em;
       padding: 5px 0;
       &:last-child {
         border-bottom: none;

@@ -13,6 +13,7 @@ export const CardList = ({ events }) => {
       <Link
         to={`/eventi/${e.id}/${formatTitle(e.title.rendered, "dash")}`}
         key={e.id}
+        className="card__link"
       >
         <Card
           title={e.title.rendered}

@@ -9,6 +9,12 @@
     align-items: center;
     color: #333;
     background-color: white;
+    @media (min-width: 740px) {
+      max-width: 940px;
+      padding: 0;
+      margin: 0 auto;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__picker {
@@ -39,6 +45,9 @@
   justify-content: space-between;
   & h1 {
     font-size: 1.2em;
+  }
+  @media (min-width: 740px) {
+    display: none;
   }
 }
 

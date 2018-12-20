@@ -30,7 +30,7 @@ class Home extends React.Component {
     }
 
     if (ui.selectedValue === "Passati") {
-      eventsList.events = past;
+      eventsList.events = past.reverse();
     }
 
     console.log(this.props);

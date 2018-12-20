@@ -21,11 +21,15 @@
     flex-direction: row;
     background-color: white;
     padding: 0 6%;
+    @media (min-width: 740px) {
+      display: none;
+    }
   }
 
   @media (min-width: 740px) {
     display: none;
   }
+
   &__links {
     display: flex;
     flex-direction: row;
