@@ -62,7 +62,7 @@ export class Feedback extends React.Component {
                 Il tuo messaggio è stato inviato con successo, grazie!
               </span>
               <br />
-              <Link to="/informazioni">
+              <Link to="/">
                 <CheckCircleOutlineIcon size={80} className="feedback__icon" />
               </Link>
             </div>
