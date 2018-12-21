@@ -23,7 +23,11 @@ export class Feedback extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "feedback", ...this.state })
+      body: encode({
+        "form-name": "feedback",
+        mail: this.state.mail,
+        message: this.state.message
+      })
     })
       .then(() => {
         this.setState({
