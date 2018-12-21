@@ -67,7 +67,7 @@ export class Feedback extends React.Component {
               <span>
                 Invia la tua opinione e contribuisci a migliorare alture.org
               </span>
-              <form onSubmit={this.handleSubmit}>
+              <form name="feedback" onSubmit={this.handleSubmit}>
                 <p>
                   <label>
                     <input
