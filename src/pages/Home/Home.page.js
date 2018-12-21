@@ -5,6 +5,7 @@ import { CardList } from "./components";
 import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
 import Logo from "logo.png";
+import orderBy from "lodash/orderBy";
 
 const SeoTags = () => {
   return (
@@ -30,7 +31,7 @@ class Home extends React.Component {
     }
 
     if (ui.selectedValue === "Passati") {
-      eventsList.events = past.reverse();
+      eventsList.events = past;
     }
 
     console.log(this.props);
@@ -56,7 +57,7 @@ const mapStateToProps = state => {
   return {
     ui: state.ui,
     isLoading: state.events.isLoading,
-    past: state.events.data,
+    past: orderBy(state.events.data, "acf.data_fine"),
     upcoming: state.events.data.filter(e => e.acf.data_inizio >= getDate())
   };
 };
