@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { Seo, ScrollToTop, Hero, Header } from "components/common";
-import {
-  ChevronRightIcon,
-  OpenInNewIcon,
-  WebIcon,
-  MailOutlineIcon
-} from "mdi-react";
+import { Seo, Hero, Header } from "components/common";
+import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
 import Logo from "assets/logo.png";
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";

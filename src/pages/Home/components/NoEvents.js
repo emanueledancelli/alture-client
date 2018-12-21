@@ -1,6 +1,5 @@
 import React from "react";
 import "./NoEvents.scss";
-import { Link } from "react-router-dom";
 
 export const NoEvents = () => {
   return (
@@ -9,7 +8,6 @@ export const NoEvents = () => {
         <span>:(</span>
         <br />
         <br />
-
         <span>Sembra non ci siano eventi in programma al momento.</span>
         <br />
         <br />

@@ -4,18 +4,12 @@ import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
-import Logo from "assets/logo.png";
 import orderBy from "lodash/orderBy";
 
-const SeoTags = () => {
-  return (
-    <Seo
-      title="Home - Alture"
-      description="Homepage dell'iniziativa Alture"
-      url="https://alture.org"
-      image={Logo}
-    />
-  );
+const seoTags = {
+  title: "Home -  Alture",
+  description: "Homepage dell'iniziativa Alture",
+  url: "https://alture.org"
 };
 
 class Home extends React.Component {
@@ -34,10 +28,9 @@ class Home extends React.Component {
       eventsList.events = past;
     }
 
-    console.log(this.props);
     return (
       <>
-        <SeoTags />
+        <Seo {...seoTags} />
         <Header />
         <Hero title="Eventi" filter />
         {isLoading ? <Spinner /> : <CardList {...eventsList} />}

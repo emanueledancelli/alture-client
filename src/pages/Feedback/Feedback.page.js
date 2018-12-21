@@ -10,6 +10,12 @@ const encode = data => {
     .join("&");
 };
 
+const seoTags = {
+  title: "Alture - Feedback",
+  url: "https://alture.org/feedback",
+  description: "Aiutaci a migliorare alture.org con il tuo feedback!"
+};
+
 export class Feedback extends React.Component {
   state = {
     mail: "",
@@ -52,7 +58,7 @@ export class Feedback extends React.Component {
     return (
       <Animated>
         <ScrollToTop />
-        <Seo />
+        <Seo {...seoTags} />
         <Header close />
         <Hero close hasBorder title="Feedback" />
         <div className="feedback">

@@ -7,9 +7,9 @@ class Filter extends Component {
   render() {
     const { ui, setFilter } = this.props;
 
-    const values = ui.selectorValues.map(e => {
+    const values = ui.selectorValues.map((e, index) => {
       return (
-        <option key={e.index} value={e}>
+        <option key={index} value={e}>
           {e}
         </option>
       );
@@ -20,7 +20,7 @@ class Filter extends Component {
         onChange={e => {
           setFilter(e);
         }}
-        className="filtermenu"
+        className="filter__menu"
         value={ui.selectedValue}
       >
         {values}

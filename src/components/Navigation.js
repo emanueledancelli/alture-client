@@ -2,7 +2,7 @@ import React from "react";
 import "./Navigation.scss";
 import posed from "react-pose";
 import { NavLink } from "react-router-dom";
-import { HomeOutlineIcon, MapOutlineIcon, InfoOutlineIcon } from "mdi-react";
+import { HomeOutlineIcon, InfoOutlineIcon } from "mdi-react";
 
 const Animated = posed.div({
   enter: {
