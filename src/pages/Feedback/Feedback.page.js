@@ -25,7 +25,7 @@ export class Feedback extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "feedback",
-        mail: this.state.mail,
+        email: this.state.mail,
         message: this.state.message
       })
     })
