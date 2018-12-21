@@ -1,26 +1,8 @@
 import React from "react";
-import posed from "react-pose";
-import { Seo, ScrollToTop, Header, Hero } from "components/common";
+import { Animated, Seo, ScrollToTop, Header, Hero } from "components/common";
 import { CheckCircleOutlineIcon } from "mdi-react";
 import { Link } from "react-router-dom";
 import "./Feedback.page.scss";
-
-const Animated = posed.div({
-  enter: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  },
-  exit: {
-    y: "100%",
-    opacity: 0,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  }
-});
 
 const encode = data => {
   return Object.keys(data)

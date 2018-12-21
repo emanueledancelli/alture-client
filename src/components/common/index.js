@@ -3,3 +3,4 @@ export { Seo } from "./Seo";
 export { ScrollToTop } from "./ScrollToTop";
 export { Hero } from "./Hero";
 export { Header } from "./Header";
+export { Animated } from "./Animated";
