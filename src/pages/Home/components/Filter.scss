@@ -1,0 +1,18 @@
+select {
+  background-color: #6d9b8d;
+}
+
+select:focus {
+  outline: none;
+}
+
+.filtermenu {
+  border: 1px solid #6d9b8d;
+  display: flex;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  flex-direction: row;
+  font-family: "Raleway";
+  justify-content: flex-end;
+  align-items: center;
+}

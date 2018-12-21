@@ -16,14 +16,14 @@ export const DesktopFooter = () => {
             <Link to="/">
               <p>Home</p>
             </Link>
-            <Link to="/mappa">
-              <p>Mappa</p>
-            </Link>
-            <Link to="/informazioni">
+            <Link to="/esplorando-i-confini">
               <p>Informazioni</p>
             </Link>
             <Link to="/notifiche">
               <p>Notifiche</p>
+            </Link>
+            <Link to="/feedback">
+              <p>Feedback</p>
             </Link>
             <Link to="/privacypolicy">
               <p>Privacy policy</p>

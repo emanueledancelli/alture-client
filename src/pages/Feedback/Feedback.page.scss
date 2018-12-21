@@ -1,0 +1,111 @@
+.feedback {
+  padding: 35px 6%;
+  @media (min-width: 740px) {
+    max-width: 940px;
+    padding: 35px 0;
+    margin: 0 auto;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+
+  & input {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 5%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &::placeholder {
+      color: #333;
+      font-family: "Raleway";
+    }
+    @media (min-width: 740px) {
+      max-width: 40%;
+      margin: 35px auto 0;
+      padding: 1%;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  & textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5%;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &::placeholder {
+      color: #333;
+      font-family: "Raleway";
+    }
+    @media (min-width: 740px) {
+      max-width: 40%;
+      padding: 1%;
+      margin: 10px auto 0;
+    }
+  }
+
+  & button {
+    background-color: #6d9b8d;
+    font-family: "Raleway";
+    border: none;
+    padding: 5%;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 50%;
+    @media (min-width: 740px) {
+      max-width: 40%;
+      padding: 1%;
+      margin: 15px auto 0;
+    }
+  }
+  &__privacy {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 0.7em;
+    & a {
+      color: #333;
+      text-decoration: underline;
+    }
+    @media (min-width: 740px) {
+      max-width: 40%;
+      margin: 35px 0 0;
+    }
+  }
+
+  &__icon {
+    color: #6d9b8d;
+    animation: bumP 500ms ease-out forwards;
+    margin: 35px 0;
+    transition: rotate, scale;
+    animation-name: bump;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in, ease-out;
+    animation-iteration-count: 1, 1;
+  }
+  &__success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

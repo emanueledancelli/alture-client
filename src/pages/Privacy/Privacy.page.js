@@ -1,9 +1,26 @@
 import React, { Component } from "react";
 import "./Privacy.page.scss";
-import { PagesHeader } from "components";
-import { Spinner, Seo, ScrollToTop } from "components/common";
+import { Spinner, Seo, Hero, Header, ScrollToTop } from "components/common";
 import { getPrivacy } from "api";
 import Logo from "logo.png";
+import posed from "react-pose";
+
+const Animated = posed.div({
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { ease: "easeOut", duration: 400 }
+    }
+  },
+  exit: {
+    y: "100%",
+    opacity: 0,
+    transition: {
+      y: { ease: "easeOut", duration: 400 }
+    }
+  }
+});
 
 export class Privacy extends Component {
   state = {
@@ -48,25 +65,11 @@ export class Privacy extends Component {
           image={Logo}
         />
 
-        <PagesHeader
-          pageTitle="Privacy Policy"
-          onClick={() => this.props.history.goBack()}
-        />
+        <Header close />
+        <Hero title="Privacy Policy" close hasBorder />
 
         <div className="privacy__body">
           <div dangerouslySetInnerHTML={this.createPrivacy()} />
-        </div>
-
-        <div className="privacy__footer">
-          <p>
-            <a
-              href="https://github.com/emanueledancelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ED
-            </a>
-          </p>
         </div>
       </>
     );

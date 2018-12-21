@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { formatDate, formatTitle } from "utils";
+import { NoEvents } from "./NoEvents";
 import "./CardList.scss";
 
 import { Card } from "./Card.js";
@@ -12,6 +13,7 @@ export const CardList = ({ events }) => {
       <Link
         to={`/eventi/${e.id}/${formatTitle(e.title.rendered, "dash")}`}
         key={e.id}
+        className="card__link"
       >
         <Card
           title={e.title.rendered}
@@ -24,6 +26,9 @@ export const CardList = ({ events }) => {
     );
   });
 
+  if (events.length === 0) {
+    return <NoEvents />;
+  }
   return <div className="cardlist">{cardList}</div>;
 };
 

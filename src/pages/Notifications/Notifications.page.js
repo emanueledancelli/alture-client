@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
-import { Link } from "react-router-dom";
 import posed from "react-pose";
-import { PagesHeader } from "components";
-import { Seo, ScrollToTop } from "components/common";
+import { Seo, ScrollToTop, Hero, Header } from "components/common";
 import Logo from "logo.png";
 
 const Animated = posed.div({
@@ -45,39 +43,17 @@ export class Notifications extends Component {
     return (
       <Animated>
         <ScrollToTop />
-
         <Seo
           title="Notifiche - Alture"
           description="Rimani aggiornato sull'attività di Alture con le notifiche"
           url="https://alture.org/notifiche"
           image={Logo}
         />
-
-        <PagesHeader
-          pageTitle="Notifiche"
-          onClick={() => this.props.history.goBack()}
-        />
+        <Header close />
+        <Hero close hasBorder title="Notifiche" />
 
         <div className="not__body">
-          <h1 className="not--mb">Notifiche</h1>
-
           <div className="onesignal-customlink-container" />
-        </div>
-        <div className="not__footer">
-          <div className="not--pl">
-            <Link to="/privacypolicy">
-              <p>Privacy Policy</p>
-            </Link>
-          </div>
-          <p className="not--pr">
-            <a
-              href="https://github.com/emanueledancelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ED
-            </a>
-          </p>
         </div>
       </Animated>
     );

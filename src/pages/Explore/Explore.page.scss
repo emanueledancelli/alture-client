@@ -1,0 +1,10 @@
+.explore {
+  padding: 35px 6% 0;
+  line-height: 150%;
+  @media (min-width: 740px) {
+    max-width: 940px;
+    padding: 35px 0;
+    margin: 0 auto;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+}

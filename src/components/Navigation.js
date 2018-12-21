@@ -2,7 +2,7 @@ import React from "react";
 import "./Navigation.scss";
 import posed from "react-pose";
 import { NavLink } from "react-router-dom";
-import { HomeOutlineIcon, MapOutlineIcon } from "mdi-react";
+import { HomeOutlineIcon, MapOutlineIcon, InfoOutlineIcon } from "mdi-react";
 
 const Animated = posed.div({
   enter: {
@@ -36,13 +36,13 @@ export const Navigation = () => {
         </NavLink>
 
         <NavLink
-          to="/Mappa"
+          to="/informazioni"
           className="nav__link"
           activeClassName="nav__link--active"
           exact
         >
-          <MapOutlineIcon className="nav__icon" size={26} />
-          <span className="nav__text">Mappa</span>
+          <InfoOutlineIcon className="nav__icon" size={26} />
+          <span className="nav__text">Info</span>
         </NavLink>
       </div>
     </Animated>

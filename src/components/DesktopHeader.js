@@ -5,7 +5,7 @@ import {
   InfoOutlineIcon,
   NotificationsNoneIcon,
   HomeOutlineIcon,
-  MapOutlineIcon
+  FeedbackOutlineIcon
 } from "mdi-react";
 import Logo from "logo.png";
 
@@ -17,7 +17,7 @@ export const DesktopHeader = () => {
           <img src={Logo} alt="Logo" height="30px" />
         </Link>
         <div className="dheader__menu">
-          <div>
+          <div className="dheader__menu__item">
             <NavLink
               to="/"
               className="dheader__link"
@@ -28,20 +28,9 @@ export const DesktopHeader = () => {
               <span className="dheader__text">Home</span>
             </NavLink>
           </div>
-          <div>
+          <div className="dheader__menu__item">
             <NavLink
-              to="/mappa"
-              className="dheader__link"
-              activeClassName="dheader__link--active"
-              exact
-            >
-              <MapOutlineIcon className="dheader__icon" size={26} />
-              <span className="dheader__text">Mappa</span>
-            </NavLink>
-          </div>
-          <div>
-            <NavLink
-              to="/informazioni"
+              to="/esplorando-i-confini"
               className="dheader__link"
               activeClassName="dheader__link--active"
               exact
@@ -50,7 +39,7 @@ export const DesktopHeader = () => {
               <span className="dheader__text">Info</span>
             </NavLink>
           </div>
-          <div>
+          <div className="dheader__menu__item">
             <NavLink
               to="/notifiche"
               className="dheader__link"
@@ -59,6 +48,17 @@ export const DesktopHeader = () => {
             >
               <NotificationsNoneIcon className="dheader__icon" size={26} />
               <span className="dheader__text">Notifiche</span>
+            </NavLink>
+          </div>
+          <div className="dheader__menu__item">
+            <NavLink
+              to="/feedback"
+              className="dheader__link"
+              activeClassName="dheader__link--active"
+              exact
+            >
+              <FeedbackOutlineIcon className="dheader__icon" size={26} />
+              <span className="dheader__text">Feedback</span>
             </NavLink>
           </div>
         </div>

@@ -1,36 +1,21 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { PagesHeader } from "components";
-import posed from "react-pose";
-import { Seo, ScrollToTop } from "components/common";
+import { Seo, ScrollToTop, Hero, Header } from "components/common";
+import {
+  ChevronRightIcon,
+  OpenInNewIcon,
+  WebIcon,
+  MailOutlineIcon
+} from "mdi-react";
 import Logo from "logo.png";
-
-const Animated = posed.div({
-  enter: {
-    y: 0,
-    opacity: 1,
-    staggerChildren: 50,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  },
-  exit: {
-    y: "100%",
-    opacity: 0,
-    staggerChildren: 50,
-    transition: {
-      y: { ease: "easeOut", duration: 400 }
-    }
-  }
-});
+import Facebook from "facebook-brands.svg";
+import Instagram from "instagram-brands.svg";
 
 export class Info extends Component {
   render() {
     return (
-      <Animated className="info">
-        <ScrollToTop />
-
+      <>
         <Seo
           title="Informazioni - Alture"
           description="Informazioni sull'iniziativa Alture"
@@ -38,76 +23,98 @@ export class Info extends Component {
           image={Logo}
         />
 
-        <PagesHeader
-          pageTitle="Alture"
-          onClick={() => this.props.history.goBack()}
-        />
-
-        <div className="info__body">
-          <h1>Alture</h1>
-          <p className="info__text">
-            Lo spirito dell"esploratore è dentro ciascuno di noi. L"uomo nasce
-            esploratore, il desiderio di scoprire cosa si cela oltre il cancello
-            o dall"altro lato della montagna è una sua tensione naturale. E,
-            nell"immaginario collettivo, l"idea stessa di ricercare luoghi
-            selvaggi e sconosciuti, di spingersi al di fuori della zona di
-            comfort porta subito la mente su una cresta sottile, che sale verso
-            il cielo. La montagna offre ancora molto spazio all"immaginario
-            dell"esplorazione proprio perchè non tutta la sua superficie sembra
-            occupata, e andare verso l"alto diviene quasi metafora
-            dell"anticonformismo, della volontà di non omologarsi: quello di
-            salire è infatti un gesto che sfida la più basica e potente delle
-            leggi naturali, la gravità, e la presenza stessa delle montagne, in
-            fondo, pare una ribellione alla linearità della pianura. Ma la
-            montagna ci parla anche di cose semplici, della terra, dell"acqua,
-            del sole, dell"aria, del nostro essere quegli stessi elementi di cui
-            è composta la natura. Ed ecco che l"esplorazione verso l"altro
-            prosegue, in parallelo, dentro ognuno di noi, alla ricerca di quello
-            che siamo e di quello che sentiamo che ci manca. Perchè esplorare,
-            in fondo, significa sognare di scoprire ciò che possiamo solo
-            immaginare.
-          </p>
-          <div className="info__links">
-            <h3>Contatti</h3>
-            <p>
-              <a href="mailto:info@associazioneilcapannone.org">Mail</a>
-            </p>
-            <p>
-              <a
-                href="https://www.instagram.com/a.alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.facebook.com/A.Alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </p>
+        <Header />
+        <Hero title="Informazioni" />
+        <div className="info">
+          <div className="info__menu">
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <Link to="/esplorando-i-confini">
+                <span>Esplorando i confini</span>
+              </Link>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <Link to="/notifiche">
+                <span>Gestisci le notifiche</span>
+              </Link>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <Link to="/feedback">
+                <span>Dai un feedback</span>
+              </Link>
+            </div>
+            <div className="info__menu__item">
+              <ChevronRightIcon className="info__icon" size={20} />
+              <Link to="/privacypolicy">
+                <span>Privacy policy</span>
+              </Link>
+            </div>
+          </div>
+          <div className="info__contact">
+            <span className="info__contact__before">A cura di:</span>
+            <br />
+            <span className="info__contact__heading">
+              Associazione Il Capannone
+            </span>
+            <div className="info__contact__items">
+              <div className="info__contact__item">
+                <WebIcon className="info__icon" size={20} />
+                <a
+                  href="http://www.associazioneilcapannone.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Website</span>
+                </a>
+              </div>
+              <div className="info__contact__item">
+                <MailOutlineIcon className="info__icon" size={20} />
+                <a
+                  href="mailto:info@associazioneilcapannone.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Mail</span>
+                </a>
+              </div>
+              <div className="info__contact__item">
+                <img
+                  src={Facebook}
+                  className="info__icon"
+                  alt="Facebook"
+                  height="20px"
+                  width="20px"
+                />
+                <a
+                  href="https://www.facebook.com/A.Alture/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Facebook</span>
+                </a>
+              </div>
+              <div className="info__contact__item">
+                <img
+                  src={Instagram}
+                  className="info__icon"
+                  alt="Instagram"
+                  height="20px"
+                  width="20px"
+                />
+                <a
+                  href="https://www.instagram.com/a.alture/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="info__footer">
-          <Link to="/privacypolicy">
-            <p>Privacy Policy</p>
-          </Link>
-
-          <p>
-            <a
-              href="https://github.com/emanueledancelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ED
-            </a>
-          </p>
-        </div>
-      </Animated>
+      </>
     );
   }
 }
