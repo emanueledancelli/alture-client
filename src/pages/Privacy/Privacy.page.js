@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Privacy.page.scss";
 import { Spinner, Seo, Hero, Header, ScrollToTop } from "components/common";
 import { getPrivacy } from "api";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 import posed from "react-pose";
 
 const Animated = posed.div({

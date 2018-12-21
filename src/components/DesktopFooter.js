@@ -2,7 +2,7 @@ import React from "react";
 import "./DesktopFooter.scss";
 
 import { Link } from "react-router-dom";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 
 export const DesktopFooter = () => {
   return (

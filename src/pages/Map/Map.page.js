@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import MapContainer from "./components/Container";
 import { Seo, Spinner } from "components/common";
 import posed from "react-pose";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 
 const Animated = posed.div({
   enter: {

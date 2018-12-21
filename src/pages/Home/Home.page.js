@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 import orderBy from "lodash/orderBy";
 
 const SeoTags = () => {

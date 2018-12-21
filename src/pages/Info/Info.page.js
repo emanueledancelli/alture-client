@@ -8,9 +8,9 @@ import {
   WebIcon,
   MailOutlineIcon
 } from "mdi-react";
-import Logo from "logo.png";
-import Facebook from "facebook-brands.svg";
-import Instagram from "instagram-brands.svg";
+import Logo from "assets/logo.png";
+import Facebook from "assets/facebook-brands.svg";
+import Instagram from "assets/instagram-brands.svg";
 
 export class Info extends Component {
   render() {

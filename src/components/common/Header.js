@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import "./Header.scss";
 import { NotificationsIcon, CloseCircleOutlineIcon } from "mdi-react";
 import { Link } from "react-router-dom";
-import Logo from "logo.jpg";
-import Facebook from "facebook-brands.svg";
-import Instagram from "instagram-brands.svg";
+import Logo from "assets/logo.jpg";
+import Facebook from "assets/facebook-brands.svg";
+import Instagram from "assets/instagram-brands.svg";
 
 const MainHeader = () => {
   return (
@@ -63,6 +63,6 @@ export class Header extends React.Component {
   }
 }
 
-Header.PropTypes = {
+Header.propTypes = {
   close: PropTypes.bool
 };

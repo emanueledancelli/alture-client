@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import logo from "logo.jpg";
+import logo from "assets/logo.jpg";
 
 export const Seo = ({ title, description, url, image }) => {
   return (
@@ -20,6 +20,5 @@ export const Seo = ({ title, description, url, image }) => {
 Seo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired
 };

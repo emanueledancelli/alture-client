@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Notifications.page.scss";
 import posed from "react-pose";
 import { Seo, ScrollToTop, Hero, Header } from "components/common";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 
 const Animated = posed.div({
   enter: {

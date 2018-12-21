@@ -7,7 +7,7 @@ import {
   HomeOutlineIcon,
   FeedbackOutlineIcon
 } from "mdi-react";
-import Logo from "logo.png";
+import Logo from "assets/logo.png";
 
 export const DesktopHeader = () => {
   return (
