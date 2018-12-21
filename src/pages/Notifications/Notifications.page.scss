@@ -9,41 +9,4 @@
       padding-top: 5%;
     }
   }
-
-  &__footer {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    color: #828282;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    font-size: 0.8em;
-    & a {
-      color: #828282;
-    }
-    @media (min-width: 740px) {
-      display: none;
-    }
-  }
-
-  &--pr {
-    padding-right: 5%;
-    @media (min-width: 740px) {
-      padding: 0%;
-    }
-  }
-
-  &--pl {
-    padding-left: 5%;
-    @media (min-width: 740px) {
-      padding: 0%;
-    }
-  }
-
-  &--mb {
-    margin-bottom: 40px;
-  }
 }
