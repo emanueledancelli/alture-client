@@ -16,7 +16,7 @@ export class Notifications extends Component {
         <Hero close hasBorder title="Notifiche" />
 
         <div className="not__body">
-          <div className="onesignal-customlink-container" />
+          <div />
         </div>
       </Animated>
     );
