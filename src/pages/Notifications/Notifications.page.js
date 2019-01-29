@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
+import { askForPermissioToReceiveNotifications } from "push-notifications";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
 
 export class Notifications extends Component {
@@ -16,7 +17,9 @@ export class Notifications extends Component {
         <Hero close hasBorder title="Notifiche" />
 
         <div className="not__body">
-          <div />
+          <button onClick={askForPermissioToReceiveNotifications}>
+            Premi qui per attivare le notifiche
+          </button>
         </div>
       </Animated>
     );
