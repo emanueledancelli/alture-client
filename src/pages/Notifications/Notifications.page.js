@@ -17,6 +17,7 @@ export class Notifications extends Component {
 
         <div className="not__body">
           <div className="onesignal-customlink-container" />
+          <p>Le notifiche non sono disponibili su iOS.</p>
         </div>
       </Animated>
     );
