@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { fetchEvents } from "actions/eventsActions";
 import store from "store";
-//import registerServiceWorker from "./registerServiceWorker";
+import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 
 store.dispatch(fetchEvents());
@@ -18,4 +18,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-//registerServiceWorker();
+registerServiceWorker();
