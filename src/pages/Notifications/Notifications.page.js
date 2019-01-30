@@ -16,7 +16,8 @@ export class Notifications extends Component {
         <Hero close hasBorder title="Notifiche" />
 
         <div className="not__body">
-          <div className="onesignal-customlink-container" />
+          {/* prettier-ignore */}
+          <div className="onesignal-customlink-container"></div>
           <p>Le notifiche non sono disponibili su iOS.</p>
         </div>
       </Animated>
