@@ -1,4 +1,4 @@
-export const initializeOneSignal = () => {
+export const initOneSignal = () => {
   var OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({

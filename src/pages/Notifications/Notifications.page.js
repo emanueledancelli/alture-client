@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
+import { Helmet } from "react-helmet";
 
 export class Notifications extends Component {
   state = {
@@ -56,24 +57,43 @@ export class Notifications extends Component {
     }
 
     return (
-      <Animated>
-        <ScrollToTop />
-        <Seo
-          title="Notifiche - Alture"
-          description="Rimani aggiornato sull'attività di Alture con le notifiche"
-          url="https://alture.org/notifiche"
-        />
-        <Header close />
-        <Hero close hasBorder title="Notifiche" />
+      <>
+        <Helmet>
+          <script
+            src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+            async=""
+          />
+          <script>
+            {`
+              var OneSignal = window.OneSignal || [];
+                OneSignal.push(function() {
+                  OneSignal.init({
+                    appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6"
+                })
+              })
+            `}
+          </script>
+        </Helmet>
 
-        <div className="not__body">
-          {isItApple ? (
-            <p>Le notifiche non sono disponibili su iOS ;( </p>
-          ) : (
-            <>{pickNotificationMsg}</>
-          )}
-        </div>
-      </Animated>
+        <Animated>
+          <ScrollToTop />
+          <Seo
+            title="Notifiche - Alture"
+            description="Rimani aggiornato sull'attività di Alture con le notifiche"
+            url="https://alture.org/notifiche"
+          />
+          <Header close />
+          <Hero close hasBorder title="Notifiche" />
+
+          <div className="not__body">
+            {isItApple ? (
+              <p>Le notifiche non sono disponibili su iOS ;( </p>
+            ) : (
+              <>{pickNotificationMsg}</>
+            )}
+          </div>
+        </Animated>
+      </>
     );
   }
 }

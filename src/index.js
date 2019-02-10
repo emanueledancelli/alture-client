@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { fetchEvents } from "actions/eventsActions";
 import { setNotificationStatus } from "actions/notActions";
-import { initializeOneSignal } from "push";
 import store from "store";
 import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
@@ -21,5 +20,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-//registerServiceWorker();
-//initializeOneSignal();
