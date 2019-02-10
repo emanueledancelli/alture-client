@@ -9,4 +9,12 @@
       padding-top: 5%;
     }
   }
+  &__button {
+    all: unset;
+    font-family: "Lato";
+    background-color: #6d9b8d;
+    color: white;
+    font-weight: 600;
+    padding: 3%;
+  }
 }
