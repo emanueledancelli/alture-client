@@ -47,7 +47,6 @@ export class Notifications extends Component {
       pickNotificationMsg = (
         <>
           <p>Le notifiche sono attive!</p>
-          <div className="onesignal-customlink-container" />
         </>
       );
     }
