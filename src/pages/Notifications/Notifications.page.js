@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
-import { askForNotificationPermission } from "push-notifications";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
 
 export class Notifications extends Component {
@@ -40,12 +39,7 @@ export class Notifications extends Component {
       pickNotificationMsg = (
         <>
           <p>Rimani aggiornato sulle attività di Alture</p>
-          <button
-            onClick={askForNotificationPermission}
-            className="not__button"
-          >
-            Attiva le notifiche!
-          </button>
+          <div className="onesignal-customlink-container" />
         </>
       );
     }
