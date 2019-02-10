@@ -39,7 +39,17 @@ export class Notifications extends Component {
       pickNotificationMsg = (
         <>
           <p>Rimani aggiornato sulle attività di Alture</p>
+
           <div className="onesignal-customlink-container" />
+          <p
+            style={{
+              color: "#888888",
+              fontSize: "0.8em",
+              textDecoration: "italic"
+            }}
+          >
+            Se non compare il bottone per la sottoscrizione, ricarica la pagina!
+          </p>
         </>
       );
     }
