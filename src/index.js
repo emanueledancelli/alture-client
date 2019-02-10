@@ -4,12 +4,14 @@ import { App } from "routes";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { fetchEvents } from "actions/eventsActions";
+import { setNotificationStatus } from "actions/notActions";
 import { initializeFirebase } from "./push-notifications";
 import store from "store";
 import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 
 store.dispatch(fetchEvents());
+store.dispatch(setNotificationStatus());
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,5 +21,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+registerServiceWorker();
 initializeFirebase();
-//registerServiceWorker();
