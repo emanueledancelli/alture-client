@@ -62,20 +62,6 @@ export class Notifications extends Component {
 
     return (
       <>
-        <Helmet>
-          <script>
-            {`
-              var OneSignal = window.OneSignal || [];
-              console.log(OneSignal);
-              OneSignal.push(function() {
-                console.log("doing init");
-                OneSignal.init({
-                  appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6"
-                });
-              });
-          `}
-          </script>
-        </Helmet>
         <Animated>
           <ScrollToTop />
           <Seo
