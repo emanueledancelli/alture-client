@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
+import { Helmet } from "react-helmet";
 
 export class Notifications extends Component {
   state = {
@@ -23,12 +24,6 @@ export class Notifications extends Component {
     } else {
       return;
     }
-    var OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-      OneSignal.init({
-        appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6"
-      });
-    });
   }
   handlePermissionStatus = status => {
     this.setState({
@@ -51,7 +46,8 @@ export class Notifications extends Component {
     if (permission === "granted") {
       pickNotificationMsg = (
         <>
-          <p>Le notifiche sono attive!</p>;
+          <p>Le notifiche sono attive!</p>
+          <div className="onesignal-customlink-container" />
         </>
       );
     }
@@ -66,6 +62,20 @@ export class Notifications extends Component {
 
     return (
       <>
+        <Helmet>
+          <script>
+            {`
+              var OneSignal = window.OneSignal || [];
+              console.log(OneSignal);
+              OneSignal.push(function() {
+                console.log("doing init");
+                OneSignal.init({
+                  appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6"
+                });
+              });
+          `}
+          </script>
+        </Helmet>
         <Animated>
           <ScrollToTop />
           <Seo
