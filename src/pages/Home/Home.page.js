@@ -51,7 +51,6 @@ const mapStateToProps = state => {
     ui: state.ui,
     isLoading: state.events.isLoading,
     past: state.events.data.filter(e => e.acf.data_inizio < getDate()),
-    //orderBy(state.events.data, "acf.data_inizio"),
     upcoming: state.events.data.filter(e => e.acf.data_inizio >= getDate())
   };
 };
