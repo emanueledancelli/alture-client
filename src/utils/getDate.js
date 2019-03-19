@@ -1,9 +1,8 @@
 export const getDate = () => {
-  let today = new Date();
-  let dateObj = new Date(today.getTime() - 24 * 60 * 60 * 1000);
-  let month = dateObj.getUTCMonth() + 1;
-  let day = (dateObj.getDate() < 10 ? "0" : "") + dateObj.getDate();
-  let year = dateObj.getUTCFullYear();
+  let d = new Date();
+  let m = ("0" + (d.getUTCMonth() + 1)).slice(-2);
+  let t = (d.getDate() < 10 ? "0" : "") + d.getDate();
+  let y = d.getUTCFullYear();
 
-  return `${year}${month}${day}`;
+  return `${y}${m}${t}`;
 };

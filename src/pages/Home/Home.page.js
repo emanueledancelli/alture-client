@@ -50,7 +50,7 @@ const mapStateToProps = state => {
   return {
     ui: state.ui,
     isLoading: state.events.isLoading,
-    past: orderBy(state.events.data, "acf.data_fine"),
+    past: orderBy(state.events.data, "acf.data_inizio"),
     upcoming: state.events.data.filter(e => e.acf.data_inizio >= getDate())
   };
 };
