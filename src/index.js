@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { fetchEvents } from "actions/eventsActions";
 import { setNotificationStatus } from "actions/notActions";
 import store from "store";
-import registerServiceWorker from "./registerServiceWorker";
+//import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 
 store.dispatch(fetchEvents());
