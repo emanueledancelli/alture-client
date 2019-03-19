@@ -49,7 +49,7 @@ export class Notifications extends Component {
             }}
           >
             Se non compare il bottone per la sottoscrizione, ricarica la pagina!
-          </p>
+          </p>2
         </>
       );
     }
