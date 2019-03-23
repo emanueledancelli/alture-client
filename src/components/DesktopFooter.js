@@ -2,7 +2,7 @@ import React from "react";
 import "./DesktopFooter.scss";
 
 import { Link } from "react-router-dom";
-import Logo from "assets/logo.png";
+import Logo from "assets/logoMarzo.png";
 
 export const DesktopFooter = () => {
   return (
@@ -10,7 +10,7 @@ export const DesktopFooter = () => {
       <footer className="dfooter">
         <div className="dfooter__container">
           <div className="dfooter__logo">
-            <img src={Logo} alt="Logo" height="40px" />
+            <img src={Logo} alt="Logo" height="60px" />
           </div>
           <div className="dfooter__links">
             <Link to="/">

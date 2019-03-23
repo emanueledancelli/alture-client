@@ -8,7 +8,7 @@ import {
   CloseCircleOutlineIcon
 } from "mdi-react";
 import { Link } from "react-router-dom";
-import Logo from "assets/logo.jpg";
+import Logo from "assets/logoMarzo.png";
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";
 import { connect } from "react-redux";
@@ -43,7 +43,12 @@ class MainHeader extends React.Component {
     return (
       <div className="header">
         <Link to="/">
-          <img src={Logo} alt="Logo" height="16px" />
+          <img
+            src={Logo}
+            style={{ paddingTop: "2px" }}
+            alt="Logo"
+            height="25px"
+          />
         </Link>
         <div className="header__links">
           <a

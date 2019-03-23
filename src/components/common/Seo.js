@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import logo from "assets/logo.jpg";
 
 export const Seo = ({ title, description, url, image }) => {
   return (
@@ -12,7 +11,7 @@ export const Seo = ({ title, description, url, image }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image || logo} />
+      <meta property="og:image" content={image} />
     </Helmet>
   );
 };

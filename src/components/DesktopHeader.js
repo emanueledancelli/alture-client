@@ -7,14 +7,14 @@ import {
   HomeOutlineIcon,
   FeedbackOutlineIcon
 } from "mdi-react";
-import Logo from "assets/logo.png";
+import Logo from "assets/logoMarzo.png";
 
 export const DesktopHeader = () => {
   return (
     <>
       <div className="dheader__container">
         <Link to="/">
-          <img src={Logo} alt="Logo" height="22px" />
+          <img src={Logo} alt="Logo" height="40px" />
         </Link>
         <div className="dheader__menu">
           <div className="dheader__menu__item">

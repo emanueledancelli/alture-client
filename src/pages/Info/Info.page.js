@@ -3,7 +3,6 @@ import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { Seo, Hero, Header } from "components/common";
 import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
-import Logo from "assets/logo.png";
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";
 
@@ -15,7 +14,6 @@ export class Info extends Component {
           title="Informazioni - Alture"
           description="Informazioni sull'iniziativa Alture"
           url="https://alture.org/informazioni"
-          image={Logo}
         />
 
         <Header />
