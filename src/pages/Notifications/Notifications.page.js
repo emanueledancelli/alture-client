@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
-import { Helmet } from "react-helmet";
 
 export class Notifications extends Component {
   state = {
@@ -39,17 +38,16 @@ export class Notifications extends Component {
       pickNotificationMsg = (
         <>
           <p>Rimani aggiornato sulle attività di Alture</p>
-
           <div className="onesignal-customlink-container" />
           <p
             style={{
-              color: "#888888",
+              color: "#999999",
               fontSize: "0.8em",
               textDecoration: "italic"
             }}
           >
             Se non compare il bottone per la sottoscrizione, ricarica la pagina!
-          </p>2
+          </p>
         </>
       );
     }
@@ -73,12 +71,15 @@ export class Notifications extends Component {
       <>
         <Animated>
           <ScrollToTop />
+
           <Seo
             title="Notifiche - Alture"
             description="Rimani aggiornato sull'attività di Alture con le notifiche"
             url="https://alture.org/notifiche"
           />
+
           <Header close />
+
           <Hero close hasBorder title="Notifiche" />
 
           <div className="not__body">
