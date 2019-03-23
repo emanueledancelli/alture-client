@@ -1,3 +1,5 @@
+@import "../styles/_variables.scss";
+
 .nav {
   &__container {
     display: flex;
@@ -35,11 +37,11 @@
 
   &__link--active {
     & svg {
-      color: #6d9b8d;
+      color: $accent-color;
       animation: shake 0.2s 2 ease-out;
     }
     & span {
-      color: #6d9b8d;
+      color: $accent-color;
     }
   }
 }

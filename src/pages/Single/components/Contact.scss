@@ -1,19 +1,39 @@
+@import "../../../styles/variables";
+
 .contact {
-  padding: 0 5%;
-  background-color: #6d9b8d;
+  background-color: $accent-color;
+  transition: all 500ms ease;
 
   @media (min-width: 740px) {
-    max-width: 940px;
-    margin: 2% auto;
+    max-width: 300px;
     padding: 0;
+    margin: 2% auto 10%;
+    background-color: transparent;
+    border-radius: 5px;
+
+    box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 5px 7px 25px -4px rgba(0, 0, 0, 0.8);
+    }
   }
 
-  &__container {
+  &__text {
+    background-color: $accent-color;
+
     width: 100%;
+    padding: 0 5%;
     height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 740px) {
+      max-width: 300px;
+      padding: 0;
+      border-radius: 5px;
+      height: 50px;
+    }
   }
 
   & p {
