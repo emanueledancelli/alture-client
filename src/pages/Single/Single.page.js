@@ -10,13 +10,14 @@ const Animated = posed.div({
   enter: {
     x: 0,
     transition: {
-      x: { ease: "linear", duration: 250 }
+      x: { ease: "linear", duration: 200, stagger: false }
     }
   },
   exit: {
+    opacity: 1,
     x: "100%",
     transition: {
-      x: { ease: "linear", duration: 250 }
+      x: { ease: "linear", duration: 200, stagger: false }
     }
   }
 });
@@ -47,7 +48,7 @@ class Single extends Component {
       return <Spinner />;
     }
     return (
-      <Animated>
+      <>
         <ScrollToTop />
 
         <Seo
@@ -61,31 +62,33 @@ class Single extends Component {
           image={events.single.acf.immagine.url}
         />
 
-        <TopBar
-          url={`https://alture.org${this.props.location.pathname}`}
-          name={this.createSlicedTitle(events.single.title.rendered)}
-          onClick={() => this.props.history.push("/")}
-        />
+        <Animated>
+          <TopBar
+            url={`https://alture.org${this.props.location.pathname}`}
+            name={this.createSlicedTitle(events.single.title.rendered)}
+            onClick={() => this.props.history.push("/")}
+          />
 
-        <Hero
-          image={events.single.acf.immagine.url}
-          title={events.single.title.rendered}
-        />
+          <Hero
+            image={events.single.acf.immagine.url}
+            title={events.single.title.rendered}
+          />
 
-        <Description
-          organizers={events.single.acf.organizzatori}
-          dates={this.createEventTimes(
-            events.single.acf.data_inizio,
-            events.single.acf.ora_inizio,
-            events.single.acf.ora_fine
-          )}
-          mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
-          place={events.single.acf.luogo}
-          info={this.createHtmlDescription(events.single.acf.descrizione)}
-        />
+          <Description
+            organizers={events.single.acf.organizzatori}
+            dates={this.createEventTimes(
+              events.single.acf.data_inizio,
+              events.single.acf.ora_inizio,
+              events.single.acf.ora_fine
+            )}
+            mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
+            place={events.single.acf.luogo}
+            info={this.createHtmlDescription(events.single.acf.descrizione)}
+          />
 
-        <Contact mail={events.single.acf.email_organizzatore} />
-      </Animated>
+          <Contact mail={events.single.acf.email_organizzatore} />
+        </Animated>
+      </>
     );
   }
 }

@@ -6,45 +6,42 @@ import { HomeOutlineIcon, InfoOutlineIcon } from "mdi-react";
 
 const Animated = posed.div({
   enter: {
-    y: 0,
-    opacity: 1,
+    x: 0,
     transition: {
-      y: { ease: "easeOut", duration: 500 }
+      x: { ease: "linear", duration: 200, stagger: false }
     }
   },
   exit: {
-    y: "100%",
-    opacity: 0,
+    opacity: 1,
+    x: "100%",
     transition: {
-      y: { ease: "easeOut", duration: 500 }
+      x: { ease: "linear", duration: 200, stagger: false }
     }
   }
 });
 
 export const Navigation = () => {
   return (
-    <Animated>
-      <div className="nav__container">
-        <NavLink
-          to="/"
-          className="nav__link"
-          activeClassName="nav__link--active"
-          exact
-        >
-          <HomeOutlineIcon className="nav__icon" size={26} />
-          <span className="nav__text">Home</span>
-        </NavLink>
+    <div className="nav__container">
+      <NavLink
+        to="/"
+        className="nav__link"
+        activeClassName="nav__link--active"
+        exact
+      >
+        <HomeOutlineIcon className="nav__icon" size={26} />
+        <span className="nav__text">Home</span>
+      </NavLink>
 
-        <NavLink
-          to="/informazioni"
-          className="nav__link"
-          activeClassName="nav__link--active"
-          exact
-        >
-          <InfoOutlineIcon className="nav__icon" size={26} />
-          <span className="nav__text">Info</span>
-        </NavLink>
-      </div>
-    </Animated>
+      <NavLink
+        to="/informazioni"
+        className="nav__link"
+        activeClassName="nav__link--active"
+        exact
+      >
+        <InfoOutlineIcon className="nav__icon" size={26} />
+        <span className="nav__text">Info</span>
+      </NavLink>
+    </div>
   );
 };

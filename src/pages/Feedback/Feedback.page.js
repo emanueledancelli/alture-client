@@ -78,36 +78,46 @@ export class Feedback extends React.Component {
                 Invia la tua opinione e contribuisci a migliorare alture.org
               </span>
               <form onSubmit={this.handleSubmit}>
-                <p>
-                  <label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={email}
-                      placeholder="Email *"
-                      onChange={this.handleChange}
-                    />
-                  </label>
+                <label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    placeholder="Email *"
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <p className="feedback__privacy">
+                  * L'indirizzo email fornito verrà utilizzato solo ed
+                  esclusivamente per rispondere a questo feedback. Per maggiori
+                  info: <Link to="/privacypolicy">Privacy policy</Link>.
                 </p>
-                <p>
-                  <label>
-                    <textarea
-                      name="message"
-                      value={message}
-                      placeholder="Inserisci qui il tuo messaggio"
-                      onChange={this.handleChange}
-                    />
-                  </label>
-                </p>
-                <p>
-                  <button type="submit">Invia</button>
-                </p>
+                <label>
+                  <textarea
+                    name="message"
+                    value={message}
+                    placeholder="Scrivi qui il tuo messaggio"
+                    onChange={this.handleChange}
+                  />
+                </label>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "15px 0"
+                  }}
+                >
+                  {message.length <= 0 ? (
+                    <button className="feedback__btn-disabled" type="submit">
+                      Invia
+                    </button>
+                  ) : (
+                    <button type="submit">Invia</button>
+                  )}
+                </div>
               </form>
-              <p className="feedback__privacy">
-                * L'indirizzo email fornito verrà utilizzato solo ed
-                esclusivamente per rispondere a questo feedback. Per maggiori
-                info: <Link to="/privacypolicy">Privacy policy</Link>.
-              </p>
             </>
           )}
         </div>

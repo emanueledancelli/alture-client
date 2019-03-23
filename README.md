@@ -1,5 +1,9 @@
 # Alture
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f2084cdb-9cfe-4065-afa2-86d5174a82a2/deploy-status)](https://app.netlify.com/sites/alture/deploys)
+
+&nbsp;
+
 This is the client side of [Alture](https://alture.org) Progressive Web App.
 
 Alture works by fetching data from a Rest API provided by a headless installation of WordPress, more info coming soon(tm).

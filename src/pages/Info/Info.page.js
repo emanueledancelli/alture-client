@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { Seo, Hero, Header } from "components/common";
+import { Seo, Hero, Header, ScrollToTop } from "components/common";
 import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
+import { Navigation } from "components";
+
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";
 
@@ -15,6 +17,7 @@ export class Info extends Component {
           description="Informazioni sull'iniziativa Alture"
           url="https://alture.org/informazioni"
         />
+        <ScrollToTop />
 
         <Header />
         <Hero title="Informazioni" />
@@ -107,6 +110,7 @@ export class Info extends Component {
             </div>
           </div>
         </div>
+        <Navigation />
       </>
     );
   }

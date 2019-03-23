@@ -1,6 +1,7 @@
 .infobox {
   padding: 8% 5% 5%;
   color: #333;
+  background-color: white;
 
   &__container {
     display: flex;
@@ -44,6 +45,7 @@
 
 .edescr {
   padding: 0 5%;
+  background-color: white;
 
   @media (min-width: 740px) {
     max-width: 940px;
@@ -52,6 +54,7 @@
   }
 
   &__container {
+    background-color: white;
     font-size: 1em;
     line-height: 180%;
     color: #333;
@@ -68,6 +71,8 @@
   & h3 {
     color: #333;
     font-size: 1.3em;
+    margin: 0;
+    padding: 20px 0 5px;
   }
 }
 

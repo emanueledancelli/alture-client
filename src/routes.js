@@ -30,10 +30,7 @@ const Routes = location => {
   );
 };
 
-const RoutesContainer = posed.div({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
-});
+const RoutesContainer = posed.div({});
 
 export const App = () => {
   return (
@@ -45,11 +42,6 @@ export const App = () => {
           <PoseGroup>
             <RoutesContainer key={location.pathname}>
               {Routes(location)}
-
-              {location.pathname === "/" ||
-              location.pathname.startsWith("/informazioni") ? (
-                <Navigation />
-              ) : null}
             </RoutesContainer>
           </PoseGroup>
 
