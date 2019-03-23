@@ -7,16 +7,24 @@ import { Sharer } from "./Sharer";
 export class TopBar extends Component {
   state = {
     isSharingOpen: false,
-    isScrolled: false
+    isScrolled: false,
+    navigatorEnabled: false
   };
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    if (window.navigator) {
+      this.handleNavigatorState();
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
+
+  handleNavigatorState = () => {
+    this.setState({ navigatorEnabled: true });
+  };
 
   handleScroll = () => {
     if (window.scrollY > 0) {
