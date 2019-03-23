@@ -87,11 +87,7 @@ export class Feedback extends React.Component {
                     onChange={this.handleChange}
                   />
                 </label>
-                <p className="feedback__privacy">
-                  * L'indirizzo email fornito verrà utilizzato solo ed
-                  esclusivamente per rispondere a questo feedback. Per maggiori
-                  info: <Link to="/privacypolicy">Privacy policy</Link>.
-                </p>
+
                 <label>
                   <textarea
                     name="message"
@@ -100,6 +96,11 @@ export class Feedback extends React.Component {
                     onChange={this.handleChange}
                   />
                 </label>
+                <p className="feedback__privacy">
+                  * L'indirizzo email fornito verrà utilizzato solo ed
+                  esclusivamente per rispondere a questo feedback. Per maggiori
+                  info: <Link to="/privacypolicy">Privacy policy</Link>.
+                </p>
                 <div
                   style={{
                     display: "flex",
@@ -110,7 +111,11 @@ export class Feedback extends React.Component {
                   }}
                 >
                   {message.length <= 0 ? (
-                    <button className="feedback__btn-disabled" type="submit">
+                    <button
+                      className="feedback__btn-disabled"
+                      disabled
+                      type="submit"
+                    >
                       Invia
                     </button>
                   ) : (

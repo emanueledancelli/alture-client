@@ -9,15 +9,16 @@ import posed from "react-pose";
 const Animated = posed.div({
   enter: {
     x: 0,
+    opacity: 1,
     transition: {
-      x: { ease: "linear", duration: 200, stagger: false }
+      x: { ease: "linear", duration: 200 }
     }
   },
   exit: {
-    opacity: 1,
+    opacity: 0,
     x: "100%",
     transition: {
-      x: { ease: "linear", duration: 200, stagger: false }
+      x: { ease: "linear", duration: 200 }
     }
   }
 });

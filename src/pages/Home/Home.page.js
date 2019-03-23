@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
-import { Navigation } from "components";
 
 const seoTags = {
   title: "Home -  Alture",
@@ -34,7 +33,6 @@ class Home extends React.Component {
         <Header />
         <Hero title="Eventi" filter />
         {isLoading ? <Spinner /> : <CardList {...eventsList} />}
-        <Navigation />
       </>
     );
   }

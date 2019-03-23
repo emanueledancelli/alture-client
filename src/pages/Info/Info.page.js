@@ -3,7 +3,6 @@ import "./Info.page.scss";
 import { Link } from "react-router-dom";
 import { Seo, Hero, Header, ScrollToTop } from "components/common";
 import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
-import { Navigation } from "components";
 
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";
@@ -110,7 +109,6 @@ export class Info extends Component {
             </div>
           </div>
         </div>
-        <Navigation />
       </>
     );
   }

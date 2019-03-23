@@ -45,6 +45,11 @@ export const App = () => {
             </RoutesContainer>
           </PoseGroup>
 
+          {location.pathname === "/" ||
+          location.pathname === "/informazioni" ? (
+            <Navigation />
+          ) : null}
+
           <DesktopFooter />
         </>
       )}
