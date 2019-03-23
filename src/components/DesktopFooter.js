@@ -30,27 +30,23 @@ export const DesktopFooter = () => {
             </Link>
           </div>
           <div className="dfooter__socials">
-            <p>
-              <a href="mailto:info@associazioneilcapannone.org">Mail</a>
-            </p>
-            <p>
-              <a
-                href="https://www.instagram.com/a.alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.facebook.com/A.Alture/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </p>
+            <a href="mailto:info@associazioneilcapannone.org">
+              <p>Mail</p>
+            </a>
+            <a
+              href="https://www.instagram.com/a.alture/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>Instagram</p>
+            </a>
+            <a
+              href="https://www.facebook.com/A.Alture/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>Facebook</p>
+            </a>
           </div>
         </div>
       </footer>

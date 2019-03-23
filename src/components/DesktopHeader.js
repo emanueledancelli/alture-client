@@ -14,7 +14,7 @@ export const DesktopHeader = () => {
     <>
       <div className="dheader__container">
         <Link to="/">
-          <img src={Logo} alt="Logo" height="30px" />
+          <img src={Logo} alt="Logo" height="22px" />
         </Link>
         <div className="dheader__menu">
           <div className="dheader__menu__item">
@@ -24,7 +24,7 @@ export const DesktopHeader = () => {
               activeClassName="dheader__link--active"
               exact
             >
-              <HomeOutlineIcon className="dheader__icon" size={26} />
+              <HomeOutlineIcon className="dheader__icon" size={22} />
               <span className="dheader__text">Home</span>
             </NavLink>
           </div>
@@ -35,7 +35,7 @@ export const DesktopHeader = () => {
               activeClassName="dheader__link--active"
               exact
             >
-              <InfoOutlineIcon className="dheader__icon" size={26} />
+              <InfoOutlineIcon className="dheader__icon" size={22} />
               <span className="dheader__text">Info</span>
             </NavLink>
           </div>
@@ -46,7 +46,7 @@ export const DesktopHeader = () => {
               activeClassName="dheader__link--active"
               exact
             >
-              <NotificationsNoneIcon className="dheader__icon" size={26} />
+              <NotificationsNoneIcon className="dheader__icon" size={22} />
               <span className="dheader__text">Notifiche</span>
             </NavLink>
           </div>
@@ -57,7 +57,7 @@ export const DesktopHeader = () => {
               activeClassName="dheader__link--active"
               exact
             >
-              <FeedbackOutlineIcon className="dheader__icon" size={26} />
+              <FeedbackOutlineIcon className="dheader__icon" size={22} />
               <span className="dheader__text">Feedback</span>
             </NavLink>
           </div>

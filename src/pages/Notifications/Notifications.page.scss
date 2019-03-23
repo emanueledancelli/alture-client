@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .not {
   &__body {
     padding: 5%;
@@ -12,7 +14,7 @@
   &__button {
     all: unset;
     font-family: "Lato";
-    background-color: #6d9b8d;
+    background-color: $accent-color;
     color: white;
     font-weight: 600;
     padding: 3%;

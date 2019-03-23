@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .dfooter {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   &__container {
@@ -25,9 +27,11 @@
     padding-left: 2%;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     width: 33%;
-
     @media (max-width: 740px) {
       border: none;
+    }
+    & p:hover {
+      color: $accent-color;
     }
   }
 
@@ -35,6 +39,9 @@
     padding-left: 2%;
     width: 33%;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
+    & p:hover {
+      color: $accent-color;
+    }
     @media (max-width: 740px) {
       border: none;
     }

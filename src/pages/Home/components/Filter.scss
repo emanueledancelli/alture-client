@@ -1,9 +1,11 @@
+@import "../../../styles/variables.scss";
+
 select:focus {
   outline: none;
 }
 
 .filter__menu {
-  border: 1px solid #6d9b8d;
+  border: 1px solid $accent-color;
   display: flex;
   padding: 5px 5px 5px 5px;
   border-radius: 5px;

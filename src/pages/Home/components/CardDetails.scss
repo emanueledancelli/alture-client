@@ -6,6 +6,9 @@
     justify-content: flex-start;
     align-items: center;
     text-transform: capitalize;
+    @media (min-width: 740px) {
+      font-size: 1.15rem;
+    }
   }
 
   &__place {
@@ -15,6 +18,9 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    @media (min-width: 740px) {
+      font-size: 1.15rem;
+    }
   }
 
   &__icon {

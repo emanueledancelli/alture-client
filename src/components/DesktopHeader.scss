@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .dheader {
   &__container {
     display: flex;
@@ -8,7 +10,6 @@
     height: 12vh;
     justify-content: space-between;
     align-items: center;
-    color: #333;
     transition: all 0.3s ease-in;
 
     @media (max-width: 740px) {
@@ -18,9 +19,17 @@
 
   &__menu {
     display: flex;
+    justify-content: flex-end;
     flex-direction: row;
+    width: 40%;
     &__item {
-      width: 25%;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 25px;
+      padding: 3px;
     }
   }
 
@@ -29,28 +38,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 25px;
   }
 
   &__link--active {
     & svg {
-      color: #6d9b8d;
+      color: $accent_color;
       animation: shake 0.2s 2 ease-out;
     }
     & span {
-      color: #6d9b8d;
+      color: $accent_color;
     }
   }
 
   &__text {
-    font-size: 0.9em;
+    font-size: 14px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.2);
+    color: $secondary-color;
     margin-top: 3px;
   }
 
   &__icon {
-    color: rgba(0, 0, 0, 0.2);
+    color: $secondary-color;
     padding-top: 2px;
   }
 }

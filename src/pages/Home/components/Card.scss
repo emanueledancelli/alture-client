@@ -11,7 +11,8 @@
   transition: all 300ms ease-out;
 
   @media (min-width: 740px) {
-    height: 40vh;
+    min-height: 55vh;
+    margin: 0 1% 2% 1%;
 
     &:hover {
       transform: scale(1.01);
@@ -19,7 +20,7 @@
     }
 
     & h1 {
-      font-size: 1.5em;
+      font-size: 1.6rem;
     }
   }
 }
