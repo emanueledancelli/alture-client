@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cra-append-sw ./custom-sw.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
