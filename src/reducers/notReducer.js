@@ -1,7 +1,8 @@
-import { SET_NOTIFICATION_STATUS } from "actions/types";
+import { SET_NOTIFICATION_STATUS, SET_RELOAD_STATUS } from "actions/types";
 
 const initialState = {
-  permission: "default"
+  permission: "default",
+  reload: false
 };
 
 export default function(state = initialState, action) {
@@ -10,6 +11,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         permission: action.payload
+      };
+    case SET_RELOAD_STATUS:
+      return {
+        ...state,
+        reload: action.payload
       };
     default:
       return state;

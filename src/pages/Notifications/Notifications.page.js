@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./Notifications.page.scss";
 import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
 
-export class Notifications extends Component {
+import { connect } from "react-redux";
+import { setReloadStatus } from "actions/notActions";
+
+class Notifications extends Component {
   state = {
     isItApple: false,
     permission: "default"
@@ -18,18 +21,19 @@ export class Notifications extends Component {
   componentDidMount() {
     let iOS =
       !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+    if (this.props.reload) {
+      window.location.reload();
+      this.props.setReloadStatus(!this.props.reload);
+    }
+    if (!this.props.reload) {
+      this.props.setReloadStatus(!this.props.reload);
+    }
     if (iOS) {
       this.setState({ isItApple: true });
     } else {
       return;
     }
-    this.importScripts("https://cdn.onesignal.com/sdks/OneSignalSDK.js");
-    var OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-      OneSignal.init({
-        appId: "b80e7963-2d68-4e15-ad8d-c79702ee21e6"
-      });
-    });
   }
   handlePermissionStatus = status => {
     this.setState({
@@ -39,6 +43,7 @@ export class Notifications extends Component {
 
   render() {
     const { isItApple, permission } = this.state;
+    const { reload } = this.props;
     let pickNotificationMsg;
 
     if (permission === "default") {
@@ -101,3 +106,18 @@ export class Notifications extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    reload: state.notifications.reload
+  };
+};
+
+const mapDispatchToProps = {
+  setReloadStatus
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Notifications);
