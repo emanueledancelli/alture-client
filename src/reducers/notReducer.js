@@ -2,7 +2,7 @@ import { SET_NOTIFICATION_STATUS, SET_RELOAD_STATUS } from "actions/types";
 
 const initialState = {
   permission: "default",
-  reload: false
+  reload: true
 };
 
 export default function(state = initialState, action) {
