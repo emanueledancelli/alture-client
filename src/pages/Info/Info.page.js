@@ -24,7 +24,7 @@ class Info extends Component {
           <div className="info__menu">
             <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
-              <Link to="/esplorando-i-confini">
+              <Link to="/edizione">
                 <span>Di vento contrario</span>
               </Link>
             </div>

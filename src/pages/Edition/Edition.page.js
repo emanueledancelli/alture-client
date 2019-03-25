@@ -1,20 +1,20 @@
 import React from "react";
 import { Seo, Header, Hero, ScrollToTop, Animated } from "components/common";
-import "./Explore.page.scss";
+import "./Edition.page.scss";
 
 const seoTags = {
-  title: "Esplorando i confini - Alture",
+  title: "Di vento contrario - Alture",
   url: "https://alture.org/esplorando-i-confini",
   description: "Esplorando i confini - Alture"
 };
 
-const Explore = () => {
+const Edition = () => {
   return (
     <Animated>
       <ScrollToTop />
       <Seo {...seoTags} />
       <Header close />
-      <Hero close hasBorder title="Esplorando i confini" />
+      <Hero close hasBorder title="Di vento contrario" />
       <p className="explore">
         In montagna é raro che vi sia assoluta assenza di vento. Simbolo della
         natura incontrollabile, il vento può cancellare le distanze e
@@ -39,4 +39,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default Edition;

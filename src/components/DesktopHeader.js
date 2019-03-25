@@ -30,7 +30,7 @@ export const DesktopHeader = () => {
           </div>
           <div className="dheader__menu__item">
             <NavLink
-              to="/esplorando-i-confini"
+              to="/edizione"
               className="dheader__link"
               activeClassName="dheader__link--active"
               exact

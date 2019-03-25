@@ -18,8 +18,8 @@ const Notifications = Loadable({
   loading: LoadableLoader
 });
 
-const Explore = Loadable({
-  loader: () => import("pages/Explore/Explore.page"),
+const Edition = Loadable({
+  loader: () => import("pages/Edition/Edition.page"),
   loading: LoadableLoader
 });
 
@@ -40,7 +40,7 @@ const Routes = location => {
       <Route exact path="/informazioni" component={Info} />
       <Route exact path="/privacypolicy" component={Privacy} />
       <Route exact path="/notifiche" component={Notifications} />
-      <Route exact path="/esplorando-i-confini" component={Explore} />
+      <Route exact path="/edizione" component={Edition} />
       <Route exact path="/Feedback" component={Feedback} />
       <Route
         exact
