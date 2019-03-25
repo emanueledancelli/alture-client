@@ -2,16 +2,36 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Navigation, DesktopHeader, DesktopFooter } from "components";
 import posed, { PoseGroup } from "react-pose";
-import Lodable from "react-loadable";
+import Loadable from "react-loadable";
+import LoadableLoader from "components/common/LoadableLoader";
 import "styles/index.scss";
-
-import { Home } from "pages/Home";
 import { Single } from "pages/Single";
 import { Info } from "pages/Info";
-import { Privacy } from "pages/Privacy";
-import { Notifications } from "pages/Notifications";
-import { Explore } from "pages/Explore";
-import { Feedback } from "pages/Feedback";
+
+const Home = Loadable({
+  loader: () => import("pages/Home/Home.page"),
+  loading: LoadableLoader
+});
+
+const Notifications = Loadable({
+  loader: () => import("pages/Notifications/Notifications.page"),
+  loading: LoadableLoader
+});
+
+const Explore = Loadable({
+  loader: () => import("pages/Explore/Explore.page"),
+  loading: LoadableLoader
+});
+
+const Feedback = Loadable({
+  loader: () => import("pages/Feedback/Feedback.page"),
+  loading: LoadableLoader
+});
+
+const Privacy = Loadable({
+  loader: () => import("pages/Privacy/Privacy.page"),
+  loading: LoadableLoader
+});
 
 const Routes = location => {
   return (

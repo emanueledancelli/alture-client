@@ -1,1 +1,1 @@
-export { Explore } from "./Explore.page";
+export { default as Explore } from "./Explore.page";

@@ -22,13 +22,6 @@ class Notifications extends Component {
     let iOS =
       !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-    if (this.props.reload) {
-      window.location.reload();
-      this.props.setReloadStatus(!this.props.reload);
-    }
-    if (!this.props.reload) {
-      this.props.setReloadStatus(!this.props.reload);
-    }
     if (iOS) {
       this.setState({ isItApple: true });
     } else {

@@ -16,7 +16,7 @@ const seoTags = {
   description: "Aiutaci a migliorare alture.org con il tuo feedback!"
 };
 
-export class Feedback extends React.Component {
+class Feedback extends React.Component {
   state = {
     mail: "",
     message: "",
@@ -130,3 +130,5 @@ export class Feedback extends React.Component {
     );
   }
 }
+
+export default Feedback;

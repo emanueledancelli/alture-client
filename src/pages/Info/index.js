@@ -1,1 +1,1 @@
-export { Info } from "./Info.page";
+export { default as Info } from "./Info.page";

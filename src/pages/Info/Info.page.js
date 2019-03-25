@@ -7,7 +7,7 @@ import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
 import Facebook from "assets/facebook-brands.svg";
 import Instagram from "assets/instagram-brands.svg";
 
-export class Info extends Component {
+class Info extends Component {
   render() {
     return (
       <>
@@ -113,3 +113,5 @@ export class Info extends Component {
     );
   }
 }
+
+export default Info;

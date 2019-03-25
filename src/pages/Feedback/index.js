@@ -1,1 +1,1 @@
-export { Feedback } from "./Feedback.page";
+export { default as Feedback } from "./Feedback.page";

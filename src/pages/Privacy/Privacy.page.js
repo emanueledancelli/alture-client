@@ -3,7 +3,7 @@ import "./Privacy.page.scss";
 import { Spinner, Seo, Hero, Header, ScrollToTop } from "components/common";
 import { getPrivacy } from "api";
 
-export class Privacy extends Component {
+class Privacy extends Component {
   state = {
     isLoading: false,
     privacy: ""
@@ -55,3 +55,5 @@ export class Privacy extends Component {
     );
   }
 }
+
+export default Privacy;

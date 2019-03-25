@@ -8,7 +8,7 @@ const seoTags = {
   description: "Esplorando i confini - Alture"
 };
 
-export const Explore = () => {
+const Explore = () => {
   return (
     <Animated>
       <ScrollToTop />
@@ -39,3 +39,5 @@ export const Explore = () => {
     </Animated>
   );
 };
+
+export default Explore;
