@@ -16,7 +16,7 @@ const Animated = posed.div({
   },
   exit: {
     opacity: 0,
-    x: "100%",
+    x: 50,
     transition: {
       x: { ease: "linear", duration: 200 }
     }
@@ -51,7 +51,6 @@ class Single extends Component {
     return (
       <>
         <ScrollToTop />
-
         <Seo
           title={this.createSeoTitle(events.single.title.rendered)}
           description={this.createSeoDescription(

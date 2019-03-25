@@ -8,7 +8,9 @@ import { getDate } from "utils";
 const seoTags = {
   title: "Home -  Alture",
   description: "Homepage dell'iniziativa Alture",
-  url: "https://alture.org"
+  url: "https://alture.org",
+  image:
+    "https://api.alture.org/wp-content/uploads/2019/03/53279007_2194473433965149_7634333943784800256_n.jpg"
 };
 
 class Home extends React.Component {

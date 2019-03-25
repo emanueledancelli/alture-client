@@ -1,5 +1,5 @@
 .card {
-  min-height: 200px;
+  height: 200px;
   border-radius: 10px;
   padding: 2% 0% 2% 5%;
   margin: 0 1% 2% 1%;
@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-around;
   box-shadow: 3px 4px 20px -4px rgba(0, 0, 0, 0.8);
-  transition: all 300ms ease-out;
+  transition: transform 300ms ease-out;
 
   @media (min-width: 740px) {
     min-height: 55vh;

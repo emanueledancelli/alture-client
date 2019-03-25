@@ -12,7 +12,7 @@
     z-index: 98;
     justify-content: space-around;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    animation: slide 600ms ease;
+    animation: slide 500ms ease;
     transition: all 600ms ease;
     @media (min-width: 740px) {
       display: none;
@@ -60,8 +60,10 @@
 @keyframes slide {
   from {
     transform: translateY(100px);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.scss";
+import LazyLoad from "react-lazyload";
 
 export const Hero = ({ image, title }) => {
   const background = {
@@ -11,10 +12,12 @@ export const Hero = ({ image, title }) => {
   };
 
   return (
-    <div style={background} className="ehero__container">
-      <div className="ehero__paddings">
-        <h1 className="title white">{title}</h1>
+    <LazyLoad>
+      <div style={background} className="ehero__container">
+        <div className="ehero__paddings">
+          <h1 className="title white">{title}</h1>
+        </div>
       </div>
-    </div>
+    </LazyLoad>
   );
 };
