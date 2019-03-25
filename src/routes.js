@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Navigation, DesktopHeader, DesktopFooter } from "components";
 import posed, { PoseGroup } from "react-pose";
+import Lodable from "react-loadable";
 import "styles/index.scss";
 
 import { Home } from "pages/Home";
@@ -29,6 +30,12 @@ const Routes = location => {
     </Switch>
   );
 };
+
+/**
+ * needed to allow routes to be animated,
+ * passing no args for enter/leave state
+ * that applies to all the routes
+ */
 
 const RoutesContainer = posed.div({});
 

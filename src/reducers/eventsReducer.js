@@ -5,7 +5,7 @@ import {
 } from "actions/types";
 
 const initialState = {
-  isLoading: false,
+  isLoading: true, //FIXME: set to false after
   isFetched: false,
   data: [],
   error: null
@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
     case FETCH_EVENTS_SUCCESS:
       return {
         ...state,
-        isLoading: false,
+        isLoading: true, //FIXME: set to false after
         isFetched: true,
         data: action.payload
       };
