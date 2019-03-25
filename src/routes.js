@@ -18,11 +18,6 @@ const Notifications = Loadable({
   loading: LoadableLoader
 });
 
-const Edition = Loadable({
-  loader: () => import("pages/Edition/Edition.page"),
-  loading: LoadableLoader
-});
-
 const Feedback = Loadable({
   loader: () => import("pages/Feedback/Feedback.page"),
   loading: LoadableLoader
@@ -30,6 +25,11 @@ const Feedback = Loadable({
 
 const Privacy = Loadable({
   loader: () => import("pages/Privacy/Privacy.page"),
+  loading: LoadableLoader
+});
+
+const Edition = Loadable({
+  loader: () => import("pages/Edition/Edition.page"),
   loading: LoadableLoader
 });
 
