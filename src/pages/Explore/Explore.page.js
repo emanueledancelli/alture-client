@@ -16,25 +16,24 @@ const Explore = () => {
       <Header close />
       <Hero close hasBorder title="Esplorando i confini" />
       <p className="explore">
-        Lo spirito dell"esploratore è dentro ciascuno di noi. L"uomo nasce
-        esploratore, il desiderio di scoprire cosa si cela oltre il cancello o
-        dall"altro lato della montagna è una sua tensione naturale. E,
-        nell"immaginario collettivo, l"idea stessa di ricercare luoghi selvaggi
-        e sconosciuti, di spingersi al di fuori della zona di comfort porta
-        subito la mente su una cresta sottile, che sale verso il cielo. La
-        montagna offre ancora molto spazio all"immaginario dell"esplorazione
-        proprio perchè non tutta la sua superficie sembra occupata, e andare
-        verso l"alto diviene quasi metafora dell"anticonformismo, della volontà
-        di non omologarsi: quello di salire è infatti un gesto che sfida la più
-        basica e potente delle leggi naturali, la gravità, e la presenza stessa
-        delle montagne, in fondo, pare una ribellione alla linearità della
-        pianura. Ma la montagna ci parla anche di cose semplici, della terra,
-        dell"acqua, del sole, dell"aria, del nostro essere quegli stessi
-        elementi di cui è composta la natura. Ed ecco che l"esplorazione verso
-        l"altro prosegue, in parallelo, dentro ognuno di noi, alla ricerca di
-        quello che siamo e di quello che sentiamo che ci manca. Perchè
-        esplorare, in fondo, significa sognare di scoprire ciò che possiamo solo
-        immaginare.
+        In montagna é raro che vi sia assoluta assenza di vento. Simbolo della
+        natura incontrollabile, il vento può cancellare le distanze e
+        trasportare profumi e colori, idee e persone; è l’elemento che spazza il
+        cielo, dissolvendo le foschie e pulendo le creste. Ma, al tempo stesso,
+        il vento è portatore di freddo, neve e paura: un giro imprevisto del
+        vento o l'arrivo di una tempesta hanno cambiato innumerevoli volte il
+        corso della storia, rovesciando l'esito di battaglie o cancellando in
+        poche ore paesi e foreste. Quando ci si trova soli, circondati dalla sua
+        forza indomita, è quindi necessario valutare sapientemente paura, fatica
+        e ambizioni in relazione alla propria condizione fisica e mentale. Il
+        vento infatti s’infila ovunque, nei corpi, nei pensieri, nelle parole,
+        facendo vacillare le certezze e obbligando a un cambiamento di
+        prospettiva. Come si affronta la corrente avversa? Cosa si prova quando
+        il mutamento di direzione diviene un passaggio necessario per procedere
+        oltre? Alla meta si può arrivare da molte direzioni e non sempre ci si
+        trova a percorrere la più semplice. A volte addirittura si sceglie la
+        più difficile, sfidando la natura e, al tempo stesso, i propri limiti.
+        Perché spesso è il percorso, e non la meta, ad essere importante.
       </p>
     </Animated>
   );
