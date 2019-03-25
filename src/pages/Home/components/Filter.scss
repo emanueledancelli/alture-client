@@ -8,7 +8,8 @@ select:focus {
   padding: 5px 5px 5px 5px;
   border-radius: 5px;
   flex-direction: row;
-  font-family: "Raleway";
   justify-content: flex-end;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
   align-items: center;
 }
