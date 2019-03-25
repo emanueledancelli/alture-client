@@ -11,7 +11,13 @@ export const Seo = ({ title, description, url, image }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content={
+          image ||
+          `https://api.alture.org/wp-content/uploads/2019/03/53279007_2194473433965149_7634333943784800256_n.jpg`
+        }
+      />
     </Helmet>
   );
 };
