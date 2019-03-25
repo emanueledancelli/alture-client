@@ -1,8 +1,10 @@
 import { SET_FILTER_VALUE } from "actions/types";
+import { SET_SCROLL_VALUE } from "actions/types";
 
 const initialState = {
   selectedValue: "In arrivo",
-  selectorValues: ["In arrivo", "Passati"]
+  selectorValues: ["In arrivo", "Passati"],
+  homePageScrollPosition: 0
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +13,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         selectedValue: action.payload
+      };
+    case SET_SCROLL_VALUE:
+      return {
+        ...state,
+        homePageScrollPosition: action.payload
       };
     default:
       return state;

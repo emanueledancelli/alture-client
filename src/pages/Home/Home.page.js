@@ -1,19 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { CardList } from "./components";
 import { Seo, Spinner, Hero, Header } from "components/common";
 import { getDate } from "utils";
+import { setScrollValue } from "actions/uiActions";
 
 const seoTags = {
-  title: "Home -  Alture",
+  title: "Home - Alture",
   description: "Homepage dell'iniziativa Alture",
   url: "https://alture.org",
   image:
     "https://api.alture.org/wp-content/uploads/2019/03/53279007_2194473433965149_7634333943784800256_n.jpg"
 };
 
-class Home extends React.Component {
+class Home extends Component {
+  componentDidMount() {
+    window.scrollTo(0, this.props.ui.homePageScrollPosition);
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    this.props.setScrollValue(window.scrollY);
+  };
+
   render() {
     const { isLoading, upcoming, past, ui } = this.props;
 
@@ -56,4 +70,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = {
+  setScrollValue
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
