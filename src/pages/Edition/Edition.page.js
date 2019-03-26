@@ -4,8 +4,8 @@ import "./Edition.page.scss";
 
 const seoTags = {
   title: "Di vento contrario - Alture",
-  url: "https://alture.org/esplorando-i-confini",
-  description: "Esplorando i confini - Alture"
+  url: "https://alture.org/edizione",
+  description: "Di vento contrario - Alture"
 };
 
 const Edition = () => {
