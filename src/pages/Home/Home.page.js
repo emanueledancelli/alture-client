@@ -8,8 +8,8 @@ import { setScrollValue } from "actions/uiActions";
 
 const seoTags = {
   title: "Home - Alture",
-  description: "Homepage dell'iniziativa Alture",
-  url: "https://alture.org"
+  url: "https://alture.org",
+  description: "Homepage dell'iniziativa Alture"
 };
 
 class Home extends Component {
