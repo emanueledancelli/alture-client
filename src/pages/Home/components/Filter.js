@@ -16,15 +16,17 @@ class Filter extends Component {
     });
 
     return (
-      <select
-        onChange={e => {
-          setFilter(e);
-        }}
-        className="filter__menu"
-        value={ui.selectedValue}
-      >
-        {values}
-      </select>
+      <div>
+        <select
+          onChange={e => {
+            setFilter(e);
+          }}
+          className="filter__menu"
+          value={ui.selectedValue}
+        >
+          {values}
+        </select>
+      </div>
     );
   }
 }

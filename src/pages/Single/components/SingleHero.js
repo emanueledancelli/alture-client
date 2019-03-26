@@ -1,8 +1,8 @@
 import React from "react";
-import "./Hero.scss";
+import "./SingleHero.scss";
 import LazyLoad from "react-lazyload";
 
-export const Hero = ({ image, title }) => {
+export const SingleHero = ({ image, title }) => {
   const background = {
     background:
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +

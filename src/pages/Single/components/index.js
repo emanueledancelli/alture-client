@@ -1,5 +1,5 @@
 export { Shade } from "./Shade";
-export { Hero } from "./Hero";
+export { SingleHero } from "./SingleHero";
 export { Sharer } from "./Sharer";
 export { Contact } from "./Contact";
 export { TopBar } from "./TopBar";

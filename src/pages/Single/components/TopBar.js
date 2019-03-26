@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./TopBar.scss";
 import { ChevronLeftIcon, ShareVariantIcon } from "mdi-react";
-
 import { Sharer } from "./Sharer";
+
+/**
+ * TODO: Implement native sharing on Android
+ */
 
 export class TopBar extends Component {
   state = {

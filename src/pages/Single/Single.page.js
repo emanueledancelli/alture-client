@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { formatDate, formatTitle } from "utils";
-import { Hero, Contact, TopBar, Description } from "./components";
+import { SingleHero, Contact, TopBar, Description } from "./components";
 import { Spinner, Seo, ScrollToTop } from "components/common";
 import posed from "react-pose";
 
@@ -69,7 +69,7 @@ class Single extends Component {
             onClick={() => this.props.history.push("/")}
           />
 
-          <Hero
+          <SingleHero
             image={events.single.acf.immagine.url}
             title={events.single.title.rendered}
           />
