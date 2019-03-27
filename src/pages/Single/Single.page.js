@@ -44,6 +44,23 @@ class Single extends Component {
 
   render() {
     const { events } = this.props;
+    const seoTitle = this.createSeoTitle(events.single.title.rendered);
+    const seoDescription = this.createSeoDescription(
+      events.single.title.rendered,
+      events.single.acf.luogo,
+      events.single.acf.data_inizio
+    );
+    const eventUrl = `https://alture.org${this.props.location.pathname}`;
+    const slicedTitle = this.createSlicedTitle(events.single.title.rendered);
+    const eventTimes = this.createEventTimes(
+      events.single.acf.data_inizio,
+      events.single.acf.ora_inizio,
+      events.single.acf.ora_fine
+    );
+    const gMapsUrl = this.createGmapsUrl(events.single.acf.luogo);
+    const htmlDescription = this.createHtmlDescription(
+      events.single.acf.descrizione
+    );
 
     if (events.isLoading) {
       return <Spinner />;
@@ -52,20 +69,16 @@ class Single extends Component {
       <>
         <ScrollToTop />
         <Seo
-          title={this.createSeoTitle(events.single.title.rendered)}
-          description={this.createSeoDescription(
-            events.single.title.rendered,
-            events.single.acf.luogo,
-            events.single.acf.data_inizio
-          )}
-          url={`https://alture.org${this.props.location.pathname}`}
+          title={seoTitle}
+          description={seoDescription}
+          url={eventUrl}
           image={events.single.acf.immagine.url}
         />
 
         <Animated>
           <TopBar
-            url={`https://alture.org${this.props.location.pathname}`}
-            name={this.createSlicedTitle(events.single.title.rendered)}
+            url={eventUrl}
+            name={slicedTitle}
             onClick={() => this.props.history.push("/")}
           />
 
@@ -76,14 +89,10 @@ class Single extends Component {
 
           <Description
             organizers={events.single.acf.organizzatori}
-            dates={this.createEventTimes(
-              events.single.acf.data_inizio,
-              events.single.acf.ora_inizio,
-              events.single.acf.ora_fine
-            )}
-            mapUrl={this.createGmapsUrl(events.single.acf.luogo)}
+            dates={eventTimes}
+            mapUrl={gMapsUrl}
             place={events.single.acf.luogo}
-            info={this.createHtmlDescription(events.single.acf.descrizione)}
+            info={htmlDescription}
           />
 
           <Contact mail={events.single.acf.email_organizzatore} />
