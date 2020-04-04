@@ -8,13 +8,13 @@ import { setReloadStatus } from "actions/notActions";
 class Notifications extends Component {
   state = {
     isItApple: false,
-    permission: "default"
+    permission: "default",
   };
 
   componentWillMount() {
     let not = Notification.permission;
     this.setState({
-      permission: not
+      permission: not,
     });
   }
 
@@ -28,15 +28,14 @@ class Notifications extends Component {
       return;
     }
   }
-  handlePermissionStatus = status => {
+  handlePermissionStatus = (status) => {
     this.setState({
-      permission: status
+      permission: status,
     });
   };
 
   render() {
     const { isItApple, permission } = this.state;
-    const { reload } = this.props;
     let pickNotificationMsg;
 
     if (permission === "default") {
@@ -48,7 +47,7 @@ class Notifications extends Component {
             style={{
               color: "#999999",
               fontSize: "0.8em",
-              textDecoration: "italic"
+              textDecoration: "italic",
             }}
           >
             Se non compare il bottone per la sottoscrizione, ricarica la pagina!
@@ -100,17 +99,14 @@ class Notifications extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    reload: state.notifications.reload
+    reload: state.notifications.reload,
   };
 };
 
 const mapDispatchToProps = {
-  setReloadStatus
+  setReloadStatus,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Notifications);
+export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
