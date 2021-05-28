@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { formatDate, formatTitle } from "utils";
+import { formatDate, formatTitle } from "../../utils";
 import { SingleHero, Contact, TopBar, Description } from "./components";
-import { Spinner, Seo, ScrollToTop } from "components/common";
+import { Spinner, Seo, ScrollToTop } from "../../components/common";
 import posed from "react-pose";
 
 const Animated = posed.div({
@@ -11,29 +11,29 @@ const Animated = posed.div({
     x: 0,
     opacity: 1,
     transition: {
-      x: { ease: "linear", duration: 200 }
-    }
+      x: { ease: "linear", duration: 200 },
+    },
   },
   exit: {
     opacity: 0,
     x: 50,
     transition: {
-      x: { ease: "linear", duration: 200 }
-    }
-  }
+      x: { ease: "linear", duration: 200 },
+    },
+  },
 });
 
 class Single extends Component {
-  createSlicedTitle = title =>
+  createSlicedTitle = (title) =>
     title.lenght < 25 ? title : title.slice(0, 21) + "...";
 
-  createHtmlDescription = descr => {
+  createHtmlDescription = (descr) => {
     return { __html: descr };
   };
 
-  createSeoTitle = title => title + " - Alture";
+  createSeoTitle = (title) => title + " - Alture";
 
-  createGmapsUrl = place =>
+  createGmapsUrl = (place) =>
     `https://www.google.com/maps/search/${formatTitle(place, "plus")}`;
 
   createEventTimes = (date, start, end) =>
@@ -103,17 +103,17 @@ class Single extends Component {
 }
 
 Single.propTypes = {
-  events: PropTypes.object.isRequired
+  events: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => {
   return {
     events: {
       single: state.events.data.filter(
-        e => e.id === parseInt(ownProps.match.params.id)
+        (e) => e.id === parseInt(ownProps.match.params.id)
       )[0],
-      isLoading: state.events.isLoading
-    }
+      isLoading: state.events.isLoading,
+    },
   };
 };
 

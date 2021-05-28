@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import "./Notifications.page.scss";
-import { Animated, Seo, ScrollToTop, Hero, Header } from "components/common";
+import {
+  Animated,
+  Seo,
+  ScrollToTop,
+  Hero,
+  Header,
+} from "../../components/common";
 
 import { connect } from "react-redux";
-import { setReloadStatus } from "actions/notActions";
+import { setReloadStatus } from "../../actions/notActions";
 
 class Notifications extends Component {
   state = {

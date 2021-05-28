@@ -5,9 +5,9 @@ import {
   InfoOutlineIcon,
   NotificationsNoneIcon,
   HomeOutlineIcon,
-  FeedbackOutlineIcon
+  FeedbackOutlineIcon,
 } from "mdi-react";
-import Logo from "assets/logoMarzo.png";
+import Logo from "../assets/logoMarzo.png";
 
 export const DesktopHeader = () => {
   return (

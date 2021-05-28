@@ -6,21 +6,21 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cra-append-sw": "^2.6.1",
+    "css-loader": "^5.2.6",
     "lodash": ">=4.17.12",
     "mdi-react": "^4.0.0",
     "moment": "^2.22.2",
-    "node-sass": "^4.10.0",
+    "node-sass": "^6.0.0",
     "normalize.css": "^8.0.1",
     "normalizr": "^3.3.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.5.0",
-    "react-loadable": "^5.5.0",
     "react-pose": "^4.0.4",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^4.0.3",
     "react-share": "^2.3.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
@@ -31,11 +31,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "sass-loader": "^11.1.1"
+  }
 }

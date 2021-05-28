@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Filter.scss";
 import { connect } from "react-redux";
-import { setFilter } from "actions/uiActions";
+import { setFilter } from "../../../actions/uiActions";
 
 class Filter extends Component {
   render() {
@@ -18,7 +18,7 @@ class Filter extends Component {
     return (
       <div>
         <select
-          onChange={e => {
+          onChange={(e) => {
             setFilter(e);
           }}
           className="filter__menu"
@@ -31,17 +31,14 @@ class Filter extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    ui: state.ui
+    ui: state.ui,
   };
 };
 
 const mapDispatchToProps = {
-  setFilter
+  setFilter,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filter);
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

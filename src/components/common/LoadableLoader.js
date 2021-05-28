@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoadableLoader.scss";
-import logo from "assets/logo.png";
-import line from "assets/line.png";
+import logo from "../../assets/logo.png";
+import line from "../../assets/line.png";
 
 const LoadableLoader = () => {
   return (

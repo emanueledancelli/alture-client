@@ -1,1 +1,1 @@
-export { default as Edition } from "./Explore.page";
+export { default as Edition } from "./Edition.page";

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./Info.page.scss";
 import { Link } from "react-router-dom";
-import { Seo, Hero, Header, ScrollToTop } from "components/common";
+import { Seo, Hero, Header, ScrollToTop } from "../../components/common";
 import { ChevronRightIcon, WebIcon, MailOutlineIcon } from "mdi-react";
 
-import Facebook from "assets/facebook-brands.svg";
-import Instagram from "assets/instagram-brands.svg";
+import Facebook from "../../assets/facebook-brands.svg";
+import Instagram from "../../assets/instagram-brands.svg";
 
 class Info extends Component {
   render() {
@@ -28,12 +28,12 @@ class Info extends Component {
                 <span>Di vento contrario</span>
               </Link>
             </div>
-            <div className="info__menu__item">
+            {/*        <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
               <Link to="/notifiche">
                 <span>Gestisci le notifiche</span>
               </Link>
-            </div>
+            </div> */}
             <div className="info__menu__item">
               <ChevronRightIcon className="info__icon" size={20} />
               <Link to="/feedback">

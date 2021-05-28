@@ -8,13 +8,13 @@ import {
   FacebookIcon,
   WhatsappIcon,
   TelegramIcon,
-  EmailIcon
+  EmailIcon,
 } from "react-share";
-import Modal from "components/common/Modal";
+import Modal from "../../../components/common/Modal";
 
 import { Shade } from "./Shade";
 
-export const Sharer = props => (
+export const Sharer = (props) => (
   <Modal>
     <Shade action={props.onClick}>
       <div className="sharer__container">

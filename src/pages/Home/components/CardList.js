@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { formatDate, formatTitle } from "utils";
+import { formatDate, formatTitle } from "../../../utils";
 import { NoEvents } from "./NoEvents";
 import "./CardList.scss";
 
 import { Card } from "./Card.js";
 
 export const CardList = ({ events }) => {
-  const cardList = events.map(e => {
+  const cardList = events.map((e) => {
     return (
       <Link
         to={`/eventi/${e.id}/${formatTitle(e.title.rendered, "dash")}`}
@@ -33,5 +33,5 @@ export const CardList = ({ events }) => {
 };
 
 CardList.propTypes = {
-  events: PropTypes.array.isRequired
+  events: PropTypes.array.isRequired,
 };

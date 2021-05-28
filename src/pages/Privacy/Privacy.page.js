@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "./Privacy.page.scss";
-import { Spinner, Seo, Hero, Header, ScrollToTop } from "components/common";
-import { getPrivacy } from "api";
+import {
+  Spinner,
+  Seo,
+  Hero,
+  Header,
+  ScrollToTop,
+} from "../../components/common";
+import { getPrivacy } from "../../api";
 
 class Privacy extends Component {
   state = {
     isLoading: false,
-    privacy: ""
+    privacy: "",
   };
 
   componentDidMount() {
@@ -16,13 +22,13 @@ class Privacy extends Component {
 
   fetchPrivacy = () => {
     getPrivacy()
-      .then(res => {
+      .then((res) => {
         this.setState({
           privacy: res.data.content.rendered,
-          isLoading: false
+          isLoading: false,
         });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   createPrivacy = () => {

@@ -1,39 +1,17 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Navigation, DesktopHeader, DesktopFooter } from "components";
+import { Navigation, DesktopHeader, DesktopFooter } from "./components";
 import posed, { PoseGroup } from "react-pose";
-import Loadable from "react-loadable";
-import LoadableLoader from "components/common/LoadableLoader";
-import "styles/index.scss";
-import { Single } from "pages/Single";
-import { Info } from "pages/Info";
+import "./styles/index.scss";
+import { Single } from "./pages/Single";
+import { Info } from "./pages/Info";
+import { Home } from "./pages/Home";
+import { Notifications } from "./pages/Notifications";
+import { Feedback } from "./pages/Feedback";
+import { Privacy } from "./pages/Privacy";
+import { Edition } from "./pages/Edition";
 
-const Home = Loadable({
-  loader: () => import("pages/Home/Home.page"),
-  loading: LoadableLoader
-});
-
-const Notifications = Loadable({
-  loader: () => import("pages/Notifications/Notifications.page"),
-  loading: LoadableLoader
-});
-
-const Feedback = Loadable({
-  loader: () => import("pages/Feedback/Feedback.page"),
-  loading: LoadableLoader
-});
-
-const Privacy = Loadable({
-  loader: () => import("pages/Privacy/Privacy.page"),
-  loading: LoadableLoader
-});
-
-const Edition = Loadable({
-  loader: () => import("pages/Edition/Edition.page"),
-  loading: LoadableLoader
-});
-
-const Routes = location => {
+const Routes = (location) => {
   return (
     <Switch location={location}>
       <Route exact path="/" component={Home} />
@@ -45,7 +23,7 @@ const Routes = location => {
       <Route
         exact
         path="/eventi/:id/:title"
-        render={routeProps => <Single {...routeProps} />}
+        render={(routeProps) => <Single {...routeProps} />}
       />
     </Switch>
   );

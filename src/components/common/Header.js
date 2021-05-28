@@ -5,24 +5,24 @@ import {
   NotificationsNoneIcon,
   NotificationsOffIcon,
   NotificationsActiveIcon,
-  CloseCircleOutlineIcon
+  CloseCircleOutlineIcon,
 } from "mdi-react";
 import { Link } from "react-router-dom";
-import Logo from "assets/logoMarzo.png";
-import Facebook from "assets/facebook-brands.svg";
-import Instagram from "assets/instagram-brands.svg";
+import Logo from "../../assets/logoMarzo.png";
+import Facebook from "../../assets/facebook-brands.svg";
+import Instagram from "../../assets/instagram-brands.svg";
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
+/* const mapStateToProps = (state) => {
   return {
-    not: state.notifications.permission
+    not: state.notifications.permission,
   };
 };
-
+ */
 class MainHeader extends React.Component {
   render() {
-    let not = Notification.permission;
-    let pickNotificationIcon;
+    //let not = Notification.permission;
+    /*    let pickNotificationIcon;
 
     if (not === "default") {
       pickNotificationIcon = (
@@ -38,7 +38,7 @@ class MainHeader extends React.Component {
       pickNotificationIcon = (
         <NotificationsOffIcon className="header__icon" size={20} />
       );
-    }
+    } */
 
     return (
       <div className="header">
@@ -77,17 +77,16 @@ class MainHeader extends React.Component {
               width="20px"
             />
           </a>
-          <Link to="/notifiche">{pickNotificationIcon}</Link>
+          {/*  <Link to="/notifiche">{pickNotificationIcon}</Link> */}
         </div>
       </div>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-  null
-)(MainHeader);
+//export default connect(mapStateToProps, null)(MainHeader);
+
+export default MainHeader;
 
 const CloseButton = () => {
   return (
@@ -109,5 +108,5 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-  close: PropTypes.bool
+  close: PropTypes.bool,
 };

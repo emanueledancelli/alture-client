@@ -1,1 +1,1 @@
-export { Privacy } from "./Privacy.page";
+export { default as Privacy } from "./Privacy.page";

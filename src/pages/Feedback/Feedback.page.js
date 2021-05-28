@@ -1,19 +1,25 @@
 import React from "react";
-import { Animated, Seo, ScrollToTop, Header, Hero } from "components/common";
+import {
+  Animated,
+  Seo,
+  ScrollToTop,
+  Header,
+  Hero,
+} from "../../components/common";
 import { CheckCircleOutlineIcon } from "mdi-react";
 import { Link } from "react-router-dom";
 import "./Feedback.page.scss";
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 };
 
 const seoTags = {
   title: "Alture - Feedback",
   url: "https://alture.org/feedback",
-  description: "Aiutaci a migliorare alture.org con il tuo feedback!"
+  description: "Aiutaci a migliorare alture.org con il tuo feedback!",
 };
 
 class Feedback extends React.Component {
@@ -21,10 +27,10 @@ class Feedback extends React.Component {
     mail: "",
     message: "",
     errorMessage: "",
-    submitSuccess: false
+    submitSuccess: false,
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     this.setState({ isSending: true });
     fetch("/", {
       method: "POST",
@@ -32,26 +38,26 @@ class Feedback extends React.Component {
       body: encode({
         "form-name": "feedback",
         email: this.state.mail,
-        message: this.state.message
-      })
+        message: this.state.message,
+      }),
     })
       .then(() => {
         this.setState({
           submitSuccess: true,
-          isSending: false
+          isSending: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({
           errorMessage: error,
-          isSending: false
+          isSending: false,
         });
       });
 
     e.preventDefault();
   };
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { email, message, submitSuccess } = this.state;
@@ -107,7 +113,7 @@ class Feedback extends React.Component {
                     width: "100%",
                     alignItems: "center",
                     justifyContent: "center",
-                    margin: "15px 0"
+                    margin: "15px 0",
                   }}
                 >
                   {message.length <= 0 ? (

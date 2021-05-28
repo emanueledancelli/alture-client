@@ -1,11 +1,17 @@
 import React from "react";
-import { Seo, Header, Hero, ScrollToTop, Animated } from "components/common";
+import {
+  Seo,
+  Header,
+  Hero,
+  ScrollToTop,
+  Animated,
+} from "../../components/common";
 import "./Edition.page.scss";
 
 const seoTags = {
   title: "Di vento contrario - Alture",
   url: "https://alture.org/edizione",
-  description: "Di vento contrario - Alture"
+  description: "Di vento contrario - Alture",
 };
 
 const Edition = () => {
