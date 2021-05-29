@@ -44,6 +44,7 @@ class Single extends Component {
 
   render() {
     const { events } = this.props;
+
     const seoTitle = this.createSeoTitle(events.single.title.rendered);
     const seoDescription = this.createSeoDescription(
       events.single.title.rendered,
@@ -110,7 +111,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     events: {
       single: state.events.data.filter(
-        (e) => e.id === parseInt(ownProps.match.params.id)
+        (e) => e.id === ownProps.match.params.id
       )[0],
       isLoading: state.events.isLoading,
     },

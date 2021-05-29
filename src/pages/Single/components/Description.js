@@ -4,7 +4,7 @@ import {
   LabelIcon,
   LocationIcon,
   AccessTimeIcon,
-  OpenInNewIcon
+  OpenInNewIcon,
 } from "mdi-react";
 
 export const Description = ({ organizers, dates, mapUrl, place, info }) => {

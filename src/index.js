@@ -10,7 +10,6 @@ import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 
 store.dispatch(fetchEvents());
-//store.dispatch(setNotificationStatus());
 
 ReactDOM.render(
   <Provider store={store}>
