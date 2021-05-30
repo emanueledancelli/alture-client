@@ -1,6 +1,7 @@
 # Alture
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f2084cdb-9cfe-4065-afa2-86d5174a82a2/deploy-status)](https://app.netlify.com/sites/alture/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/304ab92a-4fd1-412e-a410-ad154db84067/deploy-status)](https://app.netlify.com/sites/alture-test/deploys)
+
 
 &nbsp;
 
