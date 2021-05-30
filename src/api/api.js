@@ -7,4 +7,4 @@ axios.defaults.baseURL = "https://60b257c862ab150017ae1fdc.mockapi.io/api/v1/";
 
 export const getEvents = () => axios.get("/eventi");
 
-export const getPrivacy = () => axios.get(`/pages/60`);
+export const getPrivacy = () => axios.get(`/privacy`);

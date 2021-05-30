@@ -24,7 +24,7 @@ class Privacy extends Component {
     getPrivacy()
       .then((res) => {
         this.setState({
-          privacy: res.data.content.rendered,
+          privacy: res.data[0].content.rendered,
           isLoading: false,
         });
       })
