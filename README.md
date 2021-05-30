@@ -7,7 +7,7 @@
 
 This is the client side of [Alture](https://alture.org) Progressive Web App.
 
-Alture works by fetching data from a Rest API provided by a headless installation of WordPress, more info coming soon(tm).
+Alture works by fetching data from a Rest API provided by a headless installation of WordPress.
 
 &nbsp;
 
@@ -17,11 +17,11 @@ Be sure to have [Node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) an
 
 Download or clone this repository:
 
-`git clone https://github.com/emanueledancelli/alture.org-client`
+`git clone https://github.com/emanueledancelli/alture-client`
 
 cd into project folder and install dependecies
 
-`cd alture.org-client`
+`cd alture-client`
 
 `npm i` or `yarn`
 
