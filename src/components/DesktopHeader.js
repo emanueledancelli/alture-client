@@ -41,17 +41,6 @@ export const DesktopHeader = () => {
           </div>
           <div className="dheader__menu__item">
             <NavLink
-              to="/notifiche"
-              className="dheader__link"
-              activeClassName="dheader__link--active"
-              exact
-            >
-              <NotificationsNoneIcon className="dheader__icon" size={22} />
-              <span className="dheader__text">Notifiche</span>
-            </NavLink>
-          </div>
-          <div className="dheader__menu__item">
-            <NavLink
               to="/feedback"
               className="dheader__link"
               activeClassName="dheader__link--active"
