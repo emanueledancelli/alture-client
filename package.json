@@ -9,7 +9,7 @@
     "css-loader": "^5.2.6",
     "lodash": ">=4.17.12",
     "mdi-react": "^4.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "node-sass": "^6.0.0",
     "normalize.css": "^8.0.1",
     "normalizr": "^3.3.0",
